@@ -5,10 +5,16 @@ import java.util.*;
 import java.util.concurrent.Semaphore;
 
 import java.util.Random;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class Refugio {
     private Tunel[] tuneles = new Tunel[4];
     private ZonaInsegura[] zonas = new ZonaInsegura[4];
+    private Lock lockComida = new ReentrantLock();
+    private Condition vacio = lockComida.newCondition();
+
     private static int comidaDisponible = 0;
 
     public Refugio() {
@@ -19,46 +25,51 @@ class Refugio {
     }
 
     public synchronized void zonaComun(Humano h) throws InterruptedException {
-        Thread.sleep(1000 + new Random().nextInt(1000));
+        h.setUbicacion("Zona común");
         Log.escribir(h.getIdh() + " está en la zona común.");
     }
 
-    public synchronized void entrarTunelExterior(Humano h) throws InterruptedException {
+    public synchronized int entrarTunelExterior(Humano h) throws InterruptedException {
+        h.setUbicacion("Túnel (saliendo)");
         Tunel tunel = tuneles[new Random().nextInt(4)];
         tunel.cruzarHaciaFuera(h);
         Log.escribir(h.getIdh() + " ha cruzado hacia el exterior en el túnel " + tunel.getId());
+        return tunel.getId();
     }
 
-    public synchronized ZonaInsegura explorarZonaExterior(Humano h) throws InterruptedException {
-        ZonaInsegura zona = zonas[new Random().nextInt(4)];
-        zona.entrar(h);
-        Log.escribir(h.getIdh() + " ha entrado en la zona exterior " + zona.getId());
-
-        // Simulamos que recoge entre 1 y 3 unidades de comida
-        int comidaRecolectada = 1 + new Random().nextInt(3);
-        agregarComida(comidaRecolectada);
-        Log.escribir(h.getIdh() + " ha recolectado " + comidaRecolectada + " unidades de comida.");
-
+    public synchronized ZonaInsegura explorarZonaExterior(int idZona) throws InterruptedException {
+        ZonaInsegura zona = zonas[idZona];
         return zona;
     }
 
-    public synchronized void volverAlRefugio(Humano h) throws InterruptedException {
-        Tunel tunel = tuneles[new Random().nextInt(4)];
+    public synchronized void volverAlRefugio(Humano h,int idTunel,ZonaInsegura zona) throws InterruptedException {
+        Tunel tunel = tuneles[idTunel];
+        h.setUbicacion("Túnel (entrando)");
         tunel.cruzarHaciaDentro(h);
-        Log.escribir(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel.getId());
+        zona.salir(h);
+        Log.escribir(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel);
+
     }
 
-    public synchronized void zonaDescanso(Humano h) throws InterruptedException {
-        Thread.sleep(2000 + new Random().nextInt(2000));
+    public void zonaDescanso(Humano h) throws InterruptedException {
+        h.setUbicacion("Zona descanso");
         Log.escribir(h.getIdh() + " está descansando.");
     }
 
-    public synchronized void comedor(Humano h) throws InterruptedException {
-        if (consumirComida(1)) {
-            Thread.sleep(3000 + new Random().nextInt(2000));
-            Log.escribir(h.getIdh() + " está comiendo.");
-        } else {
-            Log.escribir(h.getIdh() + " no pudo comer porque no hay comida.");
+    public void comedor(Humano h) throws InterruptedException {
+        h.setUbicacion("Comedor");
+        try {
+            lockComida.lock();
+            while (comidaDisponible == 0) {
+                vacio.await();
+            }
+            if (consumirComida(1)) {
+                Thread.sleep(3000 + new Random().nextInt(2000));
+            } else {
+                Log.escribir(h.getIdh() + " no pudo comer porque no hay comida.");
+            }
+        }finally {
+            lockComida.unlock();
         }
     }
 
@@ -73,12 +84,26 @@ class Refugio {
         return comidaDisponible;
     }
 
-    public synchronized void agregarComida(int cantidad) {
-        comidaDisponible += cantidad;
-        Log.escribir("Se han agregado " + cantidad + " unidades de comida al refugio. Total: " + comidaDisponible);
+    public void agregarComida(int cantidad) {
+        try {
+            lockComida.lock();
+
+            if (comidaDisponible == 0) {
+                comidaDisponible += cantidad;
+                for (int y = 0; y < cantidad; ++y) {
+                    vacio.signal();
+                }
+            } else {
+                comidaDisponible += cantidad;
+            }
+            Log.escribir("Se han agregado " + cantidad + " unidades de comida al refugio. Total: " + comidaDisponible);
+        }finally {
+            lockComida.unlock();
+        }
+
     }
 
-    public synchronized boolean consumirComida(int cantidad) {
+    public boolean consumirComida(int cantidad) {
         if (comidaDisponible >= cantidad) {
             comidaDisponible -= cantidad;
             Log.escribir("Se han consumido " + cantidad + " unidades de comida. Restante: " + comidaDisponible);

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 class Humano extends Thread {
-    protected int id;
+    protected String id;
     protected boolean marcado = false;
     protected boolean comida=false;
     private boolean vivo=true;
@@ -15,7 +15,7 @@ class Humano extends Thread {
 
 
 
-    public Humano(int id, Refugio refugio) {
+    public Humano(String id, Refugio refugio) {
         this.id = id;
         this.refugio = refugio;
     }
@@ -51,28 +51,26 @@ class Humano extends Thread {
         while (vivo) {
             try {
                 // 1. Zona común
-                setUbicacion("Zona común");
                 refugio.zonaComun(this);
+                sleep(1000 + new Random().nextInt(1000));
 
                 // 2. Cruzando túnel hacia afuera
-                setUbicacion("Túnel (saliendo)");
-                refugio.entrarTunelExterior(this);
+                int idTunel = refugio.entrarTunelExterior(this);
+                setUbicacion("Zona insegura");
 
                 // 3. Zona insegura
-                setUbicacion("Zona insegura");
-                ZonaInsegura zona = refugio.explorarZonaExterior(this);
-                zona.recolectarComida(this);
+                ZonaInsegura zona = refugio.explorarZonaExterior(idTunel);
+                int comida = zona.recolectarComida(this);
 
                 // 4. Cruzando túnel hacia adentro
-                setUbicacion("Túnel (entrando)");
-                refugio.volverAlRefugio(this);
+                refugio.volverAlRefugio(this,idTunel,zona);
+                refugio.agregarComida(comida);
 
                 // 5. Zona de descanso
-                setUbicacion("Zona descanso");
                 refugio.zonaDescanso(this);
+                sleep(2000 + new Random().nextInt(2000));
 
                 // 6. Comedor
-                setUbicacion("Comedor");
                 refugio.comedor(this);
 
                 // 7. Enfermería (si está marcado)
@@ -154,11 +152,11 @@ class Humano extends Thread {
     }
 
     // Métodos getters y setters
-    public int getIdh() {
+    public String getIdh() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

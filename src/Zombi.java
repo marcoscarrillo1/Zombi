@@ -1,6 +1,3 @@
-import java.util.*;
-import java.util.concurrent.Semaphore;
-package zombie;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +31,7 @@ class Zombi extends Thread {
     }
 
     // Método que renace un humano como zombi
-    public void renacerHumano(String idHumano) {
+    public void renacerHumano(int idHumano) {
         Log.escribir(id + " ha convertido a " + idHumano + " en zombi.");
         Zombi zombiRenacido = new Zombi(idHumano); // Humano renace con el mismo ID pero como zombi
         zombiRenacido.start();

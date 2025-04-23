@@ -80,10 +80,13 @@ class ZonaInsegura {
     }
 
     // Método para recolectar comida (simulado) en la zona
-    public void recolectarComida(Humano h) throws InterruptedException {
+    public int recolectarComida(Humano h) throws InterruptedException {
         entrar(h);  // El humano entra a la zona para recolectar comida
+        Log.escribir(h.getIdh() + " ha entrado en la zona exterior " + id);
         Thread.sleep(3000 + new Random().nextInt(2000));  // Simula el tiempo que tarda en recolectar comida
-        salir(h);  // El humano sale de la zona después de recolectar la comida
+        int comidaRecolectada = 1 + new Random().nextInt(3);
+        Log.escribir(h.getIdh() + " ha recolectado " + comidaRecolectada + " unidades de comida.");
+        return comidaRecolectada;
     }
 
     // Métodos adicionales para obtener información sobre la zona
