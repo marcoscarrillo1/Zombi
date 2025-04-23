@@ -53,6 +53,17 @@ class ZonaInsegura {
             cerrojo.unlock();
         }
     }
+    public void añadirhumano(Humano h){
+        cerrojo.lock();
+        try{
+            humanos.add(h);
+
+        }catch (Exception e){
+
+        }finally{
+            cerrojo.unlock();
+        }
+    }
 
 
 
