@@ -6,24 +6,34 @@ import java.util.Collections;
 import java.util.List;
 
 class Humano extends Thread {
-    protected String id;
+    protected int id;
     protected boolean marcado = false;
-    protected boolean vivo = true;
+    protected boolean comida=false;
+    private boolean vivo=true;
     protected Refugio refugio;
     protected String ubicacion = "Refugio"; // Valor inicial por defecto
 
 
-    protected static final List<Humano> humanosVivos = Collections.synchronizedList(new ArrayList<>());
 
-    public Humano(String id, Refugio refugio) {
+    public Humano(int id, Refugio refugio) {
         this.id = id;
         this.refugio = refugio;
-        humanosVivos.add(this);
+    }
+    public boolean isMarcado() {
+        return marcado;
+    }
+    public void setMarcado(boolean marcado) {
+        this.marcado = marcado;
+    }
+    public boolean isComida() {
+        return comida;
+    }
+    public void setComida(boolean comida) {
+        this.comida = comida;
     }
 
-    public static int getHumanosVivos() {
-        return (int) humanosVivos.stream().filter(h -> h.vivo).count();
-    }
+
+
 
     public void morir() {
         this.vivo = false;
@@ -144,11 +154,11 @@ class Humano extends Thread {
     }
 
     // Métodos getters y setters
-    public String getIdh() {
+    public int getIdh() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

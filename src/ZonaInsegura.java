@@ -7,44 +7,61 @@ import java.util.concurrent.Semaphore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class ZonaInsegura {
-    private static final List<ZonaInsegura> zonas = new ArrayList<>();
-    private final List<Humano> humanos = new ArrayList<>();
-    private final List<Zombi> zombis = new ArrayList<>();
+
+    private  List<Humano> humanos = new ArrayList<>();
+    private Lock cerrojo=new ReentrantLock();
     private final int id;
+    private Random random=new Random();
 
     public ZonaInsegura(int id) {
-        this.id = id;
-        zonas.add(this);  // Añade la zona a la lista global de zonas
+        this.id = id;// Añade la zona a la lista global de zonas
     }
-
-    // Método estático para elegir una zona aleatoria
-    public static ZonaInsegura elegirAleatoria() {
-        Random rand = new Random();
-        return zonas.get(rand.nextInt(zonas.size()));  // Selecciona una zona aleatoria
-    }
-
-    // Método sincronizado para mover un zombi a esta zona
-    public synchronized void moverZombi(Zombi z) {
-        zombis.add(z);  // Añade el zombi a la zona
-        if (!humanos.isEmpty()) {  // Si hay humanos en la zona
-            Humano objetivo = humanos.get(new Random().nextInt(humanos.size()));  // Selecciona un humano aleatorio
-            Log.escribir(z.getIdz() + " ataca a " + objetivo.getIdh());  // Registra el ataque
-            // Lógica de ataque simplificada, podrías agregar más detalle aquí
-        }
-        try {
-            Thread.sleep(2000 + new Random().nextInt(1000));  // Simula el tiempo que tarda en moverse
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();  // Maneja la interrupción correctamente
-        }
-        zombis.remove(z);  // El zombi sale de la zona después de su acción
-    }
-
-    // Método sincronizado para que un humano entre a la zona
     public synchronized void entrar(Humano h) {
         humanos.add(h);  // Añade al humano a la lista de humanos en la zona
     }
+
+    public Humano elegirpresa() {
+        cerrojo.lock();
+        try {
+            if (!humanos.isEmpty()) {
+                int elegir=random.nextInt(humanos.size());
+                humanos.remove(elegir);
+                return humanos.get(elegir);
+            }
+        } catch (Exception e) {
+            System.out.println("NO se ha elegio bien");
+        }
+        finally {
+            cerrojo.unlock();
+        }
+    }
+    public void eliminarHumano(Humano h) {
+        cerrojo.lock();
+        try{
+            if(humanos.contains(h)){
+                humanos.remove(h);
+                h.setComida(true);
+            }
+        } catch (Exception e) {
+            System.out.println("NO se ha eliminado");
+        }
+        finally {
+            cerrojo.unlock();
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     // Método sincronizado para que un humano salga de la zona
     public synchronized void salir(Humano h) {

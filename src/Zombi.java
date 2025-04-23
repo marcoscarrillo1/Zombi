@@ -1,20 +1,20 @@
 import java.util.*;
 import java.util.concurrent.Semaphore;
-
+package zombie;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 class Zombi extends Thread {
-    private String id;
+    private int  id;
     private int muertes = 0;
     private ZonaInsegura zonaActual;
     private boolean vivo = true;
 
     private static final List<Zombi> zombisActivos = Collections.synchronizedList(new ArrayList<>());
 
-    public Zombi(String id) {
+    public Zombi(int  id) {
         this.id = id;
         zombisActivos.add(this);
     }
@@ -59,7 +59,7 @@ class Zombi extends Thread {
 
     // Método para atacar a un humano y convertirlo en zombi
     public void atacarHumano() {
-        if (Humano.getHumanosVivos() > 0) {
+        if (humano) {
             // Suponemos que el zombi elige aleatoriamente un humano para atacar
             Humano humanoAtacado = elegirHumanoAleatorio();
             if (humanoAtacado != null) {
