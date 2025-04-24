@@ -4,18 +4,55 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.Semaphore;
 
+import java.io.IOException;
+import java.util.logging.*;
 
 public class Log {
-    private static final Object lock = new Object();
 
-    public static void escribir(String evento) {
-        synchronized (lock) {
-            try (FileWriter fw = new FileWriter("apocalipsis.txt", true)) {
-                fw.write(LocalDateTime.now() + " - " + evento + "\n");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private static final Logger logger = Logger.getLogger(Log.class.getName());
+
+    static {
+        try {
+            logger.setUseParentHandlers(false);
+
+            // Handler para consola
+            ConsoleHandler consoleHandler = new ConsoleHandler();
+            consoleHandler.setLevel(Level.ALL);
+            consoleHandler.setFormatter(new SimpleFormatter());
+
+            // Handler para archivo
+            FileHandler fileHandler = new FileHandler("app.log", true); // true para añadir sin sobrescribir
+            fileHandler.setLevel(Level.ALL);
+            fileHandler.setFormatter(new SimpleFormatter());
+
+            // Agregar handlers
+            logger.addHandler(consoleHandler);
+            logger.addHandler(fileHandler);
+
+            logger.setLevel(Level.ALL);
+        } catch (IOException e) {
+            System.err.println("No se pudo configurar el logger: " + e.getMessage());
         }
     }
+    public static Logger getLogger() {
+        return logger;
+    }
+
+    public static void info(String message) {
+        logger.info(message);
+    }
+
+    public static void warning(String message) {
+        logger.warning(message);
+    }
+
+    public static void error(String message) {
+        logger.severe(message);
+    }
+
+    public static void debug(String message) {
+        logger.fine(message); // Nivel de debug
+    }
 }
+
 
