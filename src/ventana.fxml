@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="750.0" prefWidth="928.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VentanaController">
+
+    <!-- Espaciado y padding -->
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- Caja Refugio -->
+    <VBox style="-fx-background-color: #D1E8F1; -fx-border-color: black; -fx-border-width: 1;"> <!-- Fondo azul pastel -->
+        <!-- Título de la zona con fondo gris -->
+        <Label prefHeight="45.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-padding: 10; -fx-background-color: #E0E0E0; -fx-alignment: center;" text="Refugio" />
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 1: Zona de Descanso -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <!-- Título Zona Descanso con fondo gris -->
+            <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Descanso" />
+            <!-- Celda de IDs con fondo gris -->
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="IDs Humanos" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 2: Comedor (aumentando tamaño de HBox y reduciendo altura de comida) -->
+        <HBox spacing="10" style="-fx-pref-height: 100;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <!-- Título Comedor con fondo gris -->
+            <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Comedor" />
+            <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Comida" />
+            <!-- Celda de IDs con fondo gris -->
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="IDs Humanos" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <!-- Celda de comida con altura reducida y fondo gris -->
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Comida" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 40;" />
+            </StackPane>
+        </HBox>
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 3: Zona Común -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <!-- Título Zona Común con fondo gris -->
+            <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Común" />
+            <!-- Celda de IDs con fondo gris -->
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="IDs Humanos" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+    </VBox>
+
+
+    <!-- Caja Túneles -->
+    <VBox style="-fx-background-color: #FFF9C4; -fx-border-color: black; -fx-border-width: 1;">
+        <!-- Encabezado de Túneles con el mismo fondo que las celdas -->
+        <Label prefHeight="45.0" prefWidth="305.0" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-background-color: #E0E0E0; -fx-alignment: center; -fx-padding: 10px;" text="Túneles" />
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 1 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 1" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 2" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 3" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 2 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 4" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 5" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 6" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 3 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 7" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 8" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 9" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 4 -->
+        <HBox spacing="10.0">
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 10" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 11" />
+                <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Túnel 12" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </HBox>
+    </VBox>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Caja Zona de Riesgo -->
+    <VBox style="-fx-background-color: #FFD580; -fx-border-color: black; -fx-border-width: 1;">
+        <!-- Título con fondo gris -->
+        <Label prefHeight="45.0" prefWidth="235.0" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-padding: 10; -fx-background-color: #E0E0E0; -fx-alignment: center;" text="Zona de Riesgo" />
+
+        <!-- Separador: Línea horizontal completa -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 1 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Humano 1" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Zombi 1" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 2 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Humano 2" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Zombi 2" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 3 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Humano 3" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Zombi 3" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+
+        <!-- Separador -->
+        <Separator style="-fx-background-color: #333333; -fx-border-color: #333333; -fx-border-width: 1;" />
+
+        <!-- Fila 4 -->
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Humano 4" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+            <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
+                <Label text="Zombi 4" />
+                <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
+            </StackPane>
+        </HBox>
+    </VBox>
+
+
+
+
+</HBox>
