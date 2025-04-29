@@ -18,16 +18,17 @@ public class Main {
         Refugio refugio = new Refugio();
 
         // Iniciar paciente cero
-        Zombi pacienteCero = new Zombi("Z0000");
+        Zombi pacienteCero = new Zombi("Z0000",refugio);
         pacienteCero.start();
 
         // Iniciar humanos
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10000; i++) {
             String id = String.format("H%04d", i);
             Humano h = new Humano(id, refugio);
-            h.start();
+
             try {
-                Thread.sleep(500 + new java.util.Random().nextInt(1500));
+                h.sleep(500 + new java.util.Random().nextInt(1500));
+                h.start();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -26,14 +26,14 @@ class Refugio {
 
     public synchronized void zonaComun(Humano h) throws InterruptedException {
         h.setUbicacion("Zona común");
-        Log.escribir(h.getIdh() + " está en la zona común.");
+        Log.info(h.getIdh() + " está en la zona común.");
     }
 
     public synchronized int entrarTunelExterior(Humano h) throws InterruptedException {
         h.setUbicacion("Túnel (saliendo)");
         Tunel tunel = tuneles[new Random().nextInt(4)];
         tunel.cruzarHaciaFuera(h);
-        Log.escribir(h.getIdh() + " ha cruzado hacia el exterior en el túnel " + tunel.getId());
+        Log.info(h.getIdh() + " ha cruzado hacia el exterior en el túnel " + tunel.getId());
         return tunel.getId();
     }
 
@@ -47,13 +47,13 @@ class Refugio {
         h.setUbicacion("Túnel (entrando)");
         tunel.cruzarHaciaDentro(h);
         zona.salir(h);
-        Log.escribir(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel);
+        Log.info(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel);
 
     }
 
     public void zonaDescanso(Humano h) throws InterruptedException {
         h.setUbicacion("Zona descanso");
-        Log.escribir(h.getIdh() + " está descansando.");
+        Log.info(h.getIdh() + " está descansando.");
     }
 
     public void comedor(Humano h) throws InterruptedException {
@@ -66,7 +66,7 @@ class Refugio {
             if (consumirComida(1)) {
                 Thread.sleep(3000 + new Random().nextInt(2000));
             } else {
-                Log.escribir(h.getIdh() + " no pudo comer porque no hay comida.");
+                Log.info(h.getIdh() + " no pudo comer porque no hay comida.");
             }
         }finally {
             lockComida.unlock();
@@ -74,8 +74,10 @@ class Refugio {
     }
 
     public synchronized void recuperarse(Humano h) throws InterruptedException {
+        h.setUbicacion("Enfermería");
         Thread.sleep(3000 + new Random().nextInt(2000));
-        Log.escribir(h.getIdh() + " se ha recuperado.");
+        h.setMarcado(false);
+        Log.info(h.getIdh() + " se ha recuperado.");
     }
 
     // --- NUEVAS FUNCIONES DE COMIDA ---
@@ -96,7 +98,7 @@ class Refugio {
             } else {
                 comidaDisponible += cantidad;
             }
-            Log.escribir("Se han agregado " + cantidad + " unidades de comida al refugio. Total: " + comidaDisponible);
+            Log.info("Se han agregado " + cantidad + " unidades de comida al refugio. Total: " + comidaDisponible);
         }finally {
             lockComida.unlock();
         }
@@ -106,7 +108,7 @@ class Refugio {
     public boolean consumirComida(int cantidad) {
         if (comidaDisponible >= cantidad) {
             comidaDisponible -= cantidad;
-            Log.escribir("Se han consumido " + cantidad + " unidades de comida. Restante: " + comidaDisponible);
+            Log.info("Se han consumido " + cantidad + " unidades de comida. Restante: " + comidaDisponible);
             return true;
         } else {
             return false;

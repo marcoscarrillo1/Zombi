@@ -2,86 +2,78 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 class Zombi extends Thread {
-    private int  id;
+    private String id;
     private int muertes = 0;
     private ZonaInsegura zonaActual;
+    private Refugio refugio;
     private boolean vivo = true;
+    private Random rand = new Random();
 
-    private static final List<Zombi> zombisActivos = Collections.synchronizedList(new ArrayList<>());
 
-    public Zombi(int  id) {
+    public Zombi(String  id,Refugio refugio) {
         this.id = id;
-        zombisActivos.add(this);
+        refugio = this.refugio;
     }
 
-    public static int getZombisActivos() {
-        return zombisActivos.size();
-    }
 
-    public static List<Zombi> getZombis() {
-        return zombisActivos;
-    }
 
     // Método para incrementar las muertes del zombi
     public void incrementarMuertes() {
         muertes++;
-        Log.escribir(id + " ha matado a un humano. Muertes totales: " + muertes);
+        Log.info(id + " ha matado a un humano. Muertes totales: " + muertes);
     }
 
-    // Método que renace un humano como zombi
-    public void renacerHumano(int idHumano) {
-        Log.escribir(id + " ha convertido a " + idHumano + " en zombi.");
-        Zombi zombiRenacido = new Zombi(idHumano); // Humano renace con el mismo ID pero como zombi
-        zombiRenacido.start();
-    }
 
     @Override
     public void run() {
         while (vivo) {
             try {
                 // El zombi se mueve por la zona
-                zonaActual = ZonaInsegura.elegirAleatoria();
-                zonaActual.moverZombi(this);
+                zonaActual = refugio.explorarZonaExterior(rand.nextInt(4)-1);
                 // El zombi busca un humano al que atacar
-                atacarHumano();
+                Humano presa = zonaActual.elegirpresa();
+                if (presa!=null){
+                    Thread.sleep((long)(rand.nextDouble(1,3) * 500)); // Espera aleatoria entre 1 y 4 segundos
+                    atacarHumano(presa);
+                    Log.info(id + " ha atacado a: "+ presa.getIdh());
+                }
                 // Simula el tiempo de espera entre ataques
-                Thread.sleep((long)(Math.random() * 3000 + 1000)); // Espera aleatoria entre 1 y 4 segundos
+                Thread.sleep((long)(rand.nextDouble(2,3) * 1000));
+
             } catch (InterruptedException e) {
-                Log.escribir(id + " ha sido interrumpido.");
+                Log.info(id + " ha sido interrumpido.");
             }
         }
     }
 
     // Método para atacar a un humano y convertirlo en zombi
-    public void atacarHumano() {
-        if (humano) {
-            // Suponemos que el zombi elige aleatoriamente un humano para atacar
-            Humano humanoAtacado = elegirHumanoAleatorio();
-            if (humanoAtacado != null) {
-                Log.escribir(id + " ha atacado al humano " + humanoAtacado.getIdh());
-                humanoAtacado.morir(); // El humano muere
-                incrementarMuertes(); // El zombi incrementa su número de muertes
-                renacerHumano(humanoAtacado.getIdh()); // El humano se convierte en zombi
-            }
+    public void atacarHumano(Humano h) {
+        double atacque = rand.nextDouble(1);
+        if (atacque < 0.66){
+            String id = h.getIdh();
+            String zombiNuevo = 'Z' +id.substring(1);
+            h.morir();
+            this.incrementarMuertes();
+            Zombi trans = new Zombi(zombiNuevo,this.refugio);
+            trans.run();
+        }else {
+            h.setMarcado(true);
+            zonaActual.añadirhumano(h);
+            h.matarZombi(this);
         }
+
     }
 
-    // Método para elegir un humano aleatorio
-    private Humano elegirHumanoAleatorio() {
-        List<Humano> vivos = new ArrayList<>(Humano.humanosVivos);
-        if (vivos.isEmpty()) {
-            return null;
-        }
-        return vivos.get((int)(Math.random() * vivos.size())); // Elige un humano aleatorio
-    }
+
 
     // Método para matar a un zombi
     public void morir() {
         this.vivo = false;
-        Log.escribir(id + " ha muerto.");
-        zombisActivos.remove(this); // El zombi muere y se elimina de la lista de zombis activos
+        Log.info(id + " ha muerto.");
+
     }
 
     public String getIdz() {

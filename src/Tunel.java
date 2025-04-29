@@ -31,7 +31,7 @@ class Tunel {
         cerrojo.lock();
         try {
             esperandosalir.add(h);
-            Log.escribir(h.getIdh() + " está esperando para salir en el túnel " + id);
+            Log.info(h.getIdh() + " está esperando para salir en el túnel " + id);
             if (esperandosalir.size() == 3) {
                 grupoFormado = true;
                 if (esperandoEntrar == 0) {
@@ -43,7 +43,7 @@ class Tunel {
             }
             ocupado.acquire();
             Thread.sleep(1000);
-            Log.escribir(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
+            Log.info(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
             esperandosalir.remove(h);
             ocupado.release();
             if(esperandosalir.isEmpty()){
@@ -61,7 +61,7 @@ class Tunel {
         try {
             esperandoEntrar++;
             ocupado.acquire();
-            Log.escribir(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
+            Log.info(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
             esperandoEntrar--;
             Thread.sleep(1000);
             ocupado.release();

@@ -28,23 +28,25 @@ class ZonaInsegura {
         cerrojo.lock();
         try {
             if (!humanos.isEmpty()) {
-                int elegir=random.nextInt(humanos.size());
+                int elegir = random.nextInt(humanos.size());
+                Humano presa = humanos.get(elegir);
                 humanos.remove(elegir);
-                return humanos.get(elegir);
+                return presa;
             }
+
         } catch (Exception e) {
             System.out.println("NO se ha elegio bien");
-        }
-        finally {
+        } finally {
             cerrojo.unlock();
         }
+        return null;
     }
     public void eliminarHumano(Humano h) {
         cerrojo.lock();
         try{
             if(humanos.contains(h)){
                 humanos.remove(h);
-                h.setComida(true);
+
             }
         } catch (Exception e) {
             System.out.println("NO se ha eliminado");
@@ -82,10 +84,10 @@ class ZonaInsegura {
     // Método para recolectar comida (simulado) en la zona
     public int recolectarComida(Humano h) throws InterruptedException {
         entrar(h);  // El humano entra a la zona para recolectar comida
-        Log.escribir(h.getIdh() + " ha entrado en la zona exterior " + id);
+        Log.info(h.getIdh() + " ha entrado en la zona exterior " + id);
         Thread.sleep(3000 + new Random().nextInt(2000));  // Simula el tiempo que tarda en recolectar comida
         int comidaRecolectada = 1 + new Random().nextInt(3);
-        Log.escribir(h.getIdh() + " ha recolectado " + comidaRecolectada + " unidades de comida.");
+        Log.info(h.getIdh() + " ha recolectado " + comidaRecolectada + " unidades de comida.");
         return comidaRecolectada;
     }
 
@@ -94,9 +96,6 @@ class ZonaInsegura {
         return humanos;
     }
 
-    public List<Zombi> getZombis() {
-        return zombis;
-    }
 
     public int getId() {
         return id;
