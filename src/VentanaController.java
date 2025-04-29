@@ -3,11 +3,14 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -16,6 +19,8 @@ public class VentanaController implements Initializable {
     @FXML private GridPane cajaRefugio;
     @FXML private GridPane cajaTuneles;  // Usamos un GridPane para dividir los túneles en 4 partes
     @FXML private GridPane cajaZonaRiesgo;
+    @FXML private ImageView zombiView;
+
 
     @FXML private Label lblComida; // Asegúrate de que este Label esté definido en el FXML
     @FXML private Label lblDescanso; // Asegúrate de que este Label esté definido en el FXML
@@ -50,6 +55,10 @@ public class VentanaController implements Initializable {
         cajaRefugio.getChildren().addAll(crearCaja("REFUGIO", tblDescanso, lblComida));
         crearTúneles();
         cajaZonaRiesgo.getChildren().add(crearCaja("ZONA DE RIESGO", tblZonaRiesgo));
+
+            Image zombiImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombi.png")));
+            zombiView.setImage(zombiImage);
+
 
         // Configurar el Timeline
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> actualizar()));
