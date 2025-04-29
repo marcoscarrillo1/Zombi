@@ -18,6 +18,39 @@ class Refugio {
     private ArrayList<Humano> humanosComedor= new ArrayList<>();
     private ArrayList<Humano> humanosEnfermeria= new ArrayList<>();
     private ArrayList<Humano> humanosZonaComun= new ArrayList<>();
+
+    public ArrayList<Humano> getHumanosDescansando() {
+        return humanosDescansando;
+    }
+
+    public void setHumanosDescansando(ArrayList<Humano> humanosDescansando) {
+        this.humanosDescansando = humanosDescansando;
+    }
+
+    public ArrayList<Humano> getHumanosComedor() {
+        return humanosComedor;
+    }
+
+    public void setHumanosComedor(ArrayList<Humano> humanosComedor) {
+        this.humanosComedor = humanosComedor;
+    }
+
+    public ArrayList<Humano> getHumanosEnfermeria() {
+        return humanosEnfermeria;
+    }
+
+    public void setHumanosEnfermeria(ArrayList<Humano> humanosEnfermeria) {
+        this.humanosEnfermeria = humanosEnfermeria;
+    }
+
+    public ArrayList<Humano> getHumanosZonaComun() {
+        return humanosZonaComun;
+    }
+
+    public void setHumanosZonaComun(ArrayList<Humano> humanosZonaComun) {
+        this.humanosZonaComun = humanosZonaComun;
+    }
+
     private static int comidaDisponible = 0;
 
     public Refugio() {

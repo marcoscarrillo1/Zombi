@@ -27,10 +27,18 @@ public class VentanaController implements Initializable {
     @FXML TableView<String> tblDescanso;
     private TableView<String> tblTuneles;
     private TableView<String> tblZonaRiesgo;
+    private Refugio refugio;
+    public void setRefugio(Refugio refugio) {
+        this.refugio = refugio;
+    }
 
     @FXML private ListView<String> listaRefugio;    // Lista de la zona de Refugio
     @FXML private ListView<String> listaTuneles;    // Lista de la zona de Túneles
     @FXML private ListView<String> listaZonaRiesgo; // Lista de la zona de Riesgo
+    @FXML private Label labelDescanso;
+    @FXML private Label Labelcomedor;
+    @FXML private Label Labelcomida;
+    @FXML private Label laabelzonacomun;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -112,23 +120,45 @@ public class VentanaController implements Initializable {
         tblDescanso.getItems().setAll(getIdsEnZona("descanso"));
         tblTuneles.getItems().setAll(getIdsEnZona("tunel"));
         tblZonaRiesgo.getItems().setAll(getIdsEnZona("zonaRiesgo"));
-        lblComida.setText("Comida: " + Refugio.getCantidadComida());
+        Labelcomida.setText(""+Refugio.getCantidadComida());
+        Labelcomedor.setText(""+getIdsEnZona("comedor"));
+        labelDescanso.setText(""+getIdsEnZona("descanso"));
+        laabelzonacomun.setText(""+getIdsEnZona("comun"));
     }
 
     // Método de ejemplo para obtener los IDs (esto lo debes reemplazar por tu lógica real)
-    private List<String> getIdsEnZona(String zona) {
-        List<String> ids = new ArrayList<>();  // Creamos una lista vacía para almacenar los IDs
+    private ArrayList<String> getIdsEnZona(String zona) {
+        ArrayList<String> ids = new ArrayList<>();  // Creamos una lista vacía para almacenar los IDs
 
         // Si la zona es "descanso", obtendremos los humanos que están descansando
         if ("descanso".equals(zona)) {
             // Recorremos la lista de humanos descansando en el refugio
-            for (Humano humano : Refugio.getDescansando()) {
-                ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+            while(ids.toArray().length<3){
+                for (Humano humano : refugio.getHumanosDescansando()) {
+                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                }
+            }
+        }
+
+        else if ("comedor".equals(zona)) {
+            // Recorremos la lista de humanos descansando en el refugio
+            while(ids.toArray().length<3){
+                for (Humano humano : refugio.getHumanosComedor()) {
+                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                }
+            }
+        }
+        else if ("comun".equals(zona)) {
+            // Recorremos la lista de humanos descansando en el refugio
+            while(ids.toArray().length<3){
+                for (Humano humano : refugio.getHumanosZonaComun()) {
+                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                }
             }
         }
 
         // Si la zona es "tunel", obtenemos los humanos que están esperando en los túneles
-        else if ("tunel".equals(zona)) {
+        /*else if ("tunel".equals(zona)) {
             // Recorremos todos los túneles
             for (Tunel tunel : Refugio.getTuneles()) {
                 // Recorremos la lista de humanos esperando en este túnel
@@ -147,7 +177,7 @@ public class VentanaController implements Initializable {
                     ids.add(humano.getIdh());  // Añadimos el ID de cada humano
                 }
             }
-        }
+        }*/
 
         return ids;  // Retornamos la lista con los IDs
     }

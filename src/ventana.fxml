@@ -34,7 +34,7 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Descanso" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="IDs Humanos" />
+                <Label fx:id="labelDescanso" text="IDs Humanos" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -52,12 +52,12 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Comida" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="IDs Humanos" />
+                <Label fx:id="Labelcomedor" text="IDs Humanos" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <!-- Celda de comida con altura reducida y fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Comida" />
+                <Label fx:id="Labelcomida" text="Comida" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 40;" />
             </StackPane>
         </HBox>
@@ -74,7 +74,7 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Común" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="IDs Humanos" />
+                <Label fx:id="laabelzonacomun" text="IDs Humanos" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
