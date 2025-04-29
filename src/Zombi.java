@@ -15,7 +15,7 @@ class Zombi extends Thread {
 
     public Zombi(String  id,Refugio refugio) {
         this.id = id;
-        refugio = this.refugio;
+        this.refugio=refugio;
     }
 
 

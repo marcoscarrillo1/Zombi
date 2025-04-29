@@ -14,6 +14,7 @@ class Refugio {
     private ZonaInsegura[] zonas = new ZonaInsegura[4];
     private Lock lockComida = new ReentrantLock();
     private Condition vacio = lockComida.newCondition();
+    private ArrayList<Humano> humanosDescansando= new ArrayList<>();
 
     private static int comidaDisponible = 0;
 
@@ -53,6 +54,9 @@ class Refugio {
 
     public void zonaDescanso(Humano h) throws InterruptedException {
         h.setUbicacion("Zona descanso");
+        synchronized (humanosDescansando){
+            humanosDescansando.add(h);
+        }
         Log.info(h.getIdh() + " está descansando.");
     }
 
@@ -113,5 +117,15 @@ class Refugio {
         } else {
             return false;
         }
+    }
+// esto de abajo puedes quitarlo que no vale pa na
+    public  ArrayList<Humano> getDescansando() {
+        // Lógica para obtener los humanos en descanso (añade tu implementación)
+        return humanosDescansando;
+    }
+
+    public synchronized void eliminarhumanodesc(Humano h){
+        humanosDescansando.remove(h);
+        Log.info(h.getIdh() + " ha eliminado.");
     }
 }

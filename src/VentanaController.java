@@ -9,6 +9,7 @@ import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -21,7 +22,6 @@ public class VentanaController implements Initializable {
     @FXML private GridPane cajaZonaRiesgo;
     @FXML private ImageView zombiView;
 
-
     @FXML private Label lblComida; // Asegúrate de que este Label esté definido en el FXML
     @FXML private Label lblDescanso; // Asegúrate de que este Label esté definido en el FXML
     @FXML TableView<String> tblDescanso;
@@ -31,14 +31,6 @@ public class VentanaController implements Initializable {
     @FXML private ListView<String> listaRefugio;    // Lista de la zona de Refugio
     @FXML private ListView<String> listaTuneles;    // Lista de la zona de Túneles
     @FXML private ListView<String> listaZonaRiesgo; // Lista de la zona de Riesgo
-
-    // Método para actualizar las listas con más elementos
-    public void actualizarZonas() {
-        // Agregar elementos a las listas
-        listaRefugio.getItems().add("Humano 3");
-        listaTuneles.getItems().add("Zombi 5");
-        listaZonaRiesgo.getItems().add("Zombi 6");
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -56,9 +48,9 @@ public class VentanaController implements Initializable {
         crearTúneles();
         cajaZonaRiesgo.getChildren().add(crearCaja("ZONA DE RIESGO", tblZonaRiesgo));
 
-            Image zombiImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombi.png")));
-            zombiView.setImage(zombiImage);
-
+        // Cargar imagen del zombi
+        Image zombiImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombi.png")));
+        zombiView.setImage(zombiImage);
 
         // Configurar el Timeline
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> actualizar()));
@@ -125,7 +117,39 @@ public class VentanaController implements Initializable {
 
     // Método de ejemplo para obtener los IDs (esto lo debes reemplazar por tu lógica real)
     private List<String> getIdsEnZona(String zona) {
-        // Esta lógica debe ser adaptada para obtener los IDs en función de la zona
-        return List.of("ID 1", "ID 2", "ID 3");
+        List<String> ids = new ArrayList<>();  // Creamos una lista vacía para almacenar los IDs
+
+        // Si la zona es "descanso", obtendremos los humanos que están descansando
+        if ("descanso".equals(zona)) {
+            // Recorremos la lista de humanos descansando en el refugio
+            for (Humano humano : Refugio.getDescansando()) {
+                ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+            }
+        }
+
+        // Si la zona es "tunel", obtenemos los humanos que están esperando en los túneles
+        else if ("tunel".equals(zona)) {
+            // Recorremos todos los túneles
+            for (Tunel tunel : Refugio.getTuneles()) {
+                // Recorremos la lista de humanos esperando en este túnel
+                for (Humano humano : tunel.getEsperando()) {
+                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                }
+            }
+        }
+
+        // Si la zona es "zonaRiesgo", obtenemos los humanos que están en las zonas de riesgo
+        else if ("zonaRiesgo".equals(zona)) {
+            // Recorremos todas las zonas de riesgo
+            for (ZonaInsegura zonaInsegura : Refugio.getZonas()) {
+                // Recorremos los humanos en esta zona
+                for (Humano humano : zonaInsegura.getHumanos()) {
+                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                }
+            }
+        }
+
+        return ids;  // Retornamos la lista con los IDs
     }
+
 }
