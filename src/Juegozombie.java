@@ -1,0 +1,136 @@
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.logging.Logger;
+public class Juegozombie {
+    private static final Logger logger=new Log().getLogger();
+    private ListaHilos zonaComun;
+    private ListaHilos zonaDescanso;
+    private ListaHilos zonaComedor;
+    private LinkedBlockingDeque colacomedor=new LinkedBlockingDeque<>();
+    private Random rand=new Random();
+    private ArrayList<ListaHilos> zonariesgoZZ;
+    private ArrayList<ZonaInsegura> enzonariesgo;
+    private int comida;
+    private Text comidatxt;
+
+    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,Text comidatxt,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
+        this.zonaComun=zonaComun;
+        this.zonaDescanso=zonaDescanso;
+        this.zonaComedor=zonaComedor;
+        this.comida=comida;
+        this.zonariesgoZZ=zonariesgoZZ;
+        this.enzonariesgo=enzonariesgo;
+        this.comidatxt=comidatxt;
+
+    }
+    public void entrarZcomun(Humano h){
+        zonaComun.añadir(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha entrado a zona comun");
+    }
+    public void entrarDescanso(Humano h){
+        zonaDescanso.añadir(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha entrado a zona descanso");
+
+    }
+    public void salirZcomun(Humano h){
+        zonaComun.fuera(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha salido de la zona comun");
+
+    }
+    public void salirDescanso(Humano h){
+        zonaDescanso.fuera(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha salido de la zona descanso");
+
+    }
+    public void salirZcomedor(Humano h){
+        zonaComedor.fuera(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha salido del comedor");
+
+    }
+    public void entrarZcomedor(Humano h){
+        zonaComedor.añadir(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha entrado al comedor");
+
+    }
+    public void entrarZriesgoH(Humano h,int i){
+        enzonariesgo.get(i).añadirhumano(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha entrado a zona riesgo");
+
+    }
+    public void salirZriesgoH(Humano h,int i){
+        enzonariesgo.get(i).eliminarHumano(h);
+        logger.info("Humano con id:+"+h.getIdh()+"ha salido de la zona de riesgo");
+
+    }
+    public void salirZriesgoZ(Zombi z,int i){
+        zonariesgoZZ.get(i).fuera(z);
+        logger.info("Zombie con id:+"+z.getIdz()+"ha salido zona riesgo");
+
+    }
+    public void entrarZriesgoZ(Zombi z,int i){
+        zonariesgoZZ.get(i).añadir(z);
+        logger.info("Zombie con id:+"+z.getIdz()+"ha entrado zona riesgo");
+    }
+   public synchronized void  entrarcolacomedor(Humano h){
+        colacomedor.add(h);
+       logger.info("Humano con id:+"+h.getIdh()+"esperando pa comer");
+
+   }
+   public synchronized void salircolacomedor(Humano h){
+        colacomedor.remove(h);
+       logger.info("Humano con id:+"+h.getIdh()+" no esperando pa comer");
+   }
+   public synchronized void dejarComida(){
+        try{
+                comida=comida+2;
+                comidatxt.setTextContent("Comida:" +comida);
+                logger.info("Comida actualizada :+"+comida);
+                notifyAll();
+
+        }catch(Exception e){
+            logger.warning("Error al dejar la comida");
+        }
+   }
+   public void comer(Humano h){
+        try{
+            entrarcolacomedor(h);
+            logger.info("El humano con id:"+h.getIdh()+"esta esperando pa comer");
+            while (colacomedor.peek()!=h){
+                synchronized (this){
+                    wait();
+                }
+            }
+            entrarZcomedor(h);
+            logger.info("El humano con id:"+h.getIdh()+"ha entrado a comer");
+            synchronized (this){
+                while(comida==0){
+                    logger.info("El humano con id:"+h.getIdh()+"esta esperando que le traigan comida");
+                    wait();
+                }
+                comida--;
+                comidatxt.setTextContent("Comida:" +comida);
+                logger.info("El humano con id:"+h.getIdh()+"ha comido");
+                logger.info("Comida actualizada:"+comida);
+            }
+            Thread.sleep(1000);
+            salirZcomedor(h);
+            salircolacomedor(h);
+            logger.info("El humano con id:"+h.getIdh()+"ha terminado de comer");
+            synchronized (this){
+                notifyAll();
+            }
+
+        }catch(Exception e){
+            logger.warning("Los humanos no saben comer");
+        }
+   }
+
+
+
+
+}
