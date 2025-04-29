@@ -33,6 +33,7 @@ class Zombi extends Thread {
             try {
                 // El zombi se mueve por la zona
                 zonaActual = refugio.explorarZonaExterior(rand.nextInt(4)-1);
+                zonaActual.entrarZ(this);
                 // El zombi busca un humano al que atacar
                 Humano presa = zonaActual.elegirpresa();
                 if (presa!=null){
@@ -42,6 +43,7 @@ class Zombi extends Thread {
                 }
                 // Simula el tiempo de espera entre ataques
                 Thread.sleep((long)(rand.nextDouble(2,3) * 1000));
+                zonaActual.salirZ(this);
 
             } catch (InterruptedException e) {
                 Log.info(id + " ha sido interrumpido.");

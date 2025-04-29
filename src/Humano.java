@@ -63,7 +63,7 @@ class Humano extends Thread {
                 }
                 // 5. Zona de descanso
                 refugio.zonaDescanso(this);
-                sleep(2000 + new Random().nextInt(2000));
+
 
                 // 6. Comedor
                 refugio.comedor(this);

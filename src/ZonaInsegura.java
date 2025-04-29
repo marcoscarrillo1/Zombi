@@ -13,6 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class ZonaInsegura {
 
     private  List<Humano> humanos = new ArrayList<>();
+    private  List<Zombi> zombies = new ArrayList<>();
     private Lock cerrojo=new ReentrantLock();
     private final int id;
     private Random random=new Random();
@@ -23,7 +24,8 @@ class ZonaInsegura {
     public synchronized void entrar(Humano h) {
         humanos.add(h);  // Añade al humano a la lista de humanos en la zona
     }
-
+    public synchronized void entrarZ(Zombi z) {
+        zombies.add(z);}
     public Humano elegirpresa() {
         cerrojo.lock();
         try {
@@ -79,6 +81,9 @@ class ZonaInsegura {
     // Método sincronizado para que un humano salga de la zona
     public synchronized void salir(Humano h) {
         humanos.remove(h);  // Elimina al humano de la lista de humanos en la zona
+    }
+    public synchronized void salirZ(Zombi z) {
+        zombies.remove(z);  // Elimina al humano de la lista de humanos en la zona
     }
 
     // Método para recolectar comida (simulado) en la zona

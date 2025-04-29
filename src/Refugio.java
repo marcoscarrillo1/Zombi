@@ -15,7 +15,9 @@ class Refugio {
     private Lock lockComida = new ReentrantLock();
     private Condition vacio = lockComida.newCondition();
     private ArrayList<Humano> humanosDescansando= new ArrayList<>();
-
+    private ArrayList<Humano> humanosComedor= new ArrayList<>();
+    private ArrayList<Humano> humanosEnfermeria= new ArrayList<>();
+    private ArrayList<Humano> humanosZonaComun= new ArrayList<>();
     private static int comidaDisponible = 0;
 
     public Refugio() {
@@ -27,10 +29,12 @@ class Refugio {
 
     public synchronized void zonaComun(Humano h) throws InterruptedException {
         h.setUbicacion("Zona común");
+        humanosZonaComun.add(h);
         Log.info(h.getIdh() + " está en la zona común.");
     }
 
     public synchronized int entrarTunelExterior(Humano h) throws InterruptedException {
+        humanosZonaComun.remove(h);
         h.setUbicacion("Túnel (saliendo)");
         Tunel tunel = tuneles[new Random().nextInt(4)];
         tunel.cruzarHaciaFuera(h);
@@ -58,10 +62,15 @@ class Refugio {
             humanosDescansando.add(h);
         }
         Log.info(h.getIdh() + " está descansando.");
+        h.sleep(2000 + new Random().nextInt(2000));
+        synchronized (humanosDescansando){
+            humanosDescansando.remove(h);
+        }
     }
 
     public void comedor(Humano h) throws InterruptedException {
         h.setUbicacion("Comedor");
+        humanosComedor.add(h);
         try {
             lockComida.lock();
             while (comidaDisponible == 0) {
@@ -69,6 +78,7 @@ class Refugio {
             }
             if (consumirComida(1)) {
                 Thread.sleep(3000 + new Random().nextInt(2000));
+                humanosComedor.remove(h);
             } else {
                 Log.info(h.getIdh() + " no pudo comer porque no hay comida.");
             }
@@ -79,9 +89,11 @@ class Refugio {
 
     public synchronized void recuperarse(Humano h) throws InterruptedException {
         h.setUbicacion("Enfermería");
+        humanosEnfermeria.add(h);
         Thread.sleep(3000 + new Random().nextInt(2000));
         h.setMarcado(false);
         Log.info(h.getIdh() + " se ha recuperado.");
+        humanosEnfermeria.remove(h);
     }
 
     // --- NUEVAS FUNCIONES DE COMIDA ---
