@@ -17,9 +17,7 @@ import java.util.stream.Collectors;
 
 public class VentanaController implements Initializable {
 
-    @FXML private GridPane cajaRefugio;
-    @FXML private GridPane cajaTuneles;  // Usamos un GridPane para dividir los túneles en 4 partes
-    @FXML private GridPane cajaZonaRiesgo;
+
     @FXML private ImageView zombiView;
 
     @FXML private Label lblComida; // Asegúrate de que este Label esté definido en el FXML
@@ -100,21 +98,14 @@ public class VentanaController implements Initializable {
         textAreasTuneles[10] = textAreaTunel11;
         textAreasTuneles[11] = textAreaTunel12;
 
-        tblDescanso = crearTablaZona("Descanso", "#F0E68C");
-        tblTuneles = crearTablaZona("Túneles", "#D3D3D3");
-        tblZonaRiesgo = crearTablaZona("Zona de riesgo", "#FF6347");
-
         // Asegúrate de que lblComida ya esté conectado en el FXML
         lblComida.setText("Comida: " + Refugio.getCantidadComida());
         lblComida.setStyle("-fx-background-color: white; -fx-padding: 5; -fx-font-weight: bold;");
 
         // Agregar los elementos a las cajas
-        cajaRefugio.getChildren().addAll(crearCaja("REFUGIO", tblDescanso, lblComida));
-        crearTúneles();
-        cajaZonaRiesgo.getChildren().add(crearCaja("ZONA DE RIESGO", tblZonaRiesgo));
 
         // Cargar imagen del zombi
-        Image zombiImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombi.png")));
+        Image zombiImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombie.png")));
         zombiView.setImage(zombiImage);
 
         // Configurar el Timeline
@@ -123,55 +114,6 @@ public class VentanaController implements Initializable {
         timeline.play();
     }
 
-    private TableView<String> crearTablaZona(String zona, String colorFondo) {
-        TableView<String> table = new TableView<>();
-        TableColumn<String, String> column = new TableColumn<>(zona);
-        column.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()));
-        table.getColumns().add(column);
-        table.setStyle("-fx-background-color: " + colorFondo + "; -fx-padding: 5;");
-        return table;
-    }
-
-    private VBox crearCaja(String titulo, TableView<String> tabla, Label... extras) {
-        VBox caja = new VBox(5);
-        caja.setStyle("-fx-border-color: blue; -fx-border-width: 2; -fx-padding: 5;");
-        Label tituloLabel = new Label(titulo);
-        tituloLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
-        caja.getChildren().add(tituloLabel);
-        caja.getChildren().add(tabla);
-        for (Label extra : extras) {
-            caja.getChildren().add(extra);
-        }
-        return caja;
-    }
-
-    // Crear las cuatro secciones de túneles dentro de un GridPane
-    private void crearTúneles() {
-        // Limpiar el GridPane antes de agregar los túneles
-        cajaTuneles.getChildren().clear();
-        cajaTuneles.setVgap(10);
-        cajaTuneles.setHgap(10);
-
-        // Crear cuatro secciones (dos filas por dos columnas)
-        for (int i = 0; i < 4; i++) {
-            VBox tunnel = crearCajaDeTúneles("TÚNEL " + (i + 1));
-            // Determinar la posición de cada túnel en el GridPane
-            int row = i / 2;  // Dividir en 2 filas
-            int col = i % 2;  // Dividir en 2 columnas
-            cajaTuneles.add(tunnel, col, row);
-        }
-    }
-
-    // Método para crear una caja de túnel
-    private VBox crearCajaDeTúneles(String nombre) {
-        VBox vbox = new VBox();
-        Label label = new Label(nombre);
-        vbox.getChildren().add(label);
-        // Aquí puedes agregar más elementos, como tablas u otros controles específicos para los túneles
-        vbox.setStyle("-fx-border-color: black; -fx-border-width: 2;");
-        vbox.setSpacing(10);
-        return vbox;
-    }
 
     private void actualizar() {
         lblComida.setText("" + Refugio.getCantidadComida());
@@ -214,78 +156,157 @@ public class VentanaController implements Initializable {
                 }
                 break;
             case "tunel1":
+                if(!tuneles[1].getEsperandoEntrar().isEmpty()){
                 for(Humano h: tuneles[1].getEsperandoEntrar()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
 
             case "tunel2":
-                ids.add(tuneles[1].getHumanoDentro().getIdh());
+                if(tuneles[1].getHumanoDentro()!=null){
+                    ids.add(tuneles[1].getHumanoDentro().getIdh());}
+                else{
+                    ids.add("");
+                }
             case "tunel3":
+                if(!tuneles[1].getEsperandosalir().isEmpty()){
                 for(Humano h: tuneles[1].getEsperandosalir()){
                     ids.add(h.getIdh());
-                }
+                }}
+                else{
+                    ids.add("");
+                    }
             case "tunel4":
+                if(!tuneles[2].getEsperandoEntrar().isEmpty()){
                 for(Humano h: tuneles[2].getEsperandoEntrar()){
                     ids.add(h.getIdh());
+                }}else{
+                    ids.add("");
                 }
             case "tunel5":
-                ids.add(tuneles[2].getHumanoDentro().getIdh());
+                if(tuneles[2].getHumanoDentro()!=null){
+                ids.add(tuneles[2].getHumanoDentro().getIdh());}
+                else{
+                    ids.add("");
+                }
             case "tunel6":
+                if(!tuneles[2].getEsperandosalir().isEmpty()){
                 for(Humano h: tuneles[2].getEsperandosalir()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "tunel7":
+                if(!tuneles[3].getEsperandoEntrar().isEmpty()){
                 for(Humano h: tuneles[3].getEsperandoEntrar()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "tunel8":
-                ids.add(tuneles[3].getHumanoDentro().getIdh());
+                if(tuneles[3].getHumanoDentro()!=null){
+                ids.add(tuneles[3].getHumanoDentro().getIdh());}
+                else{
+                    ids.add("");
+                }
             case "tunel9":
+                if(!tuneles[3].getEsperandosalir().isEmpty()){
                 for(Humano h: tuneles[3].getEsperandosalir()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "tunel10":
+                if(!tuneles[4].getEsperandoEntrar().isEmpty()){
                 for(Humano h: tuneles[4].getEsperandoEntrar()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "tunel11":
-                ids.add(tuneles[4].getHumanoDentro().getIdh());
+                if(tuneles[4].getHumanoDentro()!=null){
+                ids.add(tuneles[4].getHumanoDentro().getIdh());}
+                else{
+                    ids.add("");
+                }
             case "tunel12":
+                if(!tuneles[4].getEsperandosalir().isEmpty()){
                 for(Humano h: tuneles[4].getEsperandosalir()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona1":
+                if(!zonas[1].getHumanos().isEmpty()){
                 for(Humano h: zonas[1].getHumanos()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
 
             case "zona2":
+                if(!zonas[1].getZombies().isEmpty()){
                 for (Zombi z :zonas[1].getZombies()){
                     ids.add(z.getIdz());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona3":
+                if(!zonas[2].getHumanos().isEmpty()){
                 for(Humano h: zonas[2].getHumanos()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona4":
+                if(!zonas[2].getZombies().isEmpty()){
                 for (Zombi z :zonas[2].getZombies()){
                     ids.add(z.getIdz());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona5":
+                if(!zonas[3].getHumanos().isEmpty()){
                 for(Humano h: zonas[3].getHumanos()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona6":
+                if(!zonas[3].getZombies().isEmpty()){
                 for (Zombi z :zonas[3].getZombies()){
                     ids.add(z.getIdz());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona7":
+                if(!zonas[4].getHumanos().isEmpty()){
                 for(Humano h: zonas[4].getHumanos()){
                     ids.add(h.getIdh());
+                }}
+                else{
+                    ids.add("");
                 }
             case "zona8":
+                if(!zonas[4].getZombies().isEmpty()){
                 for (Zombi z :zonas[4].getZombies()){
                     ids.add(z.getIdz());
+                }}
+                else{
+                    ids.add("");
                 }
 
         }

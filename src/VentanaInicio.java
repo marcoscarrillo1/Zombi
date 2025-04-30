@@ -22,7 +22,7 @@ public class VentanaInicio extends Application {
         primaryStage.setTitle("Simulador Apocalipsis Zombi");
 
         // Cargar la imagen del zombi
-        ImageView zombiView = new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombi.png"))));
+        ImageView zombiView = new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/zzzombie.png"))));
         zombiView.setFitHeight(150);  // Ajustar el tamaño
         zombiView.setPreserveRatio(true);  // Mantener la proporción
 
@@ -50,7 +50,7 @@ public class VentanaInicio extends Application {
         layout.setBackground(new Background(new BackgroundFill(Color.web("#1e1e1e"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         // Configuración de la escena
-        Scene scene = new Scene(layout, 400, 300);
+        Scene scene = new Scene(layout, 800, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
