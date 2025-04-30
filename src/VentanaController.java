@@ -35,14 +35,71 @@ public class VentanaController implements Initializable {
     @FXML private ListView<String> listaRefugio;    // Lista de la zona de Refugio
     @FXML private ListView<String> listaTuneles;    // Lista de la zona de Túneles
     @FXML private ListView<String> listaZonaRiesgo; // Lista de la zona de Riesgo
-    @FXML private Label labelDescanso;
-    @FXML private Label Labelcomedor;
-    @FXML private Label Labelcomida;
-    @FXML private Label laabelzonacomun;
+    @FXML private TextArea textAreaComedor;
+    @FXML private TextArea textAreaDescanso;
+    @FXML private TextArea textAreaZonaComun;
+    @FXML private TextArea textAreasZonaRiesgo1;
+    @FXML private TextArea textAreasZonaRiesgo2;
+    @FXML private TextArea textAreasZonaRiesgo3;
+    @FXML private TextArea textAreasZonaRiesgo4;
+    @FXML private TextArea textAreasZonaRiesgo5;
+    @FXML private TextArea textAreasZonaRiesgo6;
+    @FXML private TextArea textAreasZonaRiesgo7;
+    @FXML private TextArea textAreasZonaRiesgo8;
+    @FXML private TextArea textAreaTunel1;
+    @FXML private TextArea textAreaTunel2;
+    @FXML private TextArea textAreaTunel3;
+    @FXML private TextArea textAreaTunel4;
+    @FXML private TextArea textAreaTunel5;
+    @FXML private TextArea textAreaTunel6;
+    @FXML private TextArea textAreaTunel7;
+    @FXML private TextArea textAreaTunel8;
+    @FXML private TextArea textAreaTunel9;
+    @FXML private TextArea textAreaTunel10;
+    @FXML private TextArea textAreaTunel11;
+    @FXML private TextArea textAreaTunel12;
+
+    @FXML
+    private TextArea[] textAreasTuneles = new TextArea[12];
+    private TextArea[] textAreasZonaRiesgo = new TextArea[8];
+    private Tunel[] tuneles = new Tunel[4];
+    private ZonaInsegura[] zonas = new ZonaInsegura[4];
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Crear componentes y meterlos en sus cajas
+        for (int i = 0; i < 4; i++) {
+            tuneles[i] = new Tunel(i + 1);  // Creamos túneles con ID 1 a 4
+        }
+        for (int i = 0; i < 4; i++) {
+            zonas[i] = new ZonaInsegura(i + 1);  // Creamos túneles con ID 1 a 4
+        }
+        textAreasZonaRiesgo[0] = textAreasZonaRiesgo1;
+        textAreasZonaRiesgo[1] = textAreasZonaRiesgo2;
+        textAreasZonaRiesgo[2]=textAreasZonaRiesgo3;
+        textAreasZonaRiesgo[3] = textAreasZonaRiesgo4;
+        textAreasZonaRiesgo[4] = textAreasZonaRiesgo5;
+        textAreasZonaRiesgo[5]=textAreasZonaRiesgo6;
+        textAreasZonaRiesgo[6] = textAreasZonaRiesgo7;
+        textAreasZonaRiesgo[7] = textAreasZonaRiesgo8;
+
+
+        textAreasTuneles[0] = textAreaTunel1;
+        textAreasTuneles[1] = textAreaTunel2;
+        textAreasTuneles[2] = textAreaTunel3;
+        textAreasTuneles[3] = textAreaTunel4;
+        textAreasTuneles[4] = textAreaTunel5;
+        textAreasTuneles[5] = textAreaTunel6;
+        textAreasTuneles[6] = textAreaTunel7;
+        textAreasTuneles[7] = textAreaTunel8;
+        textAreasTuneles[8] = textAreaTunel9;
+        textAreasTuneles[9] = textAreaTunel10;
+        textAreasTuneles[10] = textAreaTunel11;
+        textAreasTuneles[11] = textAreaTunel12;
+
         tblDescanso = crearTablaZona("Descanso", "#F0E68C");
         tblTuneles = crearTablaZona("Túneles", "#D3D3D3");
         tblZonaRiesgo = crearTablaZona("Zona de riesgo", "#FF6347");
@@ -117,45 +174,124 @@ public class VentanaController implements Initializable {
     }
 
     private void actualizar() {
-        tblDescanso.getItems().setAll(getIdsEnZona("descanso"));
-        tblTuneles.getItems().setAll(getIdsEnZona("tunel"));
-        tblZonaRiesgo.getItems().setAll(getIdsEnZona("zonaRiesgo"));
-        Labelcomida.setText(""+Refugio.getCantidadComida());
-        Labelcomedor.setText(""+getIdsEnZona("comedor"));
-        labelDescanso.setText(""+getIdsEnZona("descanso"));
-        laabelzonacomun.setText(""+getIdsEnZona("comun"));
+        lblComida.setText("" + Refugio.getCantidadComida());
+        textAreaDescanso.setText(String.join("\n", getIdsEnZona("descanso")));
+        textAreaComedor.setText(String.join("\n", getIdsEnZona("comedor")));
+        textAreaZonaComun.setText(String.join("\n", getIdsEnZona("zonacomun")));
+        for (int i = 1; i <= 12; i++) {
+            String tunel = "tunel" + i;
+            String ids = String.join("\n", getIdsEnZona(tunel));
+            // Accede al TextArea correspondiente usando el índice del array
+            textAreasTuneles[i - 1].setText(ids);  // Restamos 1 porque el índice del array empieza en 0
+        }
+        for (int i = 1; i <= 8; i++) {
+            String zona = "zona" + i;
+            String ids = String.join("\n", getIdsEnZona(zona));
+            // Accede al TextArea correspondiente usando el índice del array
+            textAreasZonaRiesgo[i - 1].setText(ids);  // Restamos 1 porque el índice del array empieza en 0
+        }
+
     }
 
     // Método de ejemplo para obtener los IDs (esto lo debes reemplazar por tu lógica real)
     private ArrayList<String> getIdsEnZona(String zona) {
-        ArrayList<String> ids = new ArrayList<>();  // Creamos una lista vacía para almacenar los IDs
+        ArrayList<String> ids = new ArrayList<>();
 
-        // Si la zona es "descanso", obtendremos los humanos que están descansando
-        if ("descanso".equals(zona)) {
-            // Recorremos la lista de humanos descansando en el refugio
-            while(ids.toArray().length<3){
+        switch (zona) {
+            case "descanso":
                 for (Humano humano : refugio.getHumanosDescansando()) {
-                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
+                    ids.add(humano.getIdh());
                 }
-            }
+                break;
+            case "comedor":
+                for (Humano humano : refugio.getHumanosComedor()) {
+                    ids.add(humano.getIdh());
+                }
+                break;
+            case "comun":
+                for (Humano humano : refugio.getHumanosZonaComun()) {
+                    ids.add(humano.getIdh());
+                }
+                break;
+            case "tunel1":
+                for(Humano h: tuneles[1].getEsperandoEntrar()){
+                    ids.add(h.getIdh());
+                }
+
+            case "tunel2":
+                ids.add(tuneles[1].getHumanoDentro().getIdh());
+            case "tunel3":
+                for(Humano h: tuneles[1].getEsperandosalir()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel4":
+                for(Humano h: tuneles[2].getEsperandoEntrar()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel5":
+                ids.add(tuneles[2].getHumanoDentro().getIdh());
+            case "tunel6":
+                for(Humano h: tuneles[2].getEsperandosalir()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel7":
+                for(Humano h: tuneles[3].getEsperandoEntrar()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel8":
+                ids.add(tuneles[3].getHumanoDentro().getIdh());
+            case "tunel9":
+                for(Humano h: tuneles[3].getEsperandosalir()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel10":
+                for(Humano h: tuneles[4].getEsperandoEntrar()){
+                    ids.add(h.getIdh());
+                }
+            case "tunel11":
+                ids.add(tuneles[4].getHumanoDentro().getIdh());
+            case "tunel12":
+                for(Humano h: tuneles[4].getEsperandosalir()){
+                    ids.add(h.getIdh());
+                }
+            case "zona1":
+                for(Humano h: zonas[1].getHumanos()){
+                    ids.add(h.getIdh());
+                }
+
+            case "zona2":
+                for (Zombi z :zonas[1].getZombies()){
+                    ids.add(z.getIdz());
+                }
+            case "zona3":
+                for(Humano h: zonas[2].getHumanos()){
+                    ids.add(h.getIdh());
+                }
+            case "zona4":
+                for (Zombi z :zonas[2].getZombies()){
+                    ids.add(z.getIdz());
+                }
+            case "zona5":
+                for(Humano h: zonas[3].getHumanos()){
+                    ids.add(h.getIdh());
+                }
+            case "zona6":
+                for (Zombi z :zonas[3].getZombies()){
+                    ids.add(z.getIdz());
+                }
+            case "zona7":
+                for(Humano h: zonas[4].getHumanos()){
+                    ids.add(h.getIdh());
+                }
+            case "zona8":
+                for (Zombi z :zonas[4].getZombies()){
+                    ids.add(z.getIdz());
+                }
+
         }
 
-        else if ("comedor".equals(zona)) {
-            // Recorremos la lista de humanos descansando en el refugio
-            while(ids.toArray().length<3){
-                for (Humano humano : refugio.getHumanosComedor()) {
-                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
-                }
-            }
-        }
-        else if ("comun".equals(zona)) {
-            // Recorremos la lista de humanos descansando en el refugio
-            while(ids.toArray().length<3){
-                for (Humano humano : refugio.getHumanosZonaComun()) {
-                    ids.add(humano.getIdh());  // Añadimos el ID de cada humano
-                }
-            }
-        }
+        return ids;
+    }
 
         // Si la zona es "tunel", obtenemos los humanos que están esperando en los túneles
         /*else if ("tunel".equals(zona)) {
@@ -179,7 +315,7 @@ public class VentanaController implements Initializable {
             }
         }*/
 
-        return ids;  // Retornamos la lista con los IDs
-    }
+          // Retornamos la lista con los IDs
+
 
 }

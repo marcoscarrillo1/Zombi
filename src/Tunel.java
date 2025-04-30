@@ -16,6 +16,35 @@ class Tunel {
     private List<Humano> esperandoEntrar = new ArrayList<>();
     private boolean grupoFormado = false;
     private List<Humano> esperandosalir = new ArrayList<>();
+    private Humano humanoDentro = null;
+
+    public Humano getHumanoDentro() {
+        return humanoDentro;
+    }
+
+    public Lock getCerrojo() {
+        return cerrojo;
+    }
+
+    public void setCerrojo(Lock cerrojo) {
+        this.cerrojo = cerrojo;
+    }
+
+    public List<Humano> getEsperandoEntrar() {
+        return esperandoEntrar;
+    }
+
+    public void setEsperandoEntrar(List<Humano> esperandoEntrar) {
+        this.esperandoEntrar = esperandoEntrar;
+    }
+
+    public List<Humano> getEsperandosalir() {
+        return esperandosalir;
+    }
+
+    public void setEsperandosalir(List<Humano> esperandosalir) {
+        this.esperandosalir = esperandosalir;
+    }
 
     private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
 
@@ -43,9 +72,11 @@ class Tunel {
                 pasalir.await();
             }
             ocupado.acquire();
+            humanoDentro=h;
             Thread.sleep(1000);
             Log.info(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
             esperandosalir.remove(h);
+            humanoDentro=null;
             ocupado.release();
             if(esperandosalir.isEmpty()){
                 grupoFormado= false;
@@ -62,9 +93,11 @@ class Tunel {
         try {
             esperandoEntrar.add(h);
             ocupado.acquire();
+            humanoDentro=h;
             Log.info(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
             esperandoEntrar.remove(h);
             Thread.sleep(1000);
+            humanoDentro=null;
             ocupado.release();
             if (grupoFormado && esperandoEntrar.isEmpty()) {
                 pasalir.signalAll();

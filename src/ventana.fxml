@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.TextArea?>
 <HBox prefHeight="750.0" prefWidth="928.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VentanaController">
 
     <!-- Espaciado y padding -->
@@ -34,7 +35,8 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Descanso" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label fx:id="labelDescanso" text="IDs Humanos" />
+                <TextArea fx:id="textAreaDescanso" prefWidth="100" prefHeight="60" />
+
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -52,12 +54,13 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Comida" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label fx:id="Labelcomedor" text="IDs Humanos" />
+                <TextArea fx:id="textAreaComedor" prefWidth="100" prefHeight="60" />
+
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <!-- Celda de comida con altura reducida y fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label fx:id="Labelcomida" text="Comida" />
+                <Label fx:id="lblcomida" text="Comida" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 40;" />
             </StackPane>
         </HBox>
@@ -74,7 +77,8 @@
             <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 5;" text="Zona Común" />
             <!-- Celda de IDs con fondo gris -->
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label fx:id="laabelzonacomun" text="IDs Humanos" />
+                <TextArea fx:id="textAreaZonaComun" prefWidth="100" prefHeight="60" />
+
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -93,15 +97,16 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 1" />
+                <TextArea fx:id="textAreaTunel1" prefWidth="100" prefHeight="60" />
+
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 2" />
+                <TextArea fx:id="textAreaTunel2" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 3" />
+                <TextArea fx:id="textAreaTunel3" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -113,15 +118,15 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 4" />
+                <TextArea fx:id="textAreaTunel4" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 5" />
+                <TextArea fx:id="textAreaTunel5" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 6" />
+                <TextArea fx:id="textAreaTunel6" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -133,15 +138,15 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 7" />
+                <TextArea fx:id="textAreaTunel7" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 8" />
+                <TextArea fx:id="textAreaTunel8" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 9" />
+                <TextArea fx:id="textAreaTunel9" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -150,15 +155,15 @@
         <!-- Fila 4 -->
         <HBox spacing="10.0">
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 10" />
+                <TextArea fx:id="textAreaTunel10" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 11" />
+                <TextArea fx:id="textAreaTunel11" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 60; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Túnel 12" />
+                <TextArea fx:id="textAreaTunel12" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
          <padding>
@@ -193,11 +198,11 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Humano 1" />
+                <TextArea fx:id="textAreasZonaRiesgo1" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Zombi 1" />
+                <TextArea fx:id="textAreasZonaRiesgo2" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -211,11 +216,11 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Humano 2" />
+                <TextArea fx:id="textAreasZonaRiesgo3" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Zombi 2" />
+                <TextArea fx:id="textAreasZonaRiesgo4" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -229,11 +234,11 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Humano 3" />
+                <TextArea fx:id="textAreasZonaRiesgo5" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Zombi 3" />
+                <TextArea fx:id="textAreasZonaRiesgo6" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
@@ -247,11 +252,11 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Humano 4" />
+                <TextArea fx:id="textAreasZonaRiesgo7" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
             <StackPane style="-fx-background-color: #E0E0E0; -fx-border-color: black; -fx-border-width: 1;">
-                <Label text="Zombi 4" />
+                <TextArea fx:id="textAreasZonaRiesgo8" prefWidth="100" prefHeight="60" />
                 <Region style="-fx-pref-width: 100; -fx-pref-height: 60;" />
             </StackPane>
         </HBox>
