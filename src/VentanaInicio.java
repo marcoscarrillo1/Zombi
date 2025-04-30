@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -21,25 +22,23 @@ public class VentanaInicio extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Simulador Apocalipsis Zombi");
 
-        // Imagen de fondo (se expandirá al tamaño de la ventana)
+        // Imagen de fondo
         ImageView backgroundView = new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/apocap.png"))));
         backgroundView.setFitWidth(800);
         backgroundView.setFitHeight(700);
-        backgroundView.setPreserveRatio(false); // Para que cubra todo
+        backgroundView.setPreserveRatio(false);
 
-        // Mensaje de bienvenida
-        Label mensaje = new Label("Bienvenido al juego de los zombis. ¡Coge a tus mejores aliados antes de empezar!");
-        mensaje.setTextFill(Color.ORANGERED);
-        mensaje.setFont(Font.font("Arial", FontWeight.BOLD, 22));
-        mensaje.setWrapText(true);
-        mensaje.setAlignment(Pos.BOTTOM_LEFT);
-        mensaje.setTextAlignment(TextAlignment.CENTER);
+        // Texto de bienvenida
+        Label textoBienvenida = new Label("Bienvenido al juego de los zombis.\n¡Coge a tus mejores aliados antes de empezar!");
+        textoBienvenida.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        textoBienvenida.setTextFill(Color.WHITE);
+        textoBienvenida.setAlignment(Pos.CENTER);
+        textoBienvenida.setWrapText(true);
 
-        // Botón Nueva Partida más grande
+        // Botón Nueva Partida
         Button btnNuevaPartida = new Button("Nueva Partida");
-        btnNuevaPartida.setFont(Font.font("Arial", FontWeight.BOLD, 24));
-        btnNuevaPartida.setPadding(new Insets(15, 30, 15, 30)); // Más grande
-        btnNuevaPartida.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white;");
+        btnNuevaPartida.setFont(Font.font("Arial", 20));
+        btnNuevaPartida.setStyle("-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;");
         btnNuevaPartida.setOnAction(e -> {
             VentanaPrincipal ventanaJuego = new VentanaPrincipal();
             try {
@@ -50,19 +49,36 @@ public class VentanaInicio extends Application {
             primaryStage.close();
         });
 
-        // Contenedor centrado con el mensaje y el botón
-        VBox content = new VBox(40, mensaje, btnNuevaPartida);
+        // Botón Información
+        Button btnInfo = new Button("Información");
+        btnInfo.setFont(Font.font("Arial", 18));
+        btnInfo.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnInfo.setOnAction(e -> {
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("Instrucciones del Juego");
+            alerta.setHeaderText("¿Cómo se juega?");
+            alerta.setContentText("""
+            1. Empieza una nueva partida pulsando el botón correspondiente.
+            2. Los humanos deben sobrevivir moviéndose entre zonas del refugio.
+            3. Los zombis intentarán infectar a los humanos si los encuentran fuera del refugio.
+            4. Observa en tiempo real cómo evoluciona la situación.
+            5. ¡Asegúrate de que tus aliados sobrevivan!
+        """);
+            alerta.showAndWait();
+        });
+
+        // Contenedor vertical para los elementos
+        VBox content = new VBox(20, textoBienvenida, btnNuevaPartida, btnInfo);
         content.setAlignment(Pos.CENTER);
-        content.setPadding(new Insets(50));
+        content.setPadding(new Insets(30));
 
-        // Apilar fondo + contenido
-        StackPane root = new StackPane();
-        root.getChildren().addAll(backgroundView, content);
-
+        // StackPane con fondo y contenido
+        StackPane root = new StackPane(backgroundView, content);
         Scene scene = new Scene(root, 800, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 
 
     public static void main(String[] args) {
