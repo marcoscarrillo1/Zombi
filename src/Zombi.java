@@ -32,7 +32,7 @@ class Zombi extends Thread {
         while (vivo) {
             try {
                 // El zombi se mueve por la zona
-                zonaActual = refugio.explorarZonaExterior(rand.nextInt(4)-1);
+                zonaActual = refugio.explorarZonaExterior(rand.nextInt(4));
                 zonaActual.entrarZ(this);
                 // El zombi busca un humano al que atacar
                 Humano presa = zonaActual.elegirpresa();

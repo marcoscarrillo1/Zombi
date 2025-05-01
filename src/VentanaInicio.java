@@ -39,6 +39,11 @@ public class VentanaInicio extends Application {
         Button btnNuevaPartida = new Button("Nueva Partida");
         btnNuevaPartida.setFont(Font.font("Arial", 20));
         btnNuevaPartida.setStyle("-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnNuevaPartida.setPrefWidth(220);
+        btnNuevaPartida.setPrefHeight(50);
+// Efecto hover
+        btnNuevaPartida.setOnMouseEntered(e -> btnNuevaPartida.setStyle("-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"));
+        btnNuevaPartida.setOnMouseExited(e -> btnNuevaPartida.setStyle("-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"));
         btnNuevaPartida.setOnAction(e -> {
             VentanaPrincipal ventanaJuego = new VentanaPrincipal();
             try {
@@ -53,7 +58,11 @@ public class VentanaInicio extends Application {
         Button btnInfo = new Button("Información");
         btnInfo.setFont(Font.font("Arial", 18));
         btnInfo.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnInfo.setOnAction(e -> {
+        btnInfo.setPrefWidth(220);
+        btnInfo.setPrefHeight(45);
+// Efecto hover
+        btnInfo.setOnMouseEntered(e -> btnInfo.setStyle("-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;"));
+        btnInfo.setOnMouseExited(e -> btnInfo.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;")); btnInfo.setOnAction(e -> {
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             alerta.setTitle("Instrucciones del Juego");
             alerta.setHeaderText("¿Cómo se juega?");

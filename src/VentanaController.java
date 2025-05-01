@@ -99,8 +99,8 @@ public class VentanaController implements Initializable {
         textAreasTuneles[11] = textAreaTunel12;
 
         // Asegúrate de que lblComida ya esté conectado en el FXML
-        lblComida.setText("Comida: " + Refugio.getCantidadComida());
-        lblComida.setStyle("-fx-background-color: white; -fx-padding: 5; -fx-font-weight: bold;");
+        lblComida.setText("Comida: " + refugio.getCantidadComida());
+
 
         // Agregar los elementos a las cajas
 
@@ -116,7 +116,7 @@ public class VentanaController implements Initializable {
 
 
     private void actualizar() {
-        lblComida.setText("" + Refugio.getCantidadComida());
+        lblComida.setText("" + refugio.getCantidadComida());
         textAreaDescanso.setText(String.join("\n", getIdsEnZona("descanso")));
         textAreaComedor.setText(String.join("\n", getIdsEnZona("comedor")));
         textAreaZonaComun.setText(String.join("\n", getIdsEnZona("zonacomun")));
@@ -136,7 +136,7 @@ public class VentanaController implements Initializable {
     }
 
     // Método de ejemplo para obtener los IDs (esto lo debes reemplazar por tu lógica real)
-    private ArrayList<String> getIdsEnZona(String zona) {
+    private ArrayList<String> getIdsEnZona(String zona){
         ArrayList<String> ids = new ArrayList<>();
 
         switch (zona) {
@@ -156,165 +156,184 @@ public class VentanaController implements Initializable {
                 }
                 break;
             case "tunel1":
-                if(!tuneles[1].getEsperandoEntrar().isEmpty()){
-                for(Humano h: tuneles[1].getEsperandoEntrar()){
-                    ids.add(h.getIdh());
-                }}
-                else{
-                    ids.add("");
-                }
-
-            case "tunel2":
-                if(tuneles[1].getHumanoDentro()!=null){
-                    ids.add(tuneles[1].getHumanoDentro().getIdh());}
-                else{
-                    ids.add("");
-                }
-            case "tunel3":
-                if(!tuneles[1].getEsperandosalir().isEmpty()){
-                for(Humano h: tuneles[1].getEsperandosalir()){
-                    ids.add(h.getIdh());
-                }}
-                else{
-                    ids.add("");
+                if (!tuneles[1].getEsperandoEntrar().isEmpty()) {
+                    for (Humano h : tuneles[1].getEsperandoEntrar()) {
+                        ids.add(h.getIdh());
                     }
+                } else {
+                    ids.add("");
+                }
+                break;
+            case "tunel2":
+                if (tuneles[1].getHumanoDentro() != null) {
+                    ids.add(tuneles[1].getHumanoDentro().getIdh());
+                } else {
+                    ids.add("");
+                }
+                break;
+            case "tunel3":
+                if (!tuneles[1].getEsperandosalir().isEmpty()) {
+                    for (Humano h : tuneles[1].getEsperandosalir()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
+                    ids.add("");
+                }
+                break;
             case "tunel4":
-                if(!tuneles[2].getEsperandoEntrar().isEmpty()){
-                for(Humano h: tuneles[2].getEsperandoEntrar()){
-                    ids.add(h.getIdh());
-                }}else{
+                if (!tuneles[2].getEsperandoEntrar().isEmpty()) {
+                    for (Humano h : tuneles[2].getEsperandoEntrar()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel5":
-                if(tuneles[2].getHumanoDentro()!=null){
-                ids.add(tuneles[2].getHumanoDentro().getIdh());}
-                else{
+                if (tuneles[2].getHumanoDentro() != null) {
+                    ids.add(tuneles[2].getHumanoDentro().getIdh());
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel6":
-                if(!tuneles[2].getEsperandosalir().isEmpty()){
-                for(Humano h: tuneles[2].getEsperandosalir()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!tuneles[2].getEsperandosalir().isEmpty()) {
+                    for (Humano h : tuneles[2].getEsperandosalir()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel7":
-                if(!tuneles[3].getEsperandoEntrar().isEmpty()){
-                for(Humano h: tuneles[3].getEsperandoEntrar()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!tuneles[3].getEsperandoEntrar().isEmpty()) {
+                    for (Humano h : tuneles[3].getEsperandoEntrar()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel8":
-                if(tuneles[3].getHumanoDentro()!=null){
-                ids.add(tuneles[3].getHumanoDentro().getIdh());}
-                else{
+                if (tuneles[3].getHumanoDentro() != null) {
+                    ids.add(tuneles[3].getHumanoDentro().getIdh());
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel9":
-                if(!tuneles[3].getEsperandosalir().isEmpty()){
-                for(Humano h: tuneles[3].getEsperandosalir()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!tuneles[3].getEsperandosalir().isEmpty()) {
+                    for (Humano h : tuneles[3].getEsperandosalir()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel10":
-                if(!tuneles[4].getEsperandoEntrar().isEmpty()){
-                for(Humano h: tuneles[4].getEsperandoEntrar()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!tuneles[0].getEsperandoEntrar().isEmpty()) {
+                    for (Humano h : tuneles[0].getEsperandoEntrar()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel11":
-                if(tuneles[4].getHumanoDentro()!=null){
-                ids.add(tuneles[4].getHumanoDentro().getIdh());}
-                else{
+                if (tuneles[0].getHumanoDentro() != null) {
+                    ids.add(tuneles[0].getHumanoDentro().getIdh());
+                } else {
                     ids.add("");
                 }
+                break;
             case "tunel12":
-                if(!tuneles[4].getEsperandosalir().isEmpty()){
-                for(Humano h: tuneles[4].getEsperandosalir()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!tuneles[0].getEsperandosalir().isEmpty()) {
+                    for (Humano h : tuneles[0].getEsperandosalir()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona1":
-                if(!zonas[1].getHumanos().isEmpty()){
-                for(Humano h: zonas[1].getHumanos()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!zonas[1].getHumanos().isEmpty()) {
+                    for (Humano h : zonas[1].getHumanos()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
-
+                break;
             case "zona2":
-                if(!zonas[1].getZombies().isEmpty()){
-                for (Zombi z :zonas[1].getZombies()){
-                    ids.add(z.getIdz());
-                }}
-                else{
+                if (!zonas[1].getZombies().isEmpty()) {
+                    for (Zombi z : zonas[1].getZombies()) {
+                        ids.add(z.getIdz());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona3":
-                if(!zonas[2].getHumanos().isEmpty()){
-                for(Humano h: zonas[2].getHumanos()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!zonas[2].getHumanos().isEmpty()) {
+                    for (Humano h : zonas[2].getHumanos()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona4":
-                if(!zonas[2].getZombies().isEmpty()){
-                for (Zombi z :zonas[2].getZombies()){
-                    ids.add(z.getIdz());
-                }}
-                else{
+                if (!zonas[2].getZombies().isEmpty()) {
+                    for (Zombi z : zonas[2].getZombies()) {
+                        ids.add(z.getIdz());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona5":
-                if(!zonas[3].getHumanos().isEmpty()){
-                for(Humano h: zonas[3].getHumanos()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!zonas[3].getHumanos().isEmpty()) {
+                    for (Humano h : zonas[3].getHumanos()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona6":
-                if(!zonas[3].getZombies().isEmpty()){
-                for (Zombi z :zonas[3].getZombies()){
-                    ids.add(z.getIdz());
-                }}
-                else{
+                if (!zonas[3].getZombies().isEmpty()) {
+                    for (Zombi z : zonas[3].getZombies()) {
+                        ids.add(z.getIdz());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona7":
-                if(!zonas[4].getHumanos().isEmpty()){
-                for(Humano h: zonas[4].getHumanos()){
-                    ids.add(h.getIdh());
-                }}
-                else{
+                if (!zonas[0].getHumanos().isEmpty()) {
+                    for (Humano h : zonas[0].getHumanos()) {
+                        ids.add(h.getIdh());
+                    }
+                } else {
                     ids.add("");
                 }
+                break;
             case "zona8":
-                if(!zonas[4].getZombies().isEmpty()){
-                for (Zombi z :zonas[4].getZombies()){
-                    ids.add(z.getIdz());
-                }}
-                else{
+                if (!zonas[0].getZombies().isEmpty()) {
+                    for (Zombi z : zonas[0].getZombies()) {
+                        ids.add(z.getIdz());
+                    }
+                } else {
                     ids.add("");
                 }
-
+                break;
         }
-
+        System.out.println("IDs encontrados: " + ids);
         return ids;
     }
 
-        // Si la zona es "tunel", obtenemos los humanos que están esperando en los túneles
+
+    // Si la zona es "tunel", obtenemos los humanos que están esperando en los túneles
         /*else if ("tunel".equals(zona)) {
             // Recorremos todos los túneles
             for (Tunel tunel : Refugio.getTuneles()) {
