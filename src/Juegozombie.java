@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 public class Juegozombie {
     private static final Logger logger=new Log().getLogger();
@@ -17,15 +20,18 @@ public class Juegozombie {
     private ArrayList<ZonaInsegura> enzonariesgo;
     private int comida;
     private Text comidatxt;
+    private final Lock cerrojopausa= new ReentrantLock();
+    private final Condition condicionpausa=cerrojopausa.newCondition();
+    private boolean pausado=false;
 
-    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,Text comidatxt,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
+    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
         this.zonaComun=zonaComun;
         this.zonaDescanso=zonaDescanso;
         this.zonaComedor=zonaComedor;
         this.comida=comida;
         this.zonariesgoZZ=zonariesgoZZ;
         this.enzonariesgo=enzonariesgo;
-        this.comidatxt=comidatxt;
+
 
     }
     public void entrarZcomun(Humano h){
@@ -127,10 +133,50 @@ public class Juegozombie {
 
         }catch(Exception e){
             logger.warning("Los humanos no saben comer");
-        }
+        }}
+       public void pausar() {
+           cerrojopausa.lock();
+           try {
+               pausado = true;
+           } finally {
+               cerrojopausa.unlock();
+           }
+       }
+
+       public void reanudar() {
+           cerrojopausa.lock();
+           try {
+               pausado = false;
+               condicionpausa.signalAll();
+           } finally {
+               cerrojopausa.unlock();
+           }
+       }
+
+       public boolean estaPausado() {
+           cerrojopausa.lock();
+           try {
+               return pausado;
+           } finally {
+               cerrojopausa.unlock();
+           }
+       }
+
+       public void esperarSiPausado() {
+           cerrojopausa.lock();
+           try {
+               while (pausado) {
+                   condicionpausa.await();
+               }
+           } catch (InterruptedException e) {
+               Thread.currentThread().interrupt();
+           } finally {
+               cerrojopausa.unlock();
+           }
+       }
    }
 
 
 
 
-}
+
