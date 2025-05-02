@@ -93,6 +93,10 @@ public class VentanaController implements Initializable {
     private ListaHilos zonaComun=new ListaHilos(textAreaZonaComun);
     private ListaHilos zonaComedor=new ListaHilos(textAreaComedor);
 
+    public Juegozombie getJuego() {
+        return juego;
+    }
+
     public TextArea getTextAreaComedor() {
         return textAreaComedor;
     }

@@ -55,8 +55,8 @@ class Zombi extends Thread {
     public void atacarHumano(Humano h) {
         double atacque = rand.nextDouble(1);
         if (atacque < 0.66){
-            String id = h.getIdh();
-            String zombiNuevo = 'Z' +id.substring(1);
+            int id = h.getIdh();
+            String zombiNuevo = "Z" +id;
             h.morir();
             this.incrementarMuertes();
             Zombi trans = new Zombi(zombiNuevo,this.refugio);

@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.text.Text;
-
 
 
 public class VentanaPrincipal extends Application {
@@ -31,7 +31,7 @@ public class VentanaPrincipal extends Application {
         VentanaController controller = loader.getController();
         Refugio refugio = new Refugio();
         TextArea textoZonaComun = controller.getTextAreaZonaComun();
-        TextArea textoZonaDescanso =controller.getTextAreaDescanso();
+        TextArea textoZonaDescanso = controller.getTextAreaDescanso();
         TextArea textoZonaComedor = controller.getTextAreaComedor();
 
         // Crear las instancias de ListaHilos pasando el Text correspondiente
@@ -44,7 +44,6 @@ public class VentanaPrincipal extends Application {
 
         // Crear la instancia de Juegozombie
         Juegozombie juego = new Juegozombie(zonaComun, zonaDescanso, zonaComedor, comida, enzonariesgo, zonariesgoZZ);
-
 
 
         controller.setRefugio(refugio);
@@ -63,33 +62,22 @@ public class VentanaPrincipal extends Application {
         pacienteCero.start();
         // Iniciar humanos
         // Crear humanos
-        for (int i = 0; i < 10; i++) {
-            String id = String.format("H%04d", i);
-            Humano h = new Humano(id, refugio);
-
-            // Crear un nuevo hilo para el humano
-            new Thread(() -> {
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                String id = String.format("H%04d", i);
+                Humano h = new Humano(i, controller.getJuego());
+                h.start();
+                // Crear un nuevo hilo para el humano
                 try {
                     // Simular retardo en la creación de humanos
                     Thread.sleep(500 + new java.util.Random().nextInt(1500));
 
-                    // Llamar a start() del humano dentro del hilo
-                    h.start();
-
-                    // Asegurarse de que la actualización de la interfaz gráfica se haga en el hilo principal
-                    Platform.runLater(() -> {
-                        zonaComun.añadir(h);  // Añadir el humano a la zona
-                       ;  // Actualizar el TextArea con los IDs de los humanos
-                    });
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }).start(); // Lanza el hilo de creación del humano
+            }}).start(); // Lanza el hilo de creación del humano
         }
 
 
+    }
 
-
-
-    }}
