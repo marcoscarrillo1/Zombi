@@ -60,14 +60,19 @@ class Refugio {
         }
     }
 
-    public synchronized void zonaComun(Humano h) throws InterruptedException {
+    public  void zonaComun(Humano h) throws InterruptedException {
         h.setUbicacion("Zona común");
-        humanosZonaComun.add(h);
+        synchronized(humanosZonaComun){
+            humanosZonaComun.add(h);
+        }
         Log.info(h.getIdh() + " está en la zona común.");
     }
 
-    public synchronized int entrarTunelExterior(Humano h) throws InterruptedException {
-        humanosZonaComun.remove(h);
+    public int entrarTunelExterior(Humano h) throws InterruptedException {
+        synchronized (humanosZonaComun){
+            humanosZonaComun.remove(h);
+        }
+
         h.setUbicacion("Túnel (saliendo)");
         Tunel tunel = tuneles[new Random().nextInt(4)];
         tunel.cruzarHaciaFuera(h);
@@ -80,12 +85,12 @@ class Refugio {
         return zona;
     }
 
-    public synchronized void volverAlRefugio(Humano h, int idTunel, ZonaInsegura zona) throws InterruptedException {
+    public void volverAlRefugio(Humano h, int idTunel, ZonaInsegura zona) throws InterruptedException {
         Tunel tunel = tuneles[idTunel];
         h.setUbicacion("Túnel (entrando)");
         tunel.cruzarHaciaDentro(h);
         zona.salir(h);
-        Log.info(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel);
+        Log.info(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel.getId());
 
     }
 
@@ -104,6 +109,7 @@ class Refugio {
     public void comedor(Humano h) throws InterruptedException {
         h.setUbicacion("Comedor");
         humanosComedor.add(h);
+
         try {
             lockComida.lock();
             while (comidaDisponible == 0) {
@@ -120,13 +126,17 @@ class Refugio {
         }
     }
 
-    public synchronized void recuperarse(Humano h) throws InterruptedException {
+    public  void recuperarse(Humano h) throws InterruptedException {
         h.setUbicacion("Enfermería");
-        humanosEnfermeria.add(h);
+        synchronized(humanosEnfermeria){
+            humanosEnfermeria.add(h);
+        }
         Thread.sleep(3000 + new Random().nextInt(2000));
         h.setMarcado(false);
         Log.info(h.getIdh() + " se ha recuperado.");
-        humanosEnfermeria.remove(h);
+        synchronized (humanosEnfermeria){
+            humanosEnfermeria.remove(h);
+        }
     }
 
     // --- NUEVAS FUNCIONES DE COMIDA ---

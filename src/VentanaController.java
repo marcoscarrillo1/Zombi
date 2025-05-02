@@ -127,6 +127,10 @@ public class VentanaController implements Initializable {
         this.zonaComedor = zonaComedor;
     }
 
+    public Refugio getRefugio() {
+        return refugio;
+    }
+
     // Listas de hilos para cada celda (zona)
     private List<ListaHilos> listaHilosPorZona;
 

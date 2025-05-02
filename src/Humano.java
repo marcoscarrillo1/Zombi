@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 class Humano extends Thread {
-    protected int id;
+    protected String id;
     private Juegozombie juego;
     protected boolean marcado = false;
     private boolean vivo=true;
@@ -15,9 +15,10 @@ class Humano extends Thread {
 
 
 
-    public Humano(int id, Juegozombie juego) {
+    public Humano(String id, Juegozombie juego,Refugio refugio) {
         this.id = id;
         this.juego = juego;
+        this.refugio = refugio;
     }
     public boolean isMarcado() {
         return marcado;
@@ -99,11 +100,11 @@ class Humano extends Thread {
 
 
     // Métodos getters y setters
-    public int getIdh() {
+    public String getIdh() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

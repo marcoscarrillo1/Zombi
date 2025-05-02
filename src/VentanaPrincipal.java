@@ -65,7 +65,7 @@ public class VentanaPrincipal extends Application {
         new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 String id = String.format("H%04d", i);
-                Humano h = new Humano(i, controller.getJuego());
+                Humano h = new Humano(id, controller.getJuego(),controller.getRefugio());
                 h.start();
                 // Crear un nuevo hilo para el humano
                 try {

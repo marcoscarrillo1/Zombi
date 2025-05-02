@@ -39,7 +39,7 @@ class Zombi extends Thread {
                 if (presa!=null){
                     Thread.sleep((long)(rand.nextDouble(1,3) * 500)); // Espera aleatoria entre 1 y 4 segundos
                     atacarHumano(presa);
-                    Log.info(id + " ha atacado a: "+ presa.getIdh());
+                    Log.info(id + " ha atacado a: "+presa.getIdh());
                 }
                 // Simula el tiempo de espera entre ataques
                 Thread.sleep((long)(rand.nextDouble(2,3) * 1000));
@@ -55,7 +55,7 @@ class Zombi extends Thread {
     public void atacarHumano(Humano h) {
         double atacque = rand.nextDouble(1);
         if (atacque < 0.66){
-            int id = h.getIdh();
+            String id = h.getIdh().substring(1);
             String zombiNuevo = "Z" +id;
             h.morir();
             this.incrementarMuertes();
