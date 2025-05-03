@@ -10,6 +10,7 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -28,6 +29,7 @@ public class VentanaController implements Initializable {
     private TableView<String> tblTuneles;
     private TableView<String> tblZonaRiesgo;
     private Refugio refugio;
+
 
     public void setRefugio(Refugio refugio) {
         this.refugio = refugio;
@@ -92,10 +94,18 @@ public class VentanaController implements Initializable {
     private ListaHilos zonaDescanso= new ListaHilos(textAreaDescanso);
     private ListaHilos zonaComun=new ListaHilos(textAreaZonaComun);
     private ListaHilos zonaComedor=new ListaHilos(textAreaComedor);
+    private ArrayList<ZonaInsegura> enzonariesgo = new ArrayList<>();
+    private ArrayList<ListaHilos> zonariesgoZZ = new ArrayList<>();
+    private ArrayList<ListaHilos> irtuneles=new ArrayList<>();
+    private ArrayList<ListaHilos> volvertuneles=new ArrayList<>();
+    private ArrayList<ListaHilos> dentrotuenel=new ArrayList<>();
 
     public Juegozombie getJuego() {
         return juego;
     }
+
+
+
 
     public TextArea getTextAreaComedor() {
         return textAreaComedor;
@@ -172,7 +182,22 @@ public class VentanaController implements Initializable {
         textAreasZonaRiesgo[6] = textAreasZonaRiesgo7;
         textAreasZonaRiesgo[7] = textAreasZonaRiesgo8;
 
-        textAreasTuneles[0] = textAreaTunel1;
+        ListaHilos tunel1=new ListaHilos( textAreaTunel1);
+        ListaHilos tunel2=new ListaHilos( textAreaTunel2);
+        ListaHilos tunel3=new ListaHilos( textAreaTunel3);
+        ListaHilos tunel4=new ListaHilos( textAreaTunel4);
+        ListaHilos tunel5=new ListaHilos( textAreaTunel5);
+        ListaHilos tunel6=new ListaHilos( textAreaTunel6);
+        ListaHilos tunel7=new ListaHilos( textAreaTunel7);
+        ListaHilos tunel8=new ListaHilos( textAreaTunel8);
+        ListaHilos tunel9=new ListaHilos( textAreaTunel9);
+        ListaHilos tunel10=new ListaHilos( textAreaTunel10);
+        ListaHilos tunel11=new ListaHilos( textAreaTunel11);
+        ListaHilos tunel12=new ListaHilos( textAreaTunel12);
+
+        irtuneles.addAll(Arrays.asList(tunel1,tunel4,tunel7,tunel10));
+        dentrotuenel.addAll(Arrays.asList(tunel2,tunel5,tunel8,tunel11));
+        volvertuneles.addAll(Arrays.asList(tunel3,tunel6,tunel9,tunel12));
         textAreasTuneles[1] = textAreaTunel2;
         textAreasTuneles[2] = textAreaTunel3;
         textAreasTuneles[3] = textAreaTunel4;
@@ -202,6 +227,7 @@ public class VentanaController implements Initializable {
         for (int i = 1; i <= 8; i++) {
             actualizarZona("zona" + i, textAreasZonaRiesgo[i - 1]);
         }
+        lblComida.setText(""+refugio.getComidaDisponible());
     }
 
     private void actualizarZona(String zona, TextArea textArea) {
@@ -242,4 +268,27 @@ public class VentanaController implements Initializable {
             default: return -1;
         }
     }
+    public void iniciarSimulacion() {
+        this.refugio = new Refugio();
+        int comida = 0;
+
+        this.juego = new Juegozombie(zonaComun, zonaDescanso, zonaComedor,irtuneles,volvertuneles,dentrotuenel, comida, enzonariesgo, zonariesgoZZ);
+        refugio.setJuego(juego);
+        Zombi pacienteCero = new Zombi("Z0000", refugio);
+        pacienteCero.start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                String id = String.format("H%04d", i);
+                Humano h = new Humano(id, juego, refugio);
+                h.start();
+                try {
+                    Thread.sleep(500 + new java.util.Random().nextInt(1500));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
 }

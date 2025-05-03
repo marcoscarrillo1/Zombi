@@ -16,6 +16,9 @@ public class Juegozombie {
     private ListaHilos zonaComedor;
     private LinkedBlockingDeque colacomedor=new LinkedBlockingDeque<>();
     private Random rand=new Random();
+    private ArrayList<ListaHilos> irtuneles;
+    private ArrayList<ListaHilos> volvertuneles;
+    private ArrayList<ListaHilos> dentrotuenel;
     private ArrayList<ListaHilos> zonariesgoZZ;
     private ArrayList<ZonaInsegura> enzonariesgo;
     private int comida;
@@ -24,10 +27,13 @@ public class Juegozombie {
     private final Condition condicionpausa=cerrojopausa.newCondition();
     private boolean pausado=false;
 
-    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
+    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,ArrayList<ListaHilos> irtuneles,ArrayList<ListaHilos> volvertuneles,ArrayList<ListaHilos> dentrotuenel,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
         this.zonaComun=zonaComun;
         this.zonaDescanso=zonaDescanso;
         this.zonaComedor=zonaComedor;
+        this.irtuneles=irtuneles;
+        this.volvertuneles=volvertuneles;
+        this.dentrotuenel=dentrotuenel;
         this.comida=comida;
         this.zonariesgoZZ=zonariesgoZZ;
         this.enzonariesgo=enzonariesgo;

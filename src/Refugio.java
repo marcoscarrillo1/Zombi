@@ -15,9 +15,19 @@ class Refugio {
     private Lock lockComida = new ReentrantLock();
     private Condition vacio = lockComida.newCondition();
     private ArrayList<Humano> humanosDescansando = new ArrayList<>();
+    private ListaHilos humanodescansa;
     private ArrayList<Humano> humanosComedor = new ArrayList<>();
     private ArrayList<Humano> humanosEnfermeria = new ArrayList<>();
     private ArrayList<Humano> humanosZonaComun = new ArrayList<>();
+    private Juegozombie juego;
+
+    public  int getComidaDisponible() {
+        return comidaDisponible;
+    }
+
+    public void setJuego(Juegozombie juego) {
+        this.juego = juego;
+    }
 
     public ArrayList<Humano> getHumanosDescansando() {
         return humanosDescansando;
@@ -64,6 +74,7 @@ class Refugio {
         h.setUbicacion("Zona común");
         synchronized(humanosZonaComun){
             humanosZonaComun.add(h);
+            juego.entrarZcomun(h);
         }
         Log.info(h.getIdh() + " está en la zona común.");
     }
@@ -71,6 +82,7 @@ class Refugio {
     public int entrarTunelExterior(Humano h) throws InterruptedException {
         synchronized (humanosZonaComun){
             humanosZonaComun.remove(h);
+            juego.salirZcomun(h);
         }
 
         h.setUbicacion("Túnel (saliendo)");
@@ -98,17 +110,20 @@ class Refugio {
         h.setUbicacion("Zona descanso");
         synchronized (humanosDescansando) {
             humanosDescansando.add(h);
+            juego.entrarDescanso(h);
         }
         Log.info(h.getIdh() + " está descansando.");
         h.sleep(2000 + new Random().nextInt(2000));
         synchronized (humanosDescansando) {
             humanosDescansando.remove(h);
+            juego.salirDescanso(h);
         }
     }
 
     public void comedor(Humano h) throws InterruptedException {
         h.setUbicacion("Comedor");
         humanosComedor.add(h);
+        juego.entrarZcomedor(h);
 
         try {
             lockComida.lock();
@@ -118,6 +133,7 @@ class Refugio {
             if (consumirComida(1)) {
                 Thread.sleep(3000 + new Random().nextInt(2000));
                 humanosComedor.remove(h);
+                juego.salirZcomedor(h);
             } else {
                 Log.info(h.getIdh() + " no pudo comer porque no hay comida.");
             }

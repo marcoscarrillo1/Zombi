@@ -19,6 +19,7 @@ class Humano extends Thread {
         this.id = id;
         this.juego = juego;
         this.refugio = refugio;
+        super.setName(id);
     }
     public boolean isMarcado() {
         return marcado;

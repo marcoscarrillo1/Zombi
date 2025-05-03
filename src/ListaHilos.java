@@ -28,15 +28,18 @@ public class ListaHilos {
     public List<String> getIds() {
         List<String> ids = new ArrayList<>();
         for (Thread hilo : lista) {
-            ids.add(String.valueOf(hilo.getId()));
+            ids.add(String.valueOf(hilo.getName()));
         }
         return ids;
     }
 
     private synchronized void imprimir() {
         List<String> ids = getIds();
-        TextArea.setText(String.join("\n", ids));
+        Platform.runLater(() -> TextArea.setText(String.join("\n", ids)));
+        System.out.println("Actualizando TextArea con: " + ids);
+
     }
+
 
     public int getSize() {
         return lista.size();

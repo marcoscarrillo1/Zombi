@@ -10,10 +10,14 @@ import java.util.concurrent.locks.ReentrantLock;
 
 
 class Tunel {
-    private final int id;
+    private  int id;
     private Lock cerrojo = new ReentrantLock();  // Controla el acceso al túnel
     private Condition pasalir = cerrojo.newCondition();
+    private Condition paentrar = cerrojo.newCondition();
     private List<Humano> esperandoEntrar = new ArrayList<>();
+    private int esperadentro=0;
+    private int esperanalir=0;
+    private boolean hayalguien=false;
     private boolean grupoFormado = false;
     private List<Humano> esperandosalir = new ArrayList<>();
     private Humano humanoDentro = null;
@@ -55,6 +59,7 @@ class Tunel {
     public int getId() {
         return id;
     }
+
 
     // Método para cruzar el túnel hacia fuera
     public void cruzarHaciaFuera(Humano h) {
