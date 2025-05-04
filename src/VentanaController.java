@@ -121,8 +121,6 @@ public class VentanaController implements Initializable {
     }
 
     @FXML
-    private TextArea[] textAreasTuneles = new TextArea[12];
-    private TextArea[] textAreasZonaRiesgo = new TextArea[8];
     private Tunel[] tuneles = new Tunel[4];
     private ZonaInsegura[] zonas = new ZonaInsegura[4];
     @FXML private Button botonPausa;

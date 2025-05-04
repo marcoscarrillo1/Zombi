@@ -44,35 +44,45 @@ class Humano extends Thread {
         while (vivo) {
             try {
                 // 1. Zona común
+                juego.esperarSiPausado();
                 refugio.zonaComun(this);
                 sleep(1000 + new Random().nextInt(1000));
 
                 // 2. Cruzando túnel hacia afuera
+                juego.esperarSiPausado();
                 int idTunel = refugio.entrarTunelExterior(this);
                 setUbicacion("Zona insegura");
 
                 // 3. Zona insegura
+                juego.esperarSiPausado();
                 ZonaInsegura zona = refugio.explorarZonaExterior(idTunel);
+                juego.esperarSiPausado();
                 juego.entrarZriesgoH(this,idTunel);
                 if (marcado) {
+                    juego.esperarSiPausado();
                     refugio.volverAlRefugio(this,idTunel,zona);
                     juego.salirZriesgoH(this,idTunel);
                 }
                 else{
+                    juego.esperarSiPausado();
                     int comida = zona.recolectarComida(this);
 
 
                 // 4. Cruzando túnel hacia adentro
+                juego.esperarSiPausado();
                 refugio.volverAlRefugio(this,idTunel,zona);
                 juego.salirZriesgoH(this,idTunel);
                 refugio.agregarComida(comida);
                 }
                 // 5. Zona de descanso
+                juego.esperarSiPausado();
                 refugio.zonaDescanso(this);
 
 
                 // 6. Comedor
+                juego.esperarSiPausado();
                 refugio.comedor(this);
+
 
                 // 7. Enfermería (si está marcado)
                 if (marcado) {

@@ -14712,3 +14712,1769 @@ may 04, 2025 11:49:24 A. M. Log info
 INFO: H0007 está descansando.
 may 04, 2025 11:49:24 A. M. Log info
 INFO: Se han consumido 1 unidades de comida. Restante: 6
+may 04, 2025 12:05:30 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:05:30 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:30 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:05:31 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:05:31 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:05:32 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:05:32 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 2
+may 04, 2025 12:05:32 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:05:32 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:05:33 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:05:33 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:33 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0003ha entrado a zona comun
+may 04, 2025 12:05:33 P. M. Log info
+INFO: H0003 está en la zona común.
+may 04, 2025 12:05:33 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:05:33 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 1
+may 04, 2025 12:05:34 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:05:34 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 1
+may 04, 2025 12:05:35 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0003ha salido de la zona comun
+may 04, 2025 12:05:35 P. M. Log info
+INFO: H0003 está esperando para salir en el túnel 2
+may 04, 2025 12:05:35 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:05:35 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:05:35 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:05:35 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:36 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:05:36 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:05:36 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:05:36 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 3
+may 04, 2025 12:05:37 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:05:37 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 2
+may 04, 2025 12:05:37 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:05:37 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:37 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:05:37 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:05:38 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:38 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:38 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:05:38 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 2
+may 04, 2025 12:05:38 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:05:38 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:05:39 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 0
+may 04, 2025 12:05:39 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0008ha entrado a zona comun
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0008 está en la zona común.
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:39 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 2
+may 04, 2025 12:05:39 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0009ha entrado a zona comun
+may 04, 2025 12:05:39 P. M. Log info
+INFO: H0009 está en la zona común.
+may 04, 2025 12:05:39 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:05:40 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:05:40 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:40 P. M. Log info
+INFO: H0003 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:40 P. M. Log info
+INFO: H0003 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:40 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0003ha entrado a zona riesgo
+may 04, 2025 12:05:40 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 2
+may 04, 2025 12:05:40 P. M. Log info
+INFO: H0003 ha entrado en la zona exterior 2
+may 04, 2025 12:05:42 P. M. Log info
+INFO: H0005 ha recolectado 1 unidades de comida.
+may 04, 2025 12:05:43 P. M. Log info
+INFO: H0000 ha recolectado 3 unidades de comida.
+may 04, 2025 12:05:43 P. M. Log info
+INFO: H0003 ha recolectado 2 unidades de comida.
+may 04, 2025 12:05:45 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0008ha salido de la zona comun
+may 04, 2025 12:05:45 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:05:45 P. M. Log info
+INFO: H0000 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:05:45 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0009ha salido de la zona comun
+may 04, 2025 12:05:45 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:05:45 P. M. Log info
+INFO: H0009 está esperando para salir en el túnel 3
+may 04, 2025 12:05:46 P. M. Log info
+INFO: H0005 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:05:46 P. M. Log info
+INFO: H0000 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:05:46 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0000ha salido de la zona de riesgo
+may 04, 2025 12:05:46 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 3
+may 04, 2025 12:05:46 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0000ha entrado a zona descanso
+may 04, 2025 12:05:46 P. M. Log info
+INFO: H0000 está descansando.
+may 04, 2025 12:05:47 P. M. Log info
+INFO: H0003 ha muerto.
+may 04, 2025 12:05:47 P. M. Log info
+INFO: Z0000 ha matado a un humano. Muertes totales: 1
+may 04, 2025 12:05:47 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:47 P. M. Log info
+INFO: H0005 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:05:47 P. M. Log info
+INFO: H0003 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:05:47 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0005ha salido de la zona de riesgo
+may 04, 2025 12:05:47 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 4
+may 04, 2025 12:05:47 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0005ha entrado a zona descanso
+may 04, 2025 12:05:47 P. M. Log info
+INFO: H0005 está descansando.
+may 04, 2025 12:05:48 P. M. Log info
+INFO: H0003 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:05:48 P. M. Log info
+INFO: H0008 está esperando para salir en el túnel 2
+may 04, 2025 12:05:48 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0003ha salido de la zona de riesgo
+may 04, 2025 12:05:48 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 6
+may 04, 2025 12:05:48 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0003ha entrado a zona descanso
+may 04, 2025 12:05:48 P. M. Log info
+INFO: H0003 está descansando.
+may 04, 2025 12:05:49 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:05:49 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:49 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0000ha salido de la zona descanso
+may 04, 2025 12:05:49 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0000ha entrado al comedor
+may 04, 2025 12:05:49 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 5
+may 04, 2025 12:05:50 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0005ha salido de la zona descanso
+may 04, 2025 12:05:50 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0005ha entrado al comedor
+may 04, 2025 12:05:51 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0003ha salido de la zona descanso
+may 04, 2025 12:05:51 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0003ha entrado al comedor
+may 04, 2025 12:05:51 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:05:51 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:54 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:05:54 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:54 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0000ha salido del comedor
+may 04, 2025 12:05:54 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:05:54 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:05:54 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 4
+may 04, 2025 12:05:56 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:05:56 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 2
+may 04, 2025 12:05:56 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:05:56 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:57 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:57 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:57 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:05:57 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 2
+may 04, 2025 12:05:58 P. M. Log info
+INFO: H0007 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:58 P. M. Log info
+INFO: H0007 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:58 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0007ha entrado a zona riesgo
+may 04, 2025 12:05:58 P. M. Log info
+INFO: H0007 ha entrado en la zona exterior 2
+may 04, 2025 12:05:58 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0005ha salido del comedor
+may 04, 2025 12:05:58 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:05:58 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:05:58 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 3
+may 04, 2025 12:05:59 P. M. Log info
+INFO: H0008 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:05:59 P. M. Log info
+INFO: H0008 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:05:59 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0008ha entrado a zona riesgo
+may 04, 2025 12:05:59 P. M. Log info
+INFO: H0008 ha entrado en la zona exterior 2
+may 04, 2025 12:05:59 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:05:59 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:05:59 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:05:59 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 1
+may 04, 2025 12:06:00 P. M. Log info
+INFO: H0000 ha recolectado 2 unidades de comida.
+may 04, 2025 12:06:00 P. M. Log info
+INFO: H0000 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:06:00 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:06:00 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:06:00 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:06:00 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 1
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0007 ha recolectado 2 unidades de comida.
+may 04, 2025 12:06:01 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:06:01 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0000 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:06:01 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0000ha salido de la zona de riesgo
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0007 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0001 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0001 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:06:01 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0001ha entrado a zona riesgo
+may 04, 2025 12:06:01 P. M. Log info
+INFO: H0001 ha entrado en la zona exterior 1
+may 04, 2025 12:06:02 P. M. Log info
+INFO: H0007 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:06:02 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0007ha salido de la zona de riesgo
+may 04, 2025 12:06:02 P. M. Log info
+INFO: H0002 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:06:02 P. M. Log info
+INFO: H0002 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:06:02 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0002ha entrado a zona riesgo
+may 04, 2025 12:06:02 P. M. Log info
+INFO: H0002 ha entrado en la zona exterior 1
+may 04, 2025 12:06:02 P. M. Log info
+INFO: H0005 mata al zombi Z0003
+may 04, 2025 12:06:02 P. M. Log info
+INFO: Z0003 ha muerto.
+may 04, 2025 12:06:02 P. M. Log info
+INFO: Z0003 ha atacado a: H0005
+may 04, 2025 12:06:03 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0003ha salido del comedor
+may 04, 2025 12:06:03 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 5
+may 04, 2025 12:06:03 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0000ha entrado a zona descanso
+may 04, 2025 12:06:03 P. M. Log info
+INFO: H0000 está descansando.
+may 04, 2025 12:06:03 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 7
+may 04, 2025 12:06:03 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0007ha entrado a zona descanso
+may 04, 2025 12:06:03 P. M. Log info
+INFO: H0007 está descansando.
+may 04, 2025 12:06:04 P. M. Log info
+INFO: H0008 ha recolectado 2 unidades de comida.
+may 04, 2025 12:06:04 P. M. Log info
+INFO: H0008 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:06:04 P. M. Log info
+INFO: H0005 ha recolectado 1 unidades de comida.
+may 04, 2025 12:06:04 P. M. Log info
+INFO: H0005 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:06:04 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:06:04 P. M. Log info
+INFO: Z0000 ha atacado a: H0003
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0008 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:06:05 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0008ha salido de la zona de riesgo
+may 04, 2025 12:06:05 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 9
+may 04, 2025 12:06:05 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0008ha entrado a zona descanso
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0008 está descansando.
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0001 ha recolectado 2 unidades de comida.
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0005 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0001 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:06:05 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0005ha salido de la zona de riesgo
+may 04, 2025 12:06:05 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 10
+may 04, 2025 12:06:05 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0005ha entrado a zona descanso
+may 04, 2025 12:06:05 P. M. Log info
+INFO: H0005 está descansando.
+may 04, 2025 12:06:05 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0000ha salido de la zona descanso
+may 04, 2025 12:06:05 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0000ha entrado al comedor
+may 04, 2025 12:06:05 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 9
+may 04, 2025 12:06:06 P. M. Log info
+INFO: H0001 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:06:06 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0001ha salido de la zona de riesgo
+may 04, 2025 12:06:07 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0007ha salido de la zona descanso
+may 04, 2025 12:06:07 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0007ha entrado al comedor
+may 04, 2025 12:06:07 P. M. Log info
+INFO: H0002 ha recolectado 2 unidades de comida.
+may 04, 2025 12:06:07 P. M. Log info
+INFO: H0002 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:06:07 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:06:07 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:06:08 P. M. Log info
+INFO: H0002 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:06:08 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0002ha salido de la zona de riesgo
+may 04, 2025 12:06:08 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0008ha salido de la zona descanso
+may 04, 2025 12:06:08 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0008ha entrado al comedor
+may 04, 2025 12:06:08 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0005ha salido de la zona descanso
+may 04, 2025 12:06:08 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0005ha entrado al comedor
+may 04, 2025 12:06:09 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0000ha salido del comedor
+may 04, 2025 12:06:09 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:06:09 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:06:09 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 11
+may 04, 2025 12:06:09 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0001ha entrado a zona descanso
+may 04, 2025 12:06:09 P. M. Log info
+INFO: H0001 está descansando.
+may 04, 2025 12:06:09 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 10
+may 04, 2025 12:06:10 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:06:10 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:06:10 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:06:10 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 3
+may 04, 2025 12:06:11 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0001ha salido de la zona descanso
+may 04, 2025 12:06:11 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0001ha entrado al comedor
+may 04, 2025 12:06:11 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:06:11 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:06:11 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:06:11 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 3
+may 04, 2025 12:11:45 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:11:45 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:11:45 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:11:47 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:11:47 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 2
+may 04, 2025 12:11:47 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:11:47 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:11:48 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:11:48 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:11:48 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:11:48 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:11:49 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:11:49 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 1
+may 04, 2025 12:11:49 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:11:49 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 2
+may 04, 2025 12:11:50 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0003ha entrado a zona comun
+may 04, 2025 12:11:50 P. M. Log info
+INFO: H0003 está en la zona común.
+may 04, 2025 12:11:50 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:11:50 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:11:51 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0003ha salido de la zona comun
+may 04, 2025 12:11:51 P. M. Log info
+INFO: H0003 está esperando para salir en el túnel 1
+may 04, 2025 12:11:51 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:11:51 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:11:52 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:11:52 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 0
+may 04, 2025 12:11:52 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:11:52 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:11:52 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:11:52 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:11:54 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:11:54 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:11:54 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:11:54 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 2
+may 04, 2025 12:11:55 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:11:55 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:11:55 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:11:55 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:11:55 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:11:55 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 2
+may 04, 2025 12:11:55 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:11:55 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 3
+may 04, 2025 12:11:55 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:11:55 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:11:56 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0008ha entrado a zona comun
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0008 está en la zona común.
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:11:56 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 2
+may 04, 2025 12:11:56 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0009ha entrado a zona comun
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0009 está en la zona común.
+may 04, 2025 12:11:56 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 1
+may 04, 2025 12:11:56 P. M. Log info
+INFO: H0005 mata al zombi Z0000
+may 04, 2025 12:11:56 P. M. Log info
+INFO: Z0000 ha muerto.
+may 04, 2025 12:11:56 P. M. Log info
+INFO: Z0000 ha atacado a: H0005
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0002 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0002 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:11:57 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0002ha entrado a zona riesgo
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0002 ha entrado en la zona exterior 2
+may 04, 2025 12:11:57 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0008ha salido de la zona comun
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0008 está esperando para salir en el túnel 3
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0007 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0007 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:11:57 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0007ha entrado a zona riesgo
+may 04, 2025 12:11:57 P. M. Log info
+INFO: H0007 ha entrado en la zona exterior 1
+may 04, 2025 12:11:58 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0009ha salido de la zona comun
+may 04, 2025 12:11:58 P. M. Log info
+INFO: H0009 está esperando para salir en el túnel 3
+may 04, 2025 12:11:58 P. M. Log info
+INFO: H0001 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:11:58 P. M. Log info
+INFO: H0001 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:11:58 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0001ha entrado a zona riesgo
+may 04, 2025 12:11:58 P. M. Log info
+INFO: H0001 ha entrado en la zona exterior 1
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0009 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0009 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:11:59 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0009ha entrado a zona riesgo
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0009 ha entrado en la zona exterior 3
+may 04, 2025 12:11:59 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0003 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0003 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:11:59 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0003ha entrado a zona riesgo
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0003 ha entrado en la zona exterior 1
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0005 ha recolectado 3 unidades de comida.
+may 04, 2025 12:11:59 P. M. Log info
+INFO: H0005 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0006 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0006 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:12:00 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0006ha entrado a zona riesgo
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0006 ha entrado en la zona exterior 3
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0000 ha recolectado 3 unidades de comida.
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0000 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0005 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:12:00 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0005ha salido de la zona de riesgo
+may 04, 2025 12:12:00 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 3
+may 04, 2025 12:12:00 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0005ha entrado a zona descanso
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0005 está descansando.
+may 04, 2025 12:12:00 P. M. Log info
+INFO: H0002 ha recolectado 3 unidades de comida.
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0008 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0008 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:12:01 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0008ha entrado a zona riesgo
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0008 ha entrado en la zona exterior 3
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0007 ha recolectado 2 unidades de comida.
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0007 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0000 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0002 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:12:01 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0000ha salido de la zona de riesgo
+may 04, 2025 12:12:01 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 6
+may 04, 2025 12:12:01 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0000ha entrado a zona descanso
+may 04, 2025 12:12:01 P. M. Log info
+INFO: H0000 está descansando.
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0007 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:12:02 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0007ha salido de la zona de riesgo
+may 04, 2025 12:12:02 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 8
+may 04, 2025 12:12:02 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0007ha entrado a zona descanso
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0007 está descansando.
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0002 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:12:02 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0002ha salido de la zona de riesgo
+may 04, 2025 12:12:02 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 11
+may 04, 2025 12:12:02 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0002ha entrado a zona descanso
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0002 está descansando.
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0001 ha recolectado 1 unidades de comida.
+may 04, 2025 12:12:02 P. M. Log info
+INFO: H0001 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:12:03 P. M. Log info
+INFO: H0003 ha recolectado 2 unidades de comida.
+may 04, 2025 12:12:03 P. M. Log info
+INFO: H0009 ha recolectado 2 unidades de comida.
+may 04, 2025 12:12:03 P. M. Log info
+INFO: H0009 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:12:03 P. M. Log info
+INFO: H0001 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:12:04 P. M. Log info
+INFO: H0003 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:12:04 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0001ha salido de la zona de riesgo
+may 04, 2025 12:12:04 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 12
+may 04, 2025 12:12:04 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0001ha entrado a zona descanso
+may 04, 2025 12:12:04 P. M. Log info
+INFO: H0001 está descansando.
+may 04, 2025 12:12:04 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0005ha salido de la zona descanso
+may 04, 2025 12:12:04 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0005ha entrado al comedor
+may 04, 2025 12:12:04 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 11
+may 04, 2025 12:12:04 P. M. Log info
+INFO: H0008 ha recolectado 3 unidades de comida.
+may 04, 2025 12:12:04 P. M. Log info
+INFO: H0009 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:12:04 P. M. Log info
+INFO: H0008 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:12:04 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0009ha salido de la zona de riesgo
+may 04, 2025 12:12:05 P. M. Log info
+INFO: H0003 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:12:05 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0003ha salido de la zona de riesgo
+may 04, 2025 12:12:05 P. M. Log info
+INFO: H0006 ha recolectado 2 unidades de comida.
+may 04, 2025 12:12:05 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0000ha salido de la zona descanso
+may 04, 2025 12:12:05 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0000ha entrado al comedor
+may 04, 2025 12:12:05 P. M. Log info
+INFO: H0008 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:12:05 P. M. Log info
+INFO: H0006 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:12:05 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0008ha salido de la zona de riesgo
+may 04, 2025 12:12:05 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0007ha salido de la zona descanso
+may 04, 2025 12:12:05 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0007ha entrado al comedor
+may 04, 2025 12:12:06 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0002ha salido de la zona descanso
+may 04, 2025 12:12:06 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0002ha entrado al comedor
+may 04, 2025 12:12:06 P. M. Log info
+INFO: H0006 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:12:06 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0006ha salido de la zona de riesgo
+may 04, 2025 12:12:07 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0001ha salido de la zona descanso
+may 04, 2025 12:12:07 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0001ha entrado al comedor
+may 04, 2025 12:12:07 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0005ha salido del comedor
+may 04, 2025 12:12:07 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 13
+may 04, 2025 12:12:07 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0009ha entrado a zona descanso
+may 04, 2025 12:12:07 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 15
+may 04, 2025 12:12:07 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0003ha entrado a zona descanso
+may 04, 2025 12:12:07 P. M. Log info
+INFO: H0003 está descansando.
+may 04, 2025 12:12:07 P. M. Log info
+INFO: H0009 está descansando.
+may 04, 2025 12:12:07 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 14
+may 04, 2025 12:13:37 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:13:37 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:13:37 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:13:38 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:13:38 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:13:39 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:13:39 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 2
+may 04, 2025 12:13:39 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:13:39 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 0
+may 04, 2025 12:13:39 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:13:39 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:13:40 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:13:40 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:13:41 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:13:41 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 2
+may 04, 2025 12:13:42 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:13:42 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:13:42 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0003ha entrado a zona comun
+may 04, 2025 12:13:42 P. M. Log info
+INFO: H0003 está en la zona común.
+may 04, 2025 12:13:43 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:13:43 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:13:44 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:13:44 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:13:44 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0003ha salido de la zona comun
+may 04, 2025 12:13:44 P. M. Log info
+INFO: H0003 está esperando para salir en el túnel 2
+may 04, 2025 12:13:44 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:13:44 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:13:45 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:13:45 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 0
+may 04, 2025 12:13:45 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:13:45 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 3
+may 04, 2025 12:13:45 P. M. Log info
+INFO: H0003 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:13:45 P. M. Log info
+INFO: H0003 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:13:45 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0003ha entrado a zona riesgo
+may 04, 2025 12:13:45 P. M. Log info
+INFO: H0003 ha entrado en la zona exterior 2
+may 04, 2025 12:13:46 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:13:46 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:13:46 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:13:46 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:13:46 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:13:46 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 2
+may 04, 2025 12:13:46 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:13:46 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:13:47 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0002 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0002 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:13:47 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0002ha entrado a zona riesgo
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0002 ha entrado en la zona exterior 2
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0003 ha muerto.
+may 04, 2025 12:13:47 P. M. Log info
+INFO: Z0000 ha matado a un humano. Muertes totales: 1
+may 04, 2025 12:13:47 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:13:47 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:13:47 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 3
+may 04, 2025 12:13:48 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0008ha entrado a zona comun
+may 04, 2025 12:13:48 P. M. Log info
+INFO: H0008 está en la zona común.
+may 04, 2025 12:13:48 P. M. Log info
+INFO: H0003 ha recolectado 2 unidades de comida.
+may 04, 2025 12:13:48 P. M. Log info
+INFO: H0003 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:13:49 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 3
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0000 ha recolectado 3 unidades de comida.
+may 04, 2025 12:13:49 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:13:49 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0000 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0003 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:13:49 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0003ha salido de la zona de riesgo
+may 04, 2025 12:13:49 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 2
+may 04, 2025 12:13:49 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0003ha entrado a zona descanso
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0003 está descansando.
+may 04, 2025 12:13:49 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0009ha entrado a zona comun
+may 04, 2025 12:13:49 P. M. Log info
+INFO: H0009 está en la zona común.
+may 04, 2025 12:13:50 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0008ha salido de la zona comun
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0007 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0007 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:13:50 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0007ha entrado a zona riesgo
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0007 ha entrado en la zona exterior 3
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0000 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0008 está esperando para salir en el túnel 2
+may 04, 2025 12:13:50 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0000ha salido de la zona de riesgo
+may 04, 2025 12:13:50 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 5
+may 04, 2025 12:13:50 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0000ha entrado a zona descanso
+may 04, 2025 12:13:50 P. M. Log info
+INFO: H0000 está descansando.
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:13:51 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 3
+may 04, 2025 12:13:51 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0009ha salido de la zona comun
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0009 está esperando para salir en el túnel 1
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0002 ha recolectado 3 unidades de comida.
+may 04, 2025 12:13:51 P. M. Log info
+INFO: H0002 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:13:51 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:13:51 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:13:52 P. M. Log info
+INFO: H0006 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:13:52 P. M. Log info
+INFO: H0006 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:13:52 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0006ha entrado a zona riesgo
+may 04, 2025 12:13:52 P. M. Log info
+INFO: H0006 ha entrado en la zona exterior 3
+may 04, 2025 12:13:52 P. M. Log info
+INFO: H0002 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:13:52 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0002ha salido de la zona de riesgo
+may 04, 2025 12:13:52 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 8
+may 04, 2025 12:13:52 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0002ha entrado a zona descanso
+may 04, 2025 12:13:52 P. M. Log info
+INFO: H0002 está descansando.
+may 04, 2025 12:13:52 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0003ha salido de la zona descanso
+may 04, 2025 12:13:52 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0003ha entrado al comedor
+may 04, 2025 12:13:52 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 7
+may 04, 2025 12:13:53 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0000ha salido de la zona descanso
+may 04, 2025 12:13:53 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0000ha entrado al comedor
+may 04, 2025 12:13:53 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:13:53 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:13:54 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0002ha salido de la zona descanso
+may 04, 2025 12:13:54 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0002ha entrado al comedor
+may 04, 2025 12:13:54 P. M. Log info
+INFO: H0005 ha recolectado 3 unidades de comida.
+may 04, 2025 12:13:54 P. M. Log info
+INFO: H0005 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:13:55 P. M. Log info
+INFO: H0007 ha recolectado 3 unidades de comida.
+may 04, 2025 12:13:55 P. M. Log info
+INFO: H0005 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:13:55 P. M. Log info
+INFO: H0007 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:13:55 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0005ha salido de la zona de riesgo
+may 04, 2025 12:13:56 P. M. Log info
+INFO: H0006 ha recolectado 2 unidades de comida.
+may 04, 2025 12:13:56 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:13:56 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:13:56 P. M. Log info
+INFO: H0007 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:13:56 P. M. Log info
+INFO: H0006 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:13:56 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0007ha salido de la zona de riesgo
+may 04, 2025 12:13:57 P. M. Log info
+INFO: H0006 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:13:57 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0006ha salido de la zona de riesgo
+may 04, 2025 12:13:57 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0003ha salido del comedor
+may 04, 2025 12:13:57 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 6
+may 04, 2025 12:13:59 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:13:59 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:02 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:02 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:02 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0000ha salido del comedor
+may 04, 2025 12:14:02 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:14:02 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:14:02 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 5
+may 04, 2025 12:14:03 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:14:03 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 0
+may 04, 2025 12:14:04 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:04 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:04 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 0
+may 04, 2025 12:14:04 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 0
+may 04, 2025 12:14:04 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:14:04 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 0
+may 04, 2025 12:14:05 P. M. Log info
+INFO: H0001 está cruzando hacia fuera en el túnel 0
+may 04, 2025 12:14:05 P. M. Log info
+INFO: H0001 ha cruzado hacia el exterior en el túnel 0
+may 04, 2025 12:14:05 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0001ha entrado a zona riesgo
+may 04, 2025 12:14:05 P. M. Log info
+INFO: H0001 ha entrado en la zona exterior 0
+may 04, 2025 12:14:06 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:06 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:06 P. M. Log info
+INFO: H0004 está cruzando hacia fuera en el túnel 0
+may 04, 2025 12:14:06 P. M. Log info
+INFO: H0004 ha cruzado hacia el exterior en el túnel 0
+may 04, 2025 12:14:06 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0004ha entrado a zona riesgo
+may 04, 2025 12:14:06 P. M. Log info
+INFO: H0004 ha entrado en la zona exterior 0
+may 04, 2025 12:14:07 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0002ha salido del comedor
+may 04, 2025 12:14:07 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:14:07 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:14:07 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 8
+may 04, 2025 12:14:07 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 11
+may 04, 2025 12:14:07 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0005ha entrado a zona descanso
+may 04, 2025 12:14:07 P. M. Log info
+INFO: H0005 está descansando.
+may 04, 2025 12:14:07 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 13
+may 04, 2025 12:14:07 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0007ha entrado a zona descanso
+may 04, 2025 12:14:07 P. M. Log info
+INFO: H0007 está descansando.
+may 04, 2025 12:14:07 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0006ha entrado a zona descanso
+may 04, 2025 12:14:07 P. M. Log info
+INFO: H0006 está descansando.
+may 04, 2025 12:14:09 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:14:09 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 3
+may 04, 2025 12:14:09 P. M. Log info
+INFO: H0001 ha recolectado 1 unidades de comida.
+may 04, 2025 12:14:09 P. M. Log info
+INFO: H0001 está cruzando hacia dentro en el túnel 0
+may 04, 2025 12:14:09 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:09 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:09 P. M. Log info
+INFO: H0000 ha recolectado 3 unidades de comida.
+may 04, 2025 12:14:09 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0006ha salido de la zona descanso
+may 04, 2025 12:14:09 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0006ha entrado al comedor
+may 04, 2025 12:14:09 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 12
+may 04, 2025 12:14:09 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0005ha salido de la zona descanso
+may 04, 2025 12:14:09 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0005ha entrado al comedor
+may 04, 2025 12:14:10 P. M. Log info
+INFO: H0001 ha vuelto al refugio a través del túnel 0
+may 04, 2025 12:14:10 P. M. Log info
+INFO: H0000 está cruzando hacia dentro en el túnel 0
+may 04, 2025 12:14:10 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0001ha salido de la zona de riesgo
+may 04, 2025 12:14:10 P. M. Log info
+INFO: H0004 ha recolectado 2 unidades de comida.
+may 04, 2025 12:14:10 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0007ha salido de la zona descanso
+may 04, 2025 12:14:10 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0007ha entrado al comedor
+may 04, 2025 12:14:11 P. M. Log info
+INFO: H0000 ha vuelto al refugio a través del túnel 0
+may 04, 2025 12:14:11 P. M. Log info
+INFO: H0004 está cruzando hacia dentro en el túnel 0
+may 04, 2025 12:14:11 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0000ha salido de la zona de riesgo
+may 04, 2025 12:14:11 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:11 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:12 P. M. Log info
+INFO: H0004 ha vuelto al refugio a través del túnel 0
+may 04, 2025 12:14:12 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0004ha salido de la zona de riesgo
+may 04, 2025 12:14:12 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0006ha salido del comedor
+may 04, 2025 12:14:12 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:14:12 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:14:12 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 11
+may 04, 2025 12:14:14 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:14:14 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 1
+may 04, 2025 12:14:14 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:14 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:16 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0005ha salido del comedor
+may 04, 2025 12:14:16 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:14:16 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:14:16 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 12
+may 04, 2025 12:14:16 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0001ha entrado a zona descanso
+may 04, 2025 12:14:16 P. M. Log info
+INFO: H0001 está descansando.
+may 04, 2025 12:14:16 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 11
+may 04, 2025 12:14:17 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:17 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:18 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:14:18 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 2
+may 04, 2025 12:14:19 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:19 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:19 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0001ha salido de la zona descanso
+may 04, 2025 12:14:19 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0001ha entrado al comedor
+may 04, 2025 12:14:20 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0007ha salido del comedor
+may 04, 2025 12:14:20 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:14:20 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:14:20 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 14
+may 04, 2025 12:14:20 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 16
+may 04, 2025 12:14:20 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0000ha entrado a zona descanso
+may 04, 2025 12:14:20 P. M. Log info
+INFO: H0000 está descansando.
+may 04, 2025 12:14:20 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 15
+may 04, 2025 12:14:20 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0004ha entrado a zona descanso
+may 04, 2025 12:14:20 P. M. Log info
+INFO: H0004 está descansando.
+may 04, 2025 12:14:21 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:14:21 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 1
+may 04, 2025 12:14:22 P. M. Log info
+INFO: H0007 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:14:22 P. M. Log info
+INFO: H0007 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:14:22 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0007ha entrado a zona riesgo
+may 04, 2025 12:14:22 P. M. Log info
+INFO: H0007 ha entrado en la zona exterior 1
+may 04, 2025 12:14:22 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0003ha salido zona riesgo
+may 04, 2025 12:14:22 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0003ha entrado zona riesgo
+may 04, 2025 12:14:22 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0004ha salido de la zona descanso
+may 04, 2025 12:14:22 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0004ha entrado al comedor
+may 04, 2025 12:14:22 P. M. Log info
+INFO: H0007 ha muerto.
+may 04, 2025 12:14:22 P. M. Log info
+INFO: Z0003 ha matado a un humano. Muertes totales: 1
+may 04, 2025 12:14:22 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0007ha entrado zona riesgo
+may 04, 2025 12:14:23 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0000ha salido de la zona descanso
+may 04, 2025 12:14:23 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0000ha entrado al comedor
+may 04, 2025 12:14:23 P. M. Log info
+INFO: H0009 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:14:23 P. M. Log info
+INFO: H0009 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:14:23 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0009ha entrado a zona riesgo
+may 04, 2025 12:14:23 P. M. Log info
+INFO: H0009 ha entrado en la zona exterior 1
+may 04, 2025 12:14:24 P. M. Log info
+INFO: H0006 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:14:24 P. M. Log info
+INFO: H0006 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:14:24 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0006ha entrado a zona riesgo
+may 04, 2025 12:14:24 P. M. Log info
+INFO: H0006 ha entrado en la zona exterior 1
+may 04, 2025 12:14:24 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0001ha salido del comedor
+may 04, 2025 12:14:24 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:14:24 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:14:24 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 14
+may 04, 2025 12:14:25 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0007ha salido zona riesgo
+may 04, 2025 12:14:25 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0007ha entrado zona riesgo
+may 04, 2025 12:14:26 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:14:26 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 2
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0007 ha recolectado 1 unidades de comida.
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0007 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0006 ha recolectado 3 unidades de comida.
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0001 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0001 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:14:27 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0001ha entrado a zona riesgo
+may 04, 2025 12:14:27 P. M. Log info
+INFO: H0001 ha entrado en la zona exterior 2
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0007 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:14:28 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0007ha salido de la zona de riesgo
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0006 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:14:28 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0007ha salido zona riesgo
+may 04, 2025 12:14:28 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0007ha entrado zona riesgo
+may 04, 2025 12:14:28 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0004ha salido del comedor
+may 04, 2025 12:14:28 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:14:28 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 13
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0009 ha recolectado 3 unidades de comida.
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0008 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0008 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:14:28 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0008ha entrado a zona riesgo
+may 04, 2025 12:14:28 P. M. Log info
+INFO: H0008 ha entrado en la zona exterior 2
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0006 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0009 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:14:29 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0006ha salido de la zona de riesgo
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:14:29 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 2
+may 04, 2025 12:14:29 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:14:29 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 2
+may 04, 2025 12:14:30 P. M. Log info
+INFO: H0009 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:14:30 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0009ha salido de la zona de riesgo
+may 04, 2025 12:14:30 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0007ha salido zona riesgo
+may 04, 2025 12:14:30 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0007ha entrado zona riesgo
+may 04, 2025 12:22:14 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:22:14 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:22:14 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:22:15 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:22:15 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:22:15 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:22:15 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 1
+may 04, 2025 12:22:16 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:22:16 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:22:16 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:22:16 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 2
+may 04, 2025 12:22:16 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:22:16 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:22:16 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0003ha entrado a zona comun
+may 04, 2025 12:22:16 P. M. Log info
+INFO: H0003 está en la zona común.
+may 04, 2025 12:22:17 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:22:17 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 3
+may 04, 2025 12:22:17 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:22:17 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:22:18 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:22:18 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:22:18 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0003ha salido de la zona comun
+may 04, 2025 12:22:18 P. M. Log info
+INFO: H0003 está esperando para salir en el túnel 3
+may 04, 2025 12:22:19 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:22:19 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:22:19 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:22:19 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 0
+may 04, 2025 12:22:19 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:22:19 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 0
+may 04, 2025 12:22:20 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:22:20 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:22:20 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:22:20 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:22:21 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:22:21 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 1
+may 04, 2025 12:22:21 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:22:21 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:22:21 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:22:21 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 3
+may 04, 2025 12:23:22 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:22 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0000ha entrado a zona comun
+may 04, 2025 12:23:22 P. M. Log info
+INFO: H0000 está en la zona común.
+may 04, 2025 12:23:23 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:23:23 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:23:24 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0000ha salido de la zona comun
+may 04, 2025 12:23:24 P. M. Log info
+INFO: H0000 está esperando para salir en el túnel 3
+may 04, 2025 12:23:24 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:23:24 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:23:25 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:23:25 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 2
+may 04, 2025 12:23:25 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:25 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:26 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:23:26 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 1
+may 04, 2025 12:23:26 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0003ha entrado a zona comun
+may 04, 2025 12:23:26 P. M. Log info
+INFO: H0003 está en la zona común.
+may 04, 2025 12:23:27 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:27 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:27 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:23:27 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:23:27 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0003ha salido de la zona comun
+may 04, 2025 12:23:27 P. M. Log info
+INFO: H0003 está esperando para salir en el túnel 2
+may 04, 2025 12:23:28 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0005ha entrado a zona comun
+may 04, 2025 12:23:28 P. M. Log info
+INFO: H0005 está en la zona común.
+may 04, 2025 12:23:28 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:23:28 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 1
+may 04, 2025 12:23:29 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0005ha salido de la zona comun
+may 04, 2025 12:23:29 P. M. Log info
+INFO: H0005 está esperando para salir en el túnel 3
+may 04, 2025 12:23:29 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:29 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:30 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:23:30 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:23:31 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:23:31 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 1
+may 04, 2025 12:23:31 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:23:31 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:23:32 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:32 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:32 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0008ha entrado a zona comun
+may 04, 2025 12:23:32 P. M. Log info
+INFO: H0008 está en la zona común.
+may 04, 2025 12:23:32 P. M. Log info
+INFO: H0006 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:23:32 P. M. Log info
+INFO: H0006 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:23:32 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0006ha entrado a zona riesgo
+may 04, 2025 12:23:32 P. M. Log info
+INFO: H0006 ha entrado en la zona exterior 1
+may 04, 2025 12:23:33 P. M. Log info
+INFO: H0002 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:23:33 P. M. Log info
+INFO: H0002 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:23:33 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0002ha entrado a zona riesgo
+may 04, 2025 12:23:33 P. M. Log info
+INFO: H0002 ha entrado en la zona exterior 1
+may 04, 2025 12:23:33 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0009ha entrado a zona comun
+may 04, 2025 12:23:33 P. M. Log info
+INFO: H0009 está en la zona común.
+may 04, 2025 12:23:33 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:23:33 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 2
+may 04, 2025 12:23:34 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0008ha salido de la zona comun
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0004 está cruzando hacia fuera en el túnel 1
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0004 ha cruzado hacia el exterior en el túnel 1
+may 04, 2025 12:23:34 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0004ha entrado a zona riesgo
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0004 ha entrado en la zona exterior 1
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0007 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0007 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:23:34 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0007ha entrado a zona riesgo
+may 04, 2025 12:23:34 P. M. Log info
+INFO: H0007 ha entrado en la zona exterior 2
+may 04, 2025 12:23:34 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:34 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:35 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0009ha salido de la zona comun
+may 04, 2025 12:23:35 P. M. Log info
+INFO: H0001 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:23:35 P. M. Log info
+INFO: H0001 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:23:35 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0001ha entrado a zona riesgo
+may 04, 2025 12:23:35 P. M. Log info
+INFO: H0001 ha entrado en la zona exterior 2
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0006 ha recolectado 1 unidades de comida.
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0006 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0003 está cruzando hacia fuera en el túnel 2
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0003 ha cruzado hacia el exterior en el túnel 2
+may 04, 2025 12:23:36 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0003ha entrado a zona riesgo
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0003 ha entrado en la zona exterior 2
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0008 está esperando para salir en el túnel 2
+may 04, 2025 12:23:36 P. M. Log info
+INFO: H0009 está esperando para salir en el túnel 2
+may 04, 2025 12:23:37 P. M. Log info
+INFO: H0002 ha recolectado 1 unidades de comida.
+may 04, 2025 12:23:37 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:37 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:37 P. M. Log info
+INFO: H0006 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:23:37 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0006ha salido de la zona de riesgo
+may 04, 2025 12:23:37 P. M. Log info
+INFO: H0002 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:23:37 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 1
+may 04, 2025 12:23:37 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0006ha entrado a zona descanso
+may 04, 2025 12:23:37 P. M. Log info
+INFO: H0006 está descansando.
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0004 ha recolectado 1 unidades de comida.
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0002 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:23:38 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0002ha salido de la zona de riesgo
+may 04, 2025 12:23:38 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 2
+may 04, 2025 12:23:38 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0002ha entrado a zona descanso
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0002 está descansando.
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0004 está cruzando hacia dentro en el túnel 1
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0001 ha recolectado 3 unidades de comida.
+may 04, 2025 12:23:38 P. M. Log info
+INFO: H0001 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0004 ha vuelto al refugio a través del túnel 1
+may 04, 2025 12:23:39 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0004ha salido de la zona de riesgo
+may 04, 2025 12:23:39 P. M. Log info
+INFO: Se han agregado 1 unidades de comida al refugio. Total: 3
+may 04, 2025 12:23:39 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0004ha entrado a zona descanso
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0004 está descansando.
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0007 ha recolectado 3 unidades de comida.
+may 04, 2025 12:23:39 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:39 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0001 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:23:39 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0001ha salido de la zona de riesgo
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0007 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:23:39 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 6
+may 04, 2025 12:23:39 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0001ha entrado a zona descanso
+may 04, 2025 12:23:39 P. M. Log info
+INFO: H0001 está descansando.
+may 04, 2025 12:23:40 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0002ha salido de la zona descanso
+may 04, 2025 12:23:40 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0002ha entrado al comedor
+may 04, 2025 12:23:40 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 5
+may 04, 2025 12:23:40 P. M. Log info
+INFO: H0007 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:23:40 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0007ha salido de la zona de riesgo
+may 04, 2025 12:23:41 P. M. Log info
+INFO: H0003 ha recolectado 2 unidades de comida.
+may 04, 2025 12:23:41 P. M. Log info
+INFO: H0003 está cruzando hacia dentro en el túnel 2
+may 04, 2025 12:23:41 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0006ha salido de la zona descanso
+may 04, 2025 12:23:41 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0006ha entrado al comedor
+may 04, 2025 12:23:42 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:42 P. M. Juegozombie entrarZriesgoZ
+INFO: Zombie con id:+Z0000ha entrado zona riesgo
+may 04, 2025 12:23:42 P. M. Log info
+INFO: H0003 ha vuelto al refugio a través del túnel 2
+may 04, 2025 12:23:42 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0003ha salido de la zona de riesgo
+may 04, 2025 12:23:42 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0001ha salido de la zona descanso
+may 04, 2025 12:23:42 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0001ha entrado al comedor
+may 04, 2025 12:23:42 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0004ha salido de la zona descanso
+may 04, 2025 12:23:42 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0004ha entrado al comedor
+may 04, 2025 12:23:43 P. M. Log info
+INFO: H0003 mata al zombi Z0000
+may 04, 2025 12:23:43 P. M. Log info
+INFO: Z0000 ha muerto.
+may 04, 2025 12:23:43 P. M. Log info
+INFO: Z0000 ha atacado a: H0003
+may 04, 2025 12:23:45 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0002ha salido del comedor
+may 04, 2025 12:23:45 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0002ha entrado a zona comun
+may 04, 2025 12:23:45 P. M. Juegozombie salirZriesgoZ
+INFO: Zombie con id:+Z0000ha salido zona riesgo
+may 04, 2025 12:23:45 P. M. Log info
+INFO: Se han agregado 3 unidades de comida al refugio. Total: 8
+may 04, 2025 12:23:45 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0007ha entrado a zona descanso
+may 04, 2025 12:23:45 P. M. Log info
+INFO: H0007 está descansando.
+may 04, 2025 12:23:45 P. M. Log info
+INFO: H0002 está en la zona común.
+may 04, 2025 12:23:45 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 7
+may 04, 2025 12:23:46 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0002ha salido de la zona comun
+may 04, 2025 12:23:46 P. M. Log info
+INFO: H0002 está esperando para salir en el túnel 1
+may 04, 2025 12:23:47 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0007ha salido de la zona descanso
+may 04, 2025 12:23:47 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0007ha entrado al comedor
+may 04, 2025 12:23:49 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0006ha salido del comedor
+may 04, 2025 12:23:49 P. M. Log info
+INFO: Se han agregado 2 unidades de comida al refugio. Total: 9
+may 04, 2025 12:23:49 P. M. Juegozombie entrarDescanso
+INFO: Humano con id:+H0003ha entrado a zona descanso
+may 04, 2025 12:23:49 P. M. Log info
+INFO: H0003 está descansando.
+may 04, 2025 12:23:49 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0006ha entrado a zona comun
+may 04, 2025 12:23:49 P. M. Log info
+INFO: H0006 está en la zona común.
+may 04, 2025 12:23:49 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 8
+may 04, 2025 12:23:50 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0006ha salido de la zona comun
+may 04, 2025 12:23:50 P. M. Log info
+INFO: H0006 está esperando para salir en el túnel 1
+may 04, 2025 12:23:51 P. M. Juegozombie salirDescanso
+INFO: Humano con id:+H0003ha salido de la zona descanso
+may 04, 2025 12:23:51 P. M. Juegozombie entrarZcomedor
+INFO: Humano con id:+H0003ha entrado al comedor
+may 04, 2025 12:23:52 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0001ha salido del comedor
+may 04, 2025 12:23:52 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0001ha entrado a zona comun
+may 04, 2025 12:23:52 P. M. Log info
+INFO: H0001 está en la zona común.
+may 04, 2025 12:23:52 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 7
+may 04, 2025 12:23:54 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0001ha salido de la zona comun
+may 04, 2025 12:23:54 P. M. Log info
+INFO: H0001 está esperando para salir en el túnel 0
+may 04, 2025 12:23:57 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0004ha salido del comedor
+may 04, 2025 12:23:57 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0004ha entrado a zona comun
+may 04, 2025 12:23:57 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 6
+may 04, 2025 12:23:57 P. M. Log info
+INFO: H0004 está en la zona común.
+may 04, 2025 12:23:59 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0004ha salido de la zona comun
+may 04, 2025 12:23:59 P. M. Log info
+INFO: H0004 está esperando para salir en el túnel 3
+may 04, 2025 12:24:00 P. M. Log info
+INFO: H0004 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:24:00 P. M. Log info
+INFO: H0004 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:24:00 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0004ha entrado a zona riesgo
+may 04, 2025 12:24:00 P. M. Log info
+INFO: H0004 ha entrado en la zona exterior 3
+may 04, 2025 12:24:01 P. M. Juegozombie salirZcomedor
+INFO: Humano con id:+H0007ha salido del comedor
+may 04, 2025 12:24:01 P. M. Juegozombie entrarZcomun
+INFO: Humano con id:+H0007ha entrado a zona comun
+may 04, 2025 12:24:01 P. M. Log info
+INFO: H0007 está en la zona común.
+may 04, 2025 12:24:01 P. M. Log info
+INFO: Se han consumido 1 unidades de comida. Restante: 5
+may 04, 2025 12:24:01 P. M. Log info
+INFO: H0000 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:24:01 P. M. Log info
+INFO: H0000 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:24:01 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0000ha entrado a zona riesgo
+may 04, 2025 12:24:01 P. M. Log info
+INFO: H0000 ha entrado en la zona exterior 3
+may 04, 2025 12:24:02 P. M. Log info
+INFO: H0005 está cruzando hacia fuera en el túnel 3
+may 04, 2025 12:24:02 P. M. Log info
+INFO: H0005 ha cruzado hacia el exterior en el túnel 3
+may 04, 2025 12:24:02 P. M. Juegozombie entrarZriesgoH
+INFO: Humano con id:+H0005ha entrado a zona riesgo
+may 04, 2025 12:24:02 P. M. Log info
+INFO: H0005 ha entrado en la zona exterior 3
+may 04, 2025 12:24:02 P. M. Juegozombie salirZcomun
+INFO: Humano con id:+H0007ha salido de la zona comun
+may 04, 2025 12:24:02 P. M. Log info
+INFO: H0007 está esperando para salir en el túnel 0
+may 04, 2025 12:24:04 P. M. Log info
+INFO: H0004 ha recolectado 3 unidades de comida.
+may 04, 2025 12:24:04 P. M. Log info
+INFO: H0004 está cruzando hacia dentro en el túnel 3
+may 04, 2025 12:24:05 P. M. Log info
+INFO: H0004 ha vuelto al refugio a través del túnel 3
+may 04, 2025 12:24:05 P. M. Juegozombie salirZriesgoH
+INFO: Humano con id:+H0004ha salido de la zona de riesgo

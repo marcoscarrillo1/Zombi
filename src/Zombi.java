@@ -35,20 +35,24 @@ class Zombi extends Thread {
         while (vivo) {
             try {
                 // El zombi se mueve por la zona
+                juego.esperarSiPausado();
                 int zona= new Random().nextInt(4);
                 zonaActual = refugio.explorarZonaExterior(zona);
                 zonaActual.entrarZ(this);
                 juego.entrarZriesgoZ(this,zona);
 
                 // El zombi busca un humano al que atacar
+                juego.esperarSiPausado();
                 Humano presa = zonaActual.elegirpresa();
                 if (presa!=null){
                     Thread.sleep((long)(rand.nextDouble(1,3) * 500)); // Espera aleatoria entre 1 y 4 segundos
+                    juego.esperarSiPausado();
                     atacarHumano(presa);
                     Log.info(id + " ha atacado a: "+presa.getIdh());
                 }
                 // Simula el tiempo de espera entre ataques
                 Thread.sleep((long)(rand.nextDouble(2,3) * 1000));
+                juego.esperarSiPausado();
                 zonaActual.salirZ(this);
                 juego.salirZriesgoZ(this,zona);
 

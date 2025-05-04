@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ListaHilos {
     private ArrayList<Thread> lista;
-    private TextArea TextArea;
+    private  TextArea TextArea;
 
     public ListaHilos(TextArea TextArea) {
         this.TextArea = TextArea;
