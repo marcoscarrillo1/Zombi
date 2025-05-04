@@ -29,6 +29,7 @@ public class VentanaController implements Initializable {
     private TableView<String> tblTuneles;
     private TableView<String> tblZonaRiesgo;
     private Refugio refugio;
+    private ZonaInsegura zonaInsegura;
 
 
     public void setRefugio(Refugio refugio) {
@@ -94,7 +95,7 @@ public class VentanaController implements Initializable {
     private ListaHilos zonaDescanso= new ListaHilos(textAreaDescanso);
     private ListaHilos zonaComun=new ListaHilos(textAreaZonaComun);
     private ListaHilos zonaComedor=new ListaHilos(textAreaComedor);
-    private ArrayList<ZonaInsegura> enzonariesgo = new ArrayList<>();
+    private ArrayList<ListaHilos> enzonariesgo = new ArrayList<>();
     private ArrayList<ListaHilos> zonariesgoZZ = new ArrayList<>();
     private ArrayList<ListaHilos> irtuneles=new ArrayList<>();
     private ArrayList<ListaHilos> volvertuneles=new ArrayList<>();
@@ -164,7 +165,7 @@ public class VentanaController implements Initializable {
         listaHilosPorZona.add(zonaComun); // Zona Común
 
         // Crear una lista de hilos vacía para cada zona y túnel
-        for (int i = 0; i < 12; i++) {
+       /* for (int i = 0; i < 12; i++) {
             listaHilosPorZona.add(new ListaHilos(textAreasTuneles[i])); // Para túneles
         }
         for (int i = 0; i < 8; i++) {
@@ -180,8 +181,19 @@ public class VentanaController implements Initializable {
         textAreasZonaRiesgo[4] = textAreasZonaRiesgo5;
         textAreasZonaRiesgo[5] = textAreasZonaRiesgo6;
         textAreasZonaRiesgo[6] = textAreasZonaRiesgo7;
-        textAreasZonaRiesgo[7] = textAreasZonaRiesgo8;
+        textAreasZonaRiesgo[7] = textAreasZonaRiesgo8;*/
 
+        ListaHilos zona1=new ListaHilos(textAreasZonaRiesgo1);
+        ListaHilos zona2=new ListaHilos(textAreasZonaRiesgo2);
+        ListaHilos zona3=new ListaHilos(textAreasZonaRiesgo3);
+        ListaHilos zona4=new ListaHilos(textAreasZonaRiesgo4);
+        ListaHilos zona5=new ListaHilos(textAreasZonaRiesgo5);
+        ListaHilos zona6=new ListaHilos(textAreasZonaRiesgo6);
+        ListaHilos zona7=new ListaHilos(textAreasZonaRiesgo7);
+        ListaHilos zona8=new ListaHilos(textAreasZonaRiesgo8);
+
+        zonariesgoZZ.addAll(Arrays.asList(zona2,zona4,zona6,zona8));
+        enzonariesgo.addAll(Arrays.asList(zona1,zona3,zona5,zona7));
         ListaHilos tunel1=new ListaHilos( textAreaTunel1);
         ListaHilos tunel2=new ListaHilos( textAreaTunel2);
         ListaHilos tunel3=new ListaHilos( textAreaTunel3);
@@ -198,6 +210,7 @@ public class VentanaController implements Initializable {
         irtuneles.addAll(Arrays.asList(tunel1,tunel4,tunel7,tunel10));
         dentrotuenel.addAll(Arrays.asList(tunel2,tunel5,tunel8,tunel11));
         volvertuneles.addAll(Arrays.asList(tunel3,tunel6,tunel9,tunel12));
+        /*
         textAreasTuneles[1] = textAreaTunel2;
         textAreasTuneles[2] = textAreaTunel3;
         textAreasTuneles[3] = textAreaTunel4;
@@ -209,7 +222,7 @@ public class VentanaController implements Initializable {
         textAreasTuneles[9] = textAreaTunel10;
         textAreasTuneles[10] = textAreaTunel11;
         textAreasTuneles[11] = textAreaTunel12;
-
+*/
         // Configurar el Timeline
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> actualizar()));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -221,12 +234,29 @@ public class VentanaController implements Initializable {
         actualizarZona("comedor", textAreaComedor);
         actualizarZona("descanso", textAreaDescanso);
         actualizarZona("zonacomun", textAreaZonaComun);
-        for (int i = 1; i <= 12; i++) {
+        for (ListaHilos l:irtuneles){
+            l.imprimir();
+        }
+        for (ListaHilos l : dentrotuenel) {
+            l.imprimir();
+        }
+        for (ListaHilos l : volvertuneles) {
+            l.imprimir();
+        }
+
+        // Zonas de riesgo
+        for (ListaHilos l : enzonariesgo) {
+            l.imprimir();
+        }
+        for (ListaHilos l : zonariesgoZZ) {
+            l.imprimir();
+        }
+        /*for (int i = 1; i <= 12; i++) {
             actualizarZona("tunel" + i, textAreasTuneles[i - 1]);
         }
         for (int i = 1; i <= 8; i++) {
             actualizarZona("zona" + i, textAreasZonaRiesgo[i - 1]);
-        }
+        }*/
         lblComida.setText(""+refugio.getComidaDisponible());
     }
 
@@ -245,7 +275,7 @@ public class VentanaController implements Initializable {
             case "comedor": return 0;
             case "descanso": return 1;
             case "zonacomun": return 2;
-            case "tunel1": return 3;  // Túneles empiezan en índice 4
+            /*case "tunel1": return 3;  // Túneles empiezan en índice 4
             case "tunel2": return 4;
             case "tunel3": return 5;
             case "tunel4": return 6;
@@ -264,17 +294,18 @@ public class VentanaController implements Initializable {
             case "zona5": return 19;
             case "zona6": return 20;
             case "zona7": return 21;
-            case "zona8": return 22;
+            case "zona8": return 22;*/
             default: return -1;
         }
     }
     public void iniciarSimulacion() {
-        this.refugio = new Refugio();
+        this.refugio = new Refugio(irtuneles,dentrotuenel,volvertuneles);
         int comida = 0;
+
 
         this.juego = new Juegozombie(zonaComun, zonaDescanso, zonaComedor,irtuneles,volvertuneles,dentrotuenel, comida, enzonariesgo, zonariesgoZZ);
         refugio.setJuego(juego);
-        Zombi pacienteCero = new Zombi("Z0000", refugio);
+        Zombi pacienteCero = new Zombi("Z0000", juego,refugio);
         pacienteCero.start();
 
         new Thread(() -> {

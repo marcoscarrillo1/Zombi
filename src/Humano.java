@@ -53,8 +53,10 @@ class Humano extends Thread {
 
                 // 3. Zona insegura
                 ZonaInsegura zona = refugio.explorarZonaExterior(idTunel);
+                juego.entrarZriesgoH(this,idTunel);
                 if (marcado) {
                     refugio.volverAlRefugio(this,idTunel,zona);
+                    juego.salirZriesgoH(this,idTunel);
                 }
                 else{
                     int comida = zona.recolectarComida(this);
@@ -62,6 +64,7 @@ class Humano extends Thread {
 
                 // 4. Cruzando túnel hacia adentro
                 refugio.volverAlRefugio(this,idTunel,zona);
+                juego.salirZriesgoH(this,idTunel);
                 refugio.agregarComida(comida);
                 }
                 // 5. Zona de descanso

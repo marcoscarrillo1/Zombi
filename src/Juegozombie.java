@@ -20,14 +20,14 @@ public class Juegozombie {
     private ArrayList<ListaHilos> volvertuneles;
     private ArrayList<ListaHilos> dentrotuenel;
     private ArrayList<ListaHilos> zonariesgoZZ;
-    private ArrayList<ZonaInsegura> enzonariesgo;
+    private ArrayList<ListaHilos> enzonariesgo;
     private int comida;
     private Text comidatxt;
     private final Lock cerrojopausa= new ReentrantLock();
     private final Condition condicionpausa=cerrojopausa.newCondition();
     private boolean pausado=false;
 
-    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,ArrayList<ListaHilos> irtuneles,ArrayList<ListaHilos> volvertuneles,ArrayList<ListaHilos> dentrotuenel,int comida,ArrayList<ZonaInsegura> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
+    public Juegozombie( ListaHilos zonaComun,ListaHilos zonaDescanso,ListaHilos zonaComedor,ArrayList<ListaHilos> irtuneles,ArrayList<ListaHilos> volvertuneles,ArrayList<ListaHilos> dentrotuenel,int comida,ArrayList<ListaHilos> enzonariesgo,ArrayList<ListaHilos> zonariesgoZZ) {
         this.zonaComun=zonaComun;
         this.zonaDescanso=zonaDescanso;
         this.zonaComedor=zonaComedor;
@@ -69,13 +69,14 @@ public class Juegozombie {
         logger.info("Humano con id:+"+h.getIdh()+"ha entrado al comedor");
 
     }
+
     public void entrarZriesgoH(Humano h,int i){
-        enzonariesgo.get(i).añadirhumano(h);
+        enzonariesgo.get(i).añadir(h);
         logger.info("Humano con id:+"+h.getIdh()+"ha entrado a zona riesgo");
 
     }
     public void salirZriesgoH(Humano h,int i){
-        enzonariesgo.get(i).eliminarHumano(h);
+        enzonariesgo.get(i).fuera(h);
         logger.info("Humano con id:+"+h.getIdh()+"ha salido de la zona de riesgo");
 
     }

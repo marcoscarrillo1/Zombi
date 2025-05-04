@@ -33,7 +33,7 @@ public class ListaHilos {
         return ids;
     }
 
-    private synchronized void imprimir() {
+    public synchronized void imprimir() {
         List<String> ids = getIds();
         Platform.runLater(() -> TextArea.setText(String.join("\n", ids)));
         System.out.println("Actualizando TextArea con: " + ids);

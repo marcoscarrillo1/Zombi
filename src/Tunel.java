@@ -21,6 +21,9 @@ class Tunel {
     private boolean grupoFormado = false;
     private List<Humano> esperandosalir = new ArrayList<>();
     private Humano humanoDentro = null;
+    private ListaHilos irTunel;       // Lado izquierdo (esperando salir)
+    private ListaHilos dentroTunel;   // Centro (cruzando)
+    private ListaHilos volverTunel;
 
     public Humano getHumanoDentro() {
         return humanoDentro;
@@ -52,9 +55,14 @@ class Tunel {
 
     private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
 
-    public Tunel(int id) {
-        this.id = id;  // Asigna un identificador único al túnel
+    public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver) {
+        this.id = id;
+        this.irTunel = ir;
+        this.dentroTunel = dentro;
+        this.volverTunel = volver;
     }
+    // Asigna un identificador único al túnel
+
 
     public int getId() {
         return id;
@@ -66,6 +74,7 @@ class Tunel {
         cerrojo.lock();
         try {
             esperandosalir.add(h);
+            irTunel.añadir(h);
             Log.info(h.getIdh() + " está esperando para salir en el túnel " + id);
             if (esperandosalir.size() == 3) {
                 grupoFormado = true;
@@ -78,9 +87,12 @@ class Tunel {
             }
             ocupado.acquire();
             humanoDentro=h;
+            irTunel.fuera(h);
+            dentroTunel.añadir(h);
             Thread.sleep(1000);
             Log.info(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
             esperandosalir.remove(h);
+            dentroTunel.fuera(h);
             humanoDentro=null;
             ocupado.release();
             if(esperandosalir.isEmpty()){
@@ -97,11 +109,15 @@ class Tunel {
         cerrojo.lock();
         try {
             esperandoEntrar.add(h);
+            volverTunel.añadir(h);
             ocupado.acquire();
             humanoDentro=h;
+            volverTunel.fuera(h);
+            dentroTunel.añadir(h);
             Log.info(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
             esperandoEntrar.remove(h);
             Thread.sleep(1000);
+            dentroTunel.fuera(h);
             humanoDentro=null;
             ocupado.release();
             if (grupoFormado && esperandoEntrar.isEmpty()) {
