@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Condition;
@@ -24,6 +25,8 @@ class Tunel {
     private ListaHilos irTunel;       // Lado izquierdo (esperando salir)
     private ListaHilos dentroTunel;   // Centro (cruzando)
     private ListaHilos volverTunel;
+    private CyclicBarrier barreraSalida = new CyclicBarrier(3);
+
 
     public Humano getHumanoDentro() {
         return humanoDentro;

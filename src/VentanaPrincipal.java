@@ -26,11 +26,18 @@ import javafx.scene.text.Text;
 public class VentanaPrincipal extends Application {
 
 
+    private int cantidadHumanos;
+
+    public VentanaPrincipal(int cantidadHumanos) {
+        this.cantidadHumanos = cantidadHumanos;
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana.fxml"));
         Parent root = loader.load();
         VentanaController controller = loader.getController();
+        controller.setCantidadHumanos(cantidadHumanos);
 
         // Iniciar lógica de simulación desde el controlador
         controller.iniciarSimulacion();

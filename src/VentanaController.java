@@ -100,7 +100,11 @@ public class VentanaController implements Initializable {
     private ArrayList<ListaHilos> irtuneles=new ArrayList<>();
     private ArrayList<ListaHilos> volvertuneles=new ArrayList<>();
     private ArrayList<ListaHilos> dentrotuenel=new ArrayList<>();
+    private int cantidadHumanos;
 
+    public void setCantidadHumanos(int cantidadHumanos) {
+        this.cantidadHumanos = cantidadHumanos;
+    }
     public Juegozombie getJuego() {
         return juego;
     }
@@ -307,7 +311,7 @@ public class VentanaController implements Initializable {
         pacienteCero.start();
 
         new Thread(() -> {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < cantidadHumanos; i++) {
                 String id = String.format("H%04d", i);
                 Humano h = new Humano(id, juego, refugio);
                 h.start();
