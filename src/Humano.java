@@ -61,8 +61,9 @@ class Humano extends Thread {
                 juego.entrarZriesgoH(this,idTunel);
                 if (marcado) {
                     juego.esperarSiPausado();
-                    refugio.volverAlRefugio(this,idTunel,zona);
                     juego.salirZriesgoH(this,idTunel);
+                    refugio.volverAlRefugio(this,idTunel,zona);
+
                 }
                 else{
                     juego.esperarSiPausado();
@@ -71,8 +72,8 @@ class Humano extends Thread {
 
                 // 4. Cruzando túnel hacia adentro
                 juego.esperarSiPausado();
-                refugio.volverAlRefugio(this,idTunel,zona);
                 juego.salirZriesgoH(this,idTunel);
+                refugio.volverAlRefugio(this,idTunel,zona);
                 refugio.agregarComida(comida);
                 }
                 // 5. Zona de descanso

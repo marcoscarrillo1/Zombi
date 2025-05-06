@@ -100,6 +100,7 @@ class Refugio {
     public void volverAlRefugio(Humano h, int idTunel, ZonaInsegura zona) throws InterruptedException {
         Tunel tunel = tuneles[idTunel];
         h.setUbicacion("Túnel (entrando)");
+        tunel.insertarHdentro(h);
         tunel.cruzarHaciaDentro(h);
         zona.salir(h);
         Log.info(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel.getId());

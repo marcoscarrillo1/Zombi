@@ -120,7 +120,6 @@ class Tunel {
         cerrojo.lock();
         try {
             esperandoEntrar.add(h);
-            volverTunel.añadir(h);
             ocupado.acquire();
             humanoDentro=h;
             volverTunel.fuera(h);
@@ -143,7 +142,9 @@ class Tunel {
             cerrojo.unlock();
         }
     }
-
+    public synchronized void insertarHdentro(Humano h){
+        volverTunel.añadir(h);
+    }
 
 }
 
