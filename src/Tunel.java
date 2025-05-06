@@ -26,7 +26,11 @@ class Tunel {
     private ListaHilos dentroTunel;   // Centro (cruzando)
     private ListaHilos volverTunel;
     private CyclicBarrier barreraSalida = new CyclicBarrier(3);
+    private Juegozombie juego;
 
+    public void setJuego(Juegozombie juego) {
+        this.juego = juego;
+    }
 
     public Humano getHumanoDentro() {
         return humanoDentro;
@@ -58,11 +62,12 @@ class Tunel {
 
     private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
 
-    public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver) {
+    public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver,Juegozombie juego) {
         this.id = id;
         this.irTunel = ir;
         this.dentroTunel = dentro;
         this.volverTunel = volver;
+        this.juego = juego;
     }
     // Asigna un identificador único al túnel
 
@@ -92,7 +97,9 @@ class Tunel {
             humanoDentro=h;
             irTunel.fuera(h);
             dentroTunel.añadir(h);
+            juego.esperarSiPausado();
             Thread.sleep(1000);
+            juego.esperarSiPausado();
             Log.info(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
             esperandosalir.remove(h);
             dentroTunel.fuera(h);
@@ -119,7 +126,9 @@ class Tunel {
             dentroTunel.añadir(h);
             Log.info(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
             esperandoEntrar.remove(h);
+            juego.esperarSiPausado();
             Thread.sleep(1000);
+            juego.esperarSiPausado();
             dentroTunel.fuera(h);
             humanoDentro=null;
             ocupado.release();

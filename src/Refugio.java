@@ -63,9 +63,9 @@ class Refugio {
 
     private static int comidaDisponible = 0;
 
-    public Refugio(List<ListaHilos> irtuneles, List<ListaHilos> dentrotuneles, List<ListaHilos> volvertuneles) {
+    public Refugio(List<ListaHilos> irtuneles, List<ListaHilos> dentrotuneles, List<ListaHilos> volvertuneles,Juegozombie juego) {
         for (int i = 0; i < 4; i++) {
-            tuneles[i] = new Tunel(i, irtuneles.get(i), dentrotuneles.get(i), volvertuneles.get(i));
+            tuneles[i] = new Tunel(i, irtuneles.get(i), dentrotuneles.get(i), volvertuneles.get(i),juego);
             zonas[i] = new ZonaInsegura(i);
         }
     }

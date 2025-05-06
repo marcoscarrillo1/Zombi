@@ -301,11 +301,11 @@ public class VentanaController implements Initializable {
         }
     }
     public void iniciarSimulacion() {
-        this.refugio = new Refugio(irtuneles,dentrotuenel,volvertuneles);
         int comida = 0;
 
 
         this.juego = new Juegozombie(zonaComun, zonaDescanso, zonaComedor,irtuneles,volvertuneles,dentrotuenel, comida, enzonariesgo, zonariesgoZZ);
+        this.refugio = new Refugio(irtuneles,dentrotuenel,volvertuneles,juego);
         refugio.setJuego(juego);
         Zombi pacienteCero = new Zombi("Z0000", juego,refugio);
         pacienteCero.start();

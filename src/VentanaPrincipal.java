@@ -37,6 +37,7 @@ public class VentanaPrincipal extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana.fxml"));
         Parent root = loader.load();
         VentanaController controller = loader.getController();
+
         controller.setCantidadHumanos(cantidadHumanos);
 
         // Iniciar lógica de simulación desde el controlador
