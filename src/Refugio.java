@@ -165,6 +165,7 @@ class Refugio {
         return comidaDisponible;
     }
 
+
     public void agregarComida(int cantidad) {
         try {
             lockComida.lock();
