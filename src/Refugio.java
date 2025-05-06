@@ -92,7 +92,7 @@ class Refugio {
         return tunel.getId();
     }
 
-    public synchronized ZonaInsegura explorarZonaExterior(int idZona) throws InterruptedException {
+    public ZonaInsegura explorarZonaExterior(int idZona) throws InterruptedException {
         ZonaInsegura zona = zonas[idZona];
         return zona;
     }

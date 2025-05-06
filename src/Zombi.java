@@ -71,7 +71,7 @@ class Zombi extends Thread {
             h.morir();
             this.incrementarMuertes();
             Zombi trans = new Zombi(zombiNuevo,this.juego,this.refugio);
-            trans.run();
+            trans.start();
         }else {
             h.setMarcado(true);
             zonaActual.añadirhumano(h);
