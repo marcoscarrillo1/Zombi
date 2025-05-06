@@ -102,17 +102,6 @@ class Humano extends Thread {
 
 
 
-
-    // Método para matar un zombi
-    public void matarZombi(Zombi zombi) {
-        if (zombi != null) {
-            Log.info(id + " mata al zombi " + zombi.getIdz());
-            // El humano mata al zombi. Aquí puedes manejar la lógica de muerte del zombi.
-            zombi.morir();
-        }
-    }
-
-
     // Métodos getters y setters
     public String getIdh() {
         return id;

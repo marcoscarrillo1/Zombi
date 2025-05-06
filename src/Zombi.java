@@ -75,7 +75,6 @@ class Zombi extends Thread {
         }else {
             h.setMarcado(true);
             zonaActual.añadirhumano(h);
-            h.matarZombi(this);
         }
 
     }
