@@ -46,6 +46,7 @@ class Humano extends Thread {
                 // 1. Zona común
                 juego.esperarSiPausado();
                 refugio.zonaComun(this);
+                juego.esperarSiPausado();
                 sleep(1000 + new Random().nextInt(1000));
 
                 // 2. Cruzando túnel hacia afuera

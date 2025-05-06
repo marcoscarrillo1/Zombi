@@ -113,7 +113,9 @@ class Refugio {
             juego.entrarDescanso(h);
         }
         Log.info(h.getIdh() + " está descansando.");
+        juego.esperarSiPausado();
         h.sleep(2000 + new Random().nextInt(2000));
+        juego.esperarSiPausado();
         synchronized (humanosDescansando) {
             humanosDescansando.remove(h);
             juego.salirDescanso(h);
@@ -131,7 +133,9 @@ class Refugio {
                 vacio.await();
             }
             if (consumirComida(1)) {
+                juego.esperarSiPausado();
                 Thread.sleep(3000 + new Random().nextInt(2000));
+                juego.esperarSiPausado();
                 humanosComedor.remove(h);
                 juego.salirZcomedor(h);
             } else {
