@@ -11,6 +11,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class VentanaInicio extends Application {
@@ -119,6 +122,11 @@ public class VentanaInicio extends Application {
 
 
     public static void main(String[] args) {
+        try{
+            Files.deleteIfExists(Paths.get("app.log"));
+        }catch (IOException e){
+            System.err.println(("No se pudo borrar"));
+        }
         launch(args);
     }
 }
