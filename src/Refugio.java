@@ -146,18 +146,7 @@ class Refugio {
         }
     }
 
-    public  void recuperarse(Humano h) throws InterruptedException {
-        h.setUbicacion("Enfermería");
-        synchronized(humanosEnfermeria){
-            humanosEnfermeria.add(h);
-        }
-        Thread.sleep(3000 + new Random().nextInt(2000));
-        h.setMarcado(false);
-        Log.info(h.getIdh() + " se ha recuperado.");
-        synchronized (humanosEnfermeria){
-            humanosEnfermeria.remove(h);
-        }
-    }
+
 
     // --- NUEVAS FUNCIONES DE COMIDA ---
 

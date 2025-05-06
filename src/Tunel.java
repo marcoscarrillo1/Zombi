@@ -27,6 +27,8 @@ class Tunel {
     private ListaHilos volverTunel;
     private CyclicBarrier barreraSalida = new CyclicBarrier(3);
     private Juegozombie juego;
+    private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
+
 
     public void setJuego(Juegozombie juego) {
         this.juego = juego;
@@ -60,7 +62,6 @@ class Tunel {
         this.esperandosalir = esperandosalir;
     }
 
-    private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
 
     public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver,Juegozombie juego) {
         this.id = id;

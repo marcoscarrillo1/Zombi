@@ -87,7 +87,7 @@ class Humano extends Thread {
 
                 // 7. Enfermería (si está marcado)
                 if (marcado) {
-                    refugio.recuperarse(this);
+                    refugio.zonaDescanso(this);
                 }
 
 
