@@ -20,6 +20,8 @@ class Refugio {
     private ArrayList<Humano> humanosEnfermeria = new ArrayList<>();
     private ArrayList<Humano> humanosZonaComun = new ArrayList<>();
     private Juegozombie juego;
+    private Map<String, Integer> rankingZombi = new LinkedHashMap<>();
+
 
     public  int getComidaDisponible() {
         return comidaDisponible;
@@ -100,9 +102,7 @@ class Refugio {
     public void volverAlRefugio(Humano h, int idTunel, ZonaInsegura zona) throws InterruptedException {
         Tunel tunel = tuneles[idTunel];
         h.setUbicacion("Túnel (entrando)");
-        tunel.insertarHdentro(h);
         tunel.cruzarHaciaDentro(h);
-        zona.salir(h);
         Log.info(h.getIdh() + " ha vuelto al refugio a través del túnel " + tunel.getId());
 
     }
@@ -146,6 +146,62 @@ class Refugio {
             lockComida.unlock();
         }
     }
+
+    public int getTotalHumanos() {
+        return humanosDescansando.size() + humanosComedor.size() + humanosEnfermeria.size() + humanosZonaComun.size();
+    }
+
+    public synchronized Map<String, Integer> getContadorHumanosPorTunel() {
+        Map<String, Integer> resultado = new LinkedHashMap<>();
+
+        for (int i = 0; i < tuneles.length; i++) {
+            Tunel tunel = tuneles[i];
+            int total = tunel.getTotalHumanos();  // Debes tener este método en Tunel
+            resultado.put("tunel" + i, total);
+        }
+
+        return resultado;
+    }
+
+    public  Map<String, Integer> getContadorHumanosZonasInseguras() {
+        Map<String, Integer> resultado = new LinkedHashMap<>();
+
+        for (int i = 0; i < zonas.length; i++) {
+            ZonaInsegura zona = zonas[i];
+            resultado.put("zona" + i, zona.getHumans());
+        }
+
+        return resultado;
+    }
+
+    public Map<String, Integer> getContadorZombisZonasInseguras() {
+        Map<String, Integer> resultado = new LinkedHashMap<>();
+
+        for (int i = 0; i < zonas.length; i++) {
+            ZonaInsegura zona = zonas[i];
+            resultado.put("zona" + i, zona.getZombies());
+        }
+
+        return resultado;
+    }
+    public void incrementarMuerteZombi(String idZombi) {
+        rankingZombi.put(idZombi, rankingZombi.getOrDefault(idZombi, 0) + 1);
+    }
+
+    // Método para obtener el ranking completo
+    public Map<String, Integer> obtenerRankingZombis() {
+        return rankingZombi;
+    }
+    public List<Map.Entry<String, Integer>> obtenerTop3Zombis() {
+        List<Map.Entry<String, Integer>> listaRanking = new ArrayList<>(rankingZombi.entrySet());
+
+        // Ordenar por muertes (de mayor a menor)
+        listaRanking.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+
+        // Retorna el top 3
+        return listaRanking.subList(0, Math.min(3, listaRanking.size()));
+    }
+
 
 
 

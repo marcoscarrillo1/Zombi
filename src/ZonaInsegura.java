@@ -15,8 +15,11 @@ class ZonaInsegura {
     private  List<Humano> humanos = new ArrayList<>();
     private  List<Zombi> zombies = new ArrayList<>();
 
-    public List<Zombi> getZombies() {
-        return zombies;
+    public int getZombies() {
+        return zombies.size();
+    }
+    public int getHumans() {
+        return humanos.size();
     }
 
     private Lock cerrojo=new ReentrantLock();

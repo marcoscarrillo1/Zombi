@@ -39,6 +39,11 @@ public class VentanaController implements Initializable {
     public void setJuego(Juegozombie juego) {
         this.juego = juego;
     }
+    private MonitorZombi monitor;
+    public void setMonitor(MonitorZombiImpl monitor) {
+        this.monitor = monitor;
+    }
+
 
     @FXML
     private ListView<String> listaRefugio;

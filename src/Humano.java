@@ -7,6 +7,7 @@ import java.util.List;
 
 class Humano extends Thread {
     protected String id;
+    private ZonaInsegura zona;
     private Juegozombie juego;
     protected boolean marcado = false;
     private boolean vivo=true;
@@ -56,7 +57,7 @@ class Humano extends Thread {
 
                 // 3. Zona insegura
                 juego.esperarSiPausado();
-                ZonaInsegura zona = refugio.explorarZonaExterior(idTunel);
+                zona = refugio.explorarZonaExterior(idTunel);
                 juego.esperarSiPausado();
                 juego.entrarZriesgoH(this,idTunel);
                 if (marcado) {

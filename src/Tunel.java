@@ -70,6 +70,10 @@ class Tunel {
         this.volverTunel = volver;
         this.juego = juego;
     }
+    public int getTotalHumanos() {
+        return dentroTunel.getIds().size() + dentroTunel.getIds().size() + volverTunel.getIds().size(); // o lo que corresponda
+    }
+
     // Asigna un identificador único al túnel
 
 
@@ -119,7 +123,9 @@ class Tunel {
     public void cruzarHaciaDentro(Humano h) {
         cerrojo.lock();
         try {
+            volverTunel.añadir(h);
             esperandoEntrar.add(h);
+            Thread.sleep(500);
             ocupado.acquire();
             humanoDentro=h;
             volverTunel.fuera(h);

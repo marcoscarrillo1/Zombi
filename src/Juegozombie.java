@@ -91,13 +91,22 @@ public class Juegozombie {
     }
    public synchronized void  entrarcolacomedor(Humano h){
         colacomedor.add(h);
-       logger.info("Humano con id:+"+h.getIdh()+"esperando pa comer");
+        logger.info("Humano con id:+"+h.getIdh()+"esperando pa comer");
 
    }
    public synchronized void salircolacomedor(Humano h){
         colacomedor.remove(h);
        logger.info("Humano con id:+"+h.getIdh()+" no esperando pa comer");
    }
+
+
+
+
+
+
+
+
+
    public synchronized void dejarComida(){
         try{
                 comida=comida+2;

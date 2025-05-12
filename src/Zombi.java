@@ -1,8 +1,5 @@
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 class Zombi extends Thread {
     private String id;
@@ -12,6 +9,10 @@ class Zombi extends Thread {
     private boolean vivo = true;
     private Random rand = new Random();
     private Juegozombie juego;
+    private MonitorZombi monitor;
+
+    private Map<String, Integer> rankingZombis = new HashMap<>();
+
 
 
     public Zombi(String  id,Juegozombie juego,Refugio refugio) {
@@ -26,8 +27,27 @@ class Zombi extends Thread {
     // Método para incrementar las muertes del zombi
     public void incrementarMuertes() {
         muertes++;
+        try {
+            refugio.incrementarMuerteZombi(id);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
         Log.info(id + " ha matado a un humano. Muertes totales: " + muertes);
     }
+    public Map<String, Integer> getRankingZombis() {
+        return rankingZombis;  // Devuelve el mapa de zombis y sus muertes
+    }
+    public List<Map.Entry<String, Integer>> obtenerTop3Zombis() {
+        // Convertir el mapa a una lista de entradas (ID de zombi, muertes)
+        List<Map.Entry<String, Integer>> listaRanking = new ArrayList<>(rankingZombis.entrySet());
+
+        // Ordenar la lista en función de las muertes (de mayor a menor)
+        listaRanking.sort((entry1, entry2) -> entry2.getValue() - entry1.getValue());
+
+        // Obtener los 3 primeros
+        return listaRanking.subList(0, Math.min(3, listaRanking.size()));
+    }
+
 
 
     @Override
@@ -74,7 +94,6 @@ class Zombi extends Thread {
             trans.start();
         }else {
             h.setMarcado(true);
-            zonaActual.añadirhumano(h);
         }
 
     }
