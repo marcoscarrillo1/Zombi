@@ -12,7 +12,7 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
     private final Lock lockzona = new ReentrantLock();
 
     @Override
-    public Map<String, Integer> getHumanosPorTunel() throws RemoteException {
+    public List<Integer> getHumanosPorTunel() throws RemoteException {
         locktunel.lock();
         try {
             return refugio.getContadorHumanosPorTunel();
@@ -37,18 +37,12 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
 
 
     @Override
-    public Map<String, Integer> getHumanosZonasInseguras() throws RemoteException {
-        lockzona.lock();
-        try {
-            return refugio.getContadorHumanosZonasInseguras();
-        }
-        finally {
-            lockzona.unlock();
-        }
+    public List<Integer> getHumanosZonasInseguras() throws RemoteException {
+        return juego.getContadorHumanosZonasInseguras();
     }
 
     @Override
-    public Map<String, Integer> getZombisZonasInseguras() throws RemoteException {
+    public List<Integer> getZombisZonasInseguras() throws RemoteException {
         return refugio.getContadorZombisZonasInseguras();
     }
 
@@ -63,6 +57,7 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
     @Override
     public void pausar() throws RemoteException {
         juego.pausar();
+
     }
 
     @Override

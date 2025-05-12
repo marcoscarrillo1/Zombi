@@ -10,6 +10,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Refugio {
+
     private Tunel[] tuneles = new Tunel[4];
     private ZonaInsegura[] zonas = new ZonaInsegura[4];
     private Lock lockComida = new ReentrantLock();
@@ -151,39 +152,40 @@ class Refugio {
         return humanosDescansando.size() + humanosComedor.size() + humanosEnfermeria.size() + humanosZonaComun.size();
     }
 
-    public synchronized Map<String, Integer> getContadorHumanosPorTunel() {
-        Map<String, Integer> resultado = new LinkedHashMap<>();
+    public synchronized List<Integer> getContadorHumanosPorTunel() {
+        List<Integer> resultado = new ArrayList<>();
 
         for (int i = 0; i < tuneles.length; i++) {
             Tunel tunel = tuneles[i];
-            int total = tunel.getTotalHumanos();  // Debes tener este método en Tunel
-            resultado.put("tunel" + i, total);
+            int total = tunel.getTotalHumanos();  // Asegúrate de tener este método
+            resultado.add(total);
         }
 
         return resultado;
     }
 
-    public  Map<String, Integer> getContadorHumanosZonasInseguras() {
-        Map<String, Integer> resultado = new LinkedHashMap<>();
+    public List<Integer> getContadorHumanosZonasInseguras() {
+        List<Integer> resultado = new ArrayList<>();
 
         for (int i = 0; i < zonas.length; i++) {
             ZonaInsegura zona = zonas[i];
-            resultado.put("zona" + i, zona.getHumans());
+            resultado.add(zona.getHumans());
         }
 
         return resultado;
     }
 
-    public Map<String, Integer> getContadorZombisZonasInseguras() {
-        Map<String, Integer> resultado = new LinkedHashMap<>();
+    public List<Integer> getContadorZombisZonasInseguras() {
+        List<Integer> resultado = new ArrayList<>();
 
         for (int i = 0; i < zonas.length; i++) {
             ZonaInsegura zona = zonas[i];
-            resultado.put("zona" + i, zona.getZombies());
+            resultado.add(zona.getZombies());
         }
 
         return resultado;
     }
+
     public void incrementarMuerteZombi(String idZombi) {
         rankingZombi.put(idZombi, rankingZombi.getOrDefault(idZombi, 0) + 1);
     }
@@ -240,4 +242,5 @@ class Refugio {
             return false;
         }
     }
+
 }

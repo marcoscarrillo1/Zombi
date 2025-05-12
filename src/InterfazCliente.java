@@ -28,7 +28,7 @@ public class InterfazCliente extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        monitor = (MonitorZombi) Naming.lookup("//localhost/MonitorZombi");
+        monitor = (MonitorZombi) Naming.lookup("rmi://127.0.0.1/MonitorZombi");
 
         // Crear el GridPane y establecer márgenes y espaciado
         GridPane grid = new GridPane();
@@ -89,19 +89,19 @@ public class InterfazCliente extends Application {
             try {
                 humanosRefugio.setText(String.valueOf(monitor.getNumHumanosRefugio()));
 
-                Map<String, Integer> tuneles = monitor.getHumanosPorTunel();
-                for (int i = 0; i < 4; i++) {
-                    humanosTuneles[i].setText(String.valueOf(tuneles.get("tunel" + i)));
+                List<Integer> tuneles = monitor.getHumanosPorTunel();
+                for (int i = 0; i < tuneles.size(); i++) {
+                    humanosTuneles[i].setText(String.valueOf(tuneles.get(i)));
                 }
 
-                Map<String, Integer> humanosZ = monitor.getHumanosZonasInseguras();
-                for (int i = 0; i < 4; i++) {
-                    humanosZonas[i].setText(String.valueOf(humanosZ.get("zona" + i)));
+                List<Integer> humanosZ = monitor.getHumanosZonasInseguras();
+                for (int i = 0; i < humanosZ.size(); i++) {
+                    humanosZonas[i].setText(String.valueOf(humanosZ.get(i)));
                 }
 
-                Map<String, Integer> zombisZ = monitor.getZombisZonasInseguras();
-                for (int i = 0; i < 4; i++) {
-                    zombisZonas[i].setText(String.valueOf(zombisZ.get("zona" + i)));
+                List<Integer> zombisZ = monitor.getZombisZonasInseguras();
+                for (int i = 0; i < zombisZ.size(); i++) {
+                    zombisZonas[i].setText(String.valueOf(zombisZ.get(i)));
                 }
 
                 // Actualizamos el ranking de zombis usando getRankingZombies

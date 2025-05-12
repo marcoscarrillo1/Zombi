@@ -71,7 +71,7 @@ class Tunel {
         this.juego = juego;
     }
     public int getTotalHumanos() {
-        return dentroTunel.getIds().size() + dentroTunel.getIds().size() + volverTunel.getIds().size(); // o lo que corresponda
+        return dentroTunel.getIds().size() + irTunel.getIds().size() + volverTunel.getIds().size(); // o lo que corresponda
     }
 
     // Asigna un identificador único al túnel

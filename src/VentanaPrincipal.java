@@ -45,27 +45,6 @@ public class VentanaPrincipal extends Application {
 
         // Iniciar lógica de simulación desde el controlador
         controller.iniciarSimulacion();
-        try {
-            // Obtener referencias necesarias del controlador
-            Refugio refugio = controller.getRefugio();
-            Juegozombie juego = controller.getJuego();
-
-            // Crear el objeto remoto
-            MonitorZombi monitor = new MonitorZombiImpl(refugio, juego);
-            // Iniciar el registro RMI si no está ya iniciado
-            try {
-                LocateRegistry.createRegistry(1099); // solo una vez por proceso
-            } catch (ExportException e) {
-                // Ya está iniciado, ignorar
-            }
-
-            // Registrar el objeto remoto
-            Naming.rebind("//localhost/MonitorZombi", monitor);
-            System.out.println("MonitorZombi RMI registrado correctamente.");
-        } catch (Exception e) {
-            System.err.println("Error al registrar el objeto RMI: " + e.getMessage());
-            e.printStackTrace();
-        }
 
         Scene scene = new Scene(root, 1000, 900);
         stage.setTitle("Simulador de Apocalipsis Zombi");

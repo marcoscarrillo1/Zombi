@@ -9,6 +9,8 @@ import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,9 +42,6 @@ public class VentanaController implements Initializable {
         this.juego = juego;
     }
     private MonitorZombi monitor;
-    public void setMonitor(MonitorZombiImpl monitor) {
-        this.monitor = monitor;
-    }
 
 
     @FXML
@@ -131,7 +130,6 @@ public class VentanaController implements Initializable {
 
     @FXML
     private Tunel[] tuneles = new Tunel[4];
-    private ZonaInsegura[] zonas = new ZonaInsegura[4];
     @FXML private Button botonPausa;
     public void setZonaComun(ListaHilos zonaComun) {
         this.zonaComun = zonaComun;
@@ -157,14 +155,25 @@ public class VentanaController implements Initializable {
         if (juego.estaPausado()) {
             juego.reanudar();
             botonPausa.setText("Pausar");
+            try {
+                monitor.reanudar(); // Llamada RMI para reanudar
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         } else {
             juego.pausar();
             botonPausa.setText("Reanudar");
+            try {
+                monitor.pausar(); // Llamada RMI para pausar
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         // Inicializar las listas de hilos por zona
         listaHilosPorZona = new ArrayList<>();
         listaHilosPorZona.add(zonaComedor); // Comedor
@@ -312,6 +321,14 @@ public class VentanaController implements Initializable {
         this.juego = new Juegozombie(zonaComun, zonaDescanso, zonaComedor,irtuneles,volvertuneles,dentrotuenel, comida, enzonariesgo, zonariesgoZZ);
         this.refugio = new Refugio(irtuneles,dentrotuenel,volvertuneles,juego);
         refugio.setJuego(juego);
+        Servidor.iniciar(juego,refugio);
+        try {
+            monitor = (MonitorZombi) Naming.lookup("rmi://127.0.0.1/MonitorZombi");
+            System.out.println("Conectado a MonitorZombi RMI.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al conectar con el MonitorZombi: " + e.getMessage());
+        }
         Zombi pacienteCero = new Zombi("Z0000", juego,refugio);
         pacienteCero.start();
 

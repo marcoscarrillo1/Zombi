@@ -98,6 +98,15 @@ public class Juegozombie {
         colacomedor.remove(h);
        logger.info("Humano con id:+"+h.getIdh()+" no esperando pa comer");
    }
+    public List<Integer> getContadorHumanosZonasInseguras() {
+        List<Integer> resultado = new ArrayList<>();
+
+        for (ListaHilos zona : enzonariesgo) {
+            resultado.add(zona.getSize()); // Suponiendo que size() devuelve el número de humanos
+        }
+
+        return resultado;
+    }
 
 
 
@@ -107,7 +116,8 @@ public class Juegozombie {
 
 
 
-   public synchronized void dejarComida(){
+
+    public synchronized void dejarComida(){
         try{
                 comida=comida+2;
                 comidatxt.setTextContent("Comida:" +comida);

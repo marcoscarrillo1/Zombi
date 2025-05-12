@@ -60,9 +60,11 @@ class Humano extends Thread {
                 zona = refugio.explorarZonaExterior(idTunel);
                 juego.esperarSiPausado();
                 juego.entrarZriesgoH(this,idTunel);
+                zona.entrar(this);
                 if (marcado) {
                     juego.esperarSiPausado();
                     juego.salirZriesgoH(this,idTunel);
+                    zona.salir(this);
                     refugio.volverAlRefugio(this,idTunel,zona);
 
                 }
@@ -96,6 +98,9 @@ class Humano extends Thread {
             } catch (InterruptedException e) {
                 Log.info(id + " interrumpido.");
             }
+        }
+        if (zona!=null){
+            zona.salir(this);
         }
 
         // Si sale del bucle porque muere

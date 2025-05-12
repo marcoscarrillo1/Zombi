@@ -40,7 +40,7 @@ public class VentanaInicio extends Application {
         labelSlider.setTextFill(Color.WHITE);
         labelSlider.setFont(Font.font("Arial", FontWeight.BOLD, 16));
 
-        Slider sliderHumanos = new Slider(10, 1000, 100);
+        Slider sliderHumanos = new Slider(10, 20000, 100);
         sliderHumanos.setShowTickLabels(false);
         sliderHumanos.setShowTickMarks(false);
         sliderHumanos.setBlockIncrement(100);
@@ -72,6 +72,8 @@ public class VentanaInicio extends Application {
             VentanaPrincipal ventanaJuego = new VentanaPrincipal(cantidadHumanos);
             try {
                 ventanaJuego.start(new Stage());
+                InterfazCliente cliente = new InterfazCliente();
+                cliente.start(new Stage());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
