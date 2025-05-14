@@ -11,65 +11,32 @@ import java.util.concurrent.locks.ReentrantLock;
 
 
 class Tunel {
-    private  int id;
+    private int id;
     private Lock cerrojo = new ReentrantLock();  // Controla el acceso al túnel
     private Condition pasalir = cerrojo.newCondition();
-    private Condition paentrar = cerrojo.newCondition();
+
     private List<Humano> esperandoEntrar = new ArrayList<>();
-    private int esperadentro=0;
-    private int esperanalir=0;
-    private boolean hayalguien=false;
+    private int esperadentro = 0;
+    private int esperanalir = 0;
+    private boolean hayalguien = false;
     private boolean grupoFormado = false;
     private List<Humano> esperandosalir = new ArrayList<>();
     private Humano humanoDentro = null;
     private ListaHilos irTunel;       // Lado izquierdo (esperando salir)
     private ListaHilos dentroTunel;   // Centro (cruzando)
     private ListaHilos volverTunel;
-    private CyclicBarrier barreraSalida = new CyclicBarrier(3);
     private Juegozombie juego;
     private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
 
 
-    public void setJuego(Juegozombie juego) {
-        this.juego = juego;
-    }
-
-    public Humano getHumanoDentro() {
-        return humanoDentro;
-    }
-
-    public Lock getCerrojo() {
-        return cerrojo;
-    }
-
-    public void setCerrojo(Lock cerrojo) {
-        this.cerrojo = cerrojo;
-    }
-
-    public List<Humano> getEsperandoEntrar() {
-        return esperandoEntrar;
-    }
-
-    public void setEsperandoEntrar(List<Humano> esperandoEntrar) {
-        this.esperandoEntrar = esperandoEntrar;
-    }
-
-    public List<Humano> getEsperandosalir() {
-        return esperandosalir;
-    }
-
-    public void setEsperandosalir(List<Humano> esperandosalir) {
-        this.esperandosalir = esperandosalir;
-    }
-
-
-    public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver,Juegozombie juego) {
+    public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver, Juegozombie juego) {
         this.id = id;
         this.irTunel = ir;
         this.dentroTunel = dentro;
         this.volverTunel = volver;
         this.juego = juego;
     }
+
     public int getTotalHumanos() {
         return dentroTunel.getIds().size() + irTunel.getIds().size() + volverTunel.getIds().size(); // o lo que corresponda
     }
@@ -99,7 +66,7 @@ class Tunel {
                 pasalir.await();
             }
             ocupado.acquire();
-            humanoDentro=h;
+            humanoDentro = h;
             irTunel.fuera(h);
             dentroTunel.añadir(h);
             juego.esperarSiPausado();
@@ -108,10 +75,10 @@ class Tunel {
             Log.info(h.getIdh() + " está cruzando hacia fuera en el túnel " + id);
             esperandosalir.remove(h);
             dentroTunel.fuera(h);
-            humanoDentro=null;
+            humanoDentro = null;
             ocupado.release();
-            if(esperandosalir.isEmpty()){
-                grupoFormado= false;
+            if (esperandosalir.isEmpty()) {
+                grupoFormado = false;
             }
         } catch (InterruptedException e) {
             System.out.println("No ha podido usar el tunel");
@@ -127,7 +94,7 @@ class Tunel {
             esperandoEntrar.add(h);
             Thread.sleep(500);
             ocupado.acquire();
-            humanoDentro=h;
+            humanoDentro = h;
             volverTunel.fuera(h);
             dentroTunel.añadir(h);
             Log.info(h.getIdh() + " está cruzando hacia dentro en el túnel " + id);
@@ -136,7 +103,7 @@ class Tunel {
             Thread.sleep(1000);
             juego.esperarSiPausado();
             dentroTunel.fuera(h);
-            humanoDentro=null;
+            humanoDentro = null;
             ocupado.release();
             if (grupoFormado && esperandoEntrar.isEmpty()) {
                 pasalir.signalAll();
@@ -148,12 +115,7 @@ class Tunel {
             cerrojo.unlock();
         }
     }
-    public synchronized void insertarHdentro(Humano h){
-        volverTunel.añadir(h);
-    }
-
 }
-
 
 
 

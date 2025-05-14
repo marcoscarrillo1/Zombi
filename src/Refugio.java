@@ -16,7 +16,6 @@ class Refugio {
     private Lock lockComida = new ReentrantLock();
     private Condition vacio = lockComida.newCondition();
     private ArrayList<Humano> humanosDescansando = new ArrayList<>();
-    private ListaHilos humanodescansa;
     private ArrayList<Humano> humanosComedor = new ArrayList<>();
     private ArrayList<Humano> humanosEnfermeria = new ArrayList<>();
     private ArrayList<Humano> humanosZonaComun = new ArrayList<>();
@@ -30,38 +29,6 @@ class Refugio {
 
     public void setJuego(Juegozombie juego) {
         this.juego = juego;
-    }
-
-    public ArrayList<Humano> getHumanosDescansando() {
-        return humanosDescansando;
-    }
-
-    public void setHumanosDescansando(ArrayList<Humano> humanosDescansando) {
-        this.humanosDescansando = humanosDescansando;
-    }
-
-    public ArrayList<Humano> getHumanosComedor() {
-        return humanosComedor;
-    }
-
-    public void setHumanosComedor(ArrayList<Humano> humanosComedor) {
-        this.humanosComedor = humanosComedor;
-    }
-
-    public ArrayList<Humano> getHumanosEnfermeria() {
-        return humanosEnfermeria;
-    }
-
-    public void setHumanosEnfermeria(ArrayList<Humano> humanosEnfermeria) {
-        this.humanosEnfermeria = humanosEnfermeria;
-    }
-
-    public ArrayList<Humano> getHumanosZonaComun() {
-        return humanosZonaComun;
-    }
-
-    public void setHumanosZonaComun(ArrayList<Humano> humanosZonaComun) {
-        this.humanosZonaComun = humanosZonaComun;
     }
 
     private static int comidaDisponible = 0;
@@ -126,7 +93,9 @@ class Refugio {
 
     public void comedor(Humano h) throws InterruptedException {
         h.setUbicacion("Comedor");
-        humanosComedor.add(h);
+        synchronized (humanosComedor) {
+            humanosComedor.add(h);
+        }
         juego.entrarZcomedor(h);
 
         try {
@@ -157,19 +126,8 @@ class Refugio {
 
         for (int i = 0; i < tuneles.length; i++) {
             Tunel tunel = tuneles[i];
-            int total = tunel.getTotalHumanos();  // Asegúrate de tener este método
+            int total = tunel.getTotalHumanos();
             resultado.add(total);
-        }
-
-        return resultado;
-    }
-
-    public List<Integer> getContadorHumanosZonasInseguras() {
-        List<Integer> resultado = new ArrayList<>();
-
-        for (int i = 0; i < zonas.length; i++) {
-            ZonaInsegura zona = zonas[i];
-            resultado.add(zona.getHumans());
         }
 
         return resultado;
@@ -194,24 +152,11 @@ class Refugio {
     public Map<String, Integer> obtenerRankingZombis() {
         return rankingZombi;
     }
-    public List<Map.Entry<String, Integer>> obtenerTop3Zombis() {
-        List<Map.Entry<String, Integer>> listaRanking = new ArrayList<>(rankingZombi.entrySet());
-
-        // Ordenar por muertes (de mayor a menor)
-        listaRanking.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
-
-        // Retorna el top 3
-        return listaRanking.subList(0, Math.min(3, listaRanking.size()));
-    }
-
 
 
 
     // --- NUEVAS FUNCIONES DE COMIDA ---
 
-    public static synchronized int getCantidadComida() {
-        return comidaDisponible;
-    }
 
 
     public void agregarComida(int cantidad) {
