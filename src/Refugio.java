@@ -32,37 +32,6 @@ class Refugio {
         this.juego = juego;
     }
 
-    public ArrayList<Humano> getHumanosDescansando() {
-        return humanosDescansando;
-    }
-
-    public void setHumanosDescansando(ArrayList<Humano> humanosDescansando) {
-        this.humanosDescansando = humanosDescansando;
-    }
-
-    public ArrayList<Humano> getHumanosComedor() {
-        return humanosComedor;
-    }
-
-    public void setHumanosComedor(ArrayList<Humano> humanosComedor) {
-        this.humanosComedor = humanosComedor;
-    }
-
-    public ArrayList<Humano> getHumanosEnfermeria() {
-        return humanosEnfermeria;
-    }
-
-    public void setHumanosEnfermeria(ArrayList<Humano> humanosEnfermeria) {
-        this.humanosEnfermeria = humanosEnfermeria;
-    }
-
-    public ArrayList<Humano> getHumanosZonaComun() {
-        return humanosZonaComun;
-    }
-
-    public void setHumanosZonaComun(ArrayList<Humano> humanosZonaComun) {
-        this.humanosZonaComun = humanosZonaComun;
-    }
 
     private static int comidaDisponible = 0;
 
@@ -164,17 +133,6 @@ class Refugio {
         return resultado;
     }
 
-    public List<Integer> getContadorHumanosZonasInseguras() {
-        List<Integer> resultado = new ArrayList<>();
-
-        for (int i = 0; i < zonas.length; i++) {
-            ZonaInsegura zona = zonas[i];
-            resultado.add(zona.getHumans());
-        }
-
-        return resultado;
-    }
-
     public List<Integer> getContadorZombisZonasInseguras() {
         List<Integer> resultado = new ArrayList<>();
 
@@ -193,24 +151,6 @@ class Refugio {
     // Método para obtener el ranking completo
     public Map<String, Integer> obtenerRankingZombis() {
         return rankingZombi;
-    }
-    public List<Map.Entry<String, Integer>> obtenerTop3Zombis() {
-        List<Map.Entry<String, Integer>> listaRanking = new ArrayList<>(rankingZombi.entrySet());
-
-        // Ordenar por muertes (de mayor a menor)
-        listaRanking.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
-
-        // Retorna el top 3
-        return listaRanking.subList(0, Math.min(3, listaRanking.size()));
-    }
-
-
-
-
-    // --- NUEVAS FUNCIONES DE COMIDA ---
-
-    public static synchronized int getCantidadComida() {
-        return comidaDisponible;
     }
 
 

@@ -25,42 +25,8 @@ class Tunel {
     private ListaHilos irTunel;       // Lado izquierdo (esperando salir)
     private ListaHilos dentroTunel;   // Centro (cruzando)
     private ListaHilos volverTunel;
-    private CyclicBarrier barreraSalida = new CyclicBarrier(3);
     private Juegozombie juego;
     private Semaphore ocupado = new Semaphore(1);  //Controla que solo halla un humano dentro.
-
-
-    public void setJuego(Juegozombie juego) {
-        this.juego = juego;
-    }
-
-    public Humano getHumanoDentro() {
-        return humanoDentro;
-    }
-
-    public Lock getCerrojo() {
-        return cerrojo;
-    }
-
-    public void setCerrojo(Lock cerrojo) {
-        this.cerrojo = cerrojo;
-    }
-
-    public List<Humano> getEsperandoEntrar() {
-        return esperandoEntrar;
-    }
-
-    public void setEsperandoEntrar(List<Humano> esperandoEntrar) {
-        this.esperandoEntrar = esperandoEntrar;
-    }
-
-    public List<Humano> getEsperandosalir() {
-        return esperandosalir;
-    }
-
-    public void setEsperandosalir(List<Humano> esperandosalir) {
-        this.esperandosalir = esperandosalir;
-    }
 
 
     public Tunel(int id, ListaHilos ir, ListaHilos dentro, ListaHilos volver,Juegozombie juego) {
@@ -74,7 +40,6 @@ class Tunel {
         return dentroTunel.getIds().size() + irTunel.getIds().size() + volverTunel.getIds().size(); // o lo que corresponda
     }
 
-    // Asigna un identificador único al túnel
 
 
     public int getId() {

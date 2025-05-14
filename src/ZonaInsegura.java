@@ -62,11 +62,4 @@ class ZonaInsegura {
         return comidaRecolectada;
     }
 
-    public synchronized List<Humano> getHumanos() {
-        return new ArrayList<>(humanos); // Para evitar modificar la lista original desde fuera
-    }
-
-    public int getId() {
-        return id;
-    }
 }
