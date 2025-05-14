@@ -1,9 +1,4 @@
 import java.util.*;
-import java.util.concurrent.Semaphore;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 class Humano extends Thread {
     protected String id;
@@ -21,9 +16,6 @@ class Humano extends Thread {
         this.juego = juego;
         this.refugio = refugio;
         super.setName(id);
-    }
-    public boolean isMarcado() {
-        return marcado;
     }
     public void setMarcado(boolean marcado) {
         this.marcado = marcado;
@@ -115,13 +107,6 @@ class Humano extends Thread {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
