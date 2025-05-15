@@ -48,11 +48,13 @@ class Humano extends Thread {
                 zona = refugio.explorarZonaExterior(idTunel);
                 juego.esperarSiPausado();
                 juego.entrarZriesgoH(this, idTunel);
+                juego.esperarSiPausado();
                 zona.entrar(this);
                 if (marcado) {
                     juego.esperarSiPausado();
                     juego.salirZriesgoH(this, idTunel);
                     zona.salir(this);
+                    juego.esperarSiPausado();
                     refugio.volverAlRefugio(this, idTunel, zona);
 
                 } else {
@@ -63,7 +65,9 @@ class Humano extends Thread {
                     // 4. Cruzando túnel hacia adentro
                     juego.esperarSiPausado();
                     juego.salirZriesgoH(this, idTunel);
+                    juego.esperarSiPausado();
                     refugio.volverAlRefugio(this, idTunel, zona);
+                    juego.esperarSiPausado();
                     refugio.agregarComida(comida);
                 }
                 // 5. Zona de descanso
@@ -78,6 +82,7 @@ class Humano extends Thread {
 
                 // 7. Descansa (si está marcado)
                 if (marcado) {
+                    juego.esperarSiPausado();
                     refugio.zonaDescanso(this);
                 }
 

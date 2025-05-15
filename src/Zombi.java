@@ -40,6 +40,7 @@ class Zombi extends Thread {
                 juego.esperarSiPausado();
                 int zona= new Random().nextInt(4);
                 zonaActual = refugio.explorarZonaExterior(zona);
+                juego.esperarSiPausado();
                 zonaActual.entrarZ(this);
                 juego.entrarZriesgoZ(this,zona);
 
@@ -50,6 +51,7 @@ class Zombi extends Thread {
                     Thread.sleep((long)(rand.nextDouble(1,3) * 500)); // Espera aleatoria entre 1 y 4 segundos
                     juego.esperarSiPausado();
                     atacarHumano(presa);
+                    juego.esperarSiPausado();
                     Log.info(id + " ha atacado a: "+presa.getIdh());
                 }
                 // Simula el tiempo de espera entre ataques
@@ -57,6 +59,7 @@ class Zombi extends Thread {
                 juego.esperarSiPausado();
                 zonaActual.salirZ(this);
                 juego.salirZriesgoZ(this,zona);
+                juego.esperarSiPausado();
 
             } catch (InterruptedException e) {
                 Log.info(id + " ha sido interrumpido.");
