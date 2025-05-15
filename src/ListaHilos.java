@@ -45,7 +45,5 @@ public class ListaHilos {
         return lista.size();
     }
 
-    public Thread get(int index){
-        return lista.get(index);
-    }
+
 }

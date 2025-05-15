@@ -9,7 +9,6 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
     private final Juegozombie juego;
     private final Map<String, Integer> rankingZombies;
     private final Lock locktunel = new ReentrantLock();
-    private final Lock lockzona = new ReentrantLock();
 
     @Override
     public List<Integer> getHumanosPorTunel() throws RemoteException {
@@ -20,7 +19,6 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
             locktunel.unlock();
         }
     }
-
 
 
     public MonitorZombiImpl(Refugio refugio, Juegozombie juego) throws RemoteException {
@@ -65,8 +63,4 @@ public class MonitorZombiImpl extends UnicastRemoteObject implements MonitorZomb
         juego.reanudar();
     }
 
-    @Override
-    public boolean estaPausado() throws RemoteException {
-        return juego.estaPausado();
-    }
 }

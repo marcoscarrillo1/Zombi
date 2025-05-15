@@ -37,9 +37,6 @@ class ZonaInsegura {
         zombies.remove(z);
     }
 
-    public synchronized int getHumans() {
-        return humanos.size();
-    }
 
     public synchronized int getZombies() {
         return zombies.size();

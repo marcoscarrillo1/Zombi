@@ -16,7 +16,7 @@ class Refugio {
     private Lock lockComida = new ReentrantLock();
     private Condition vacio = lockComida.newCondition();
     private ArrayList<Humano> humanosDescansando = new ArrayList<>();
-    private ListaHilos humanodescansa;
+
     private ArrayList<Humano> humanosComedor = new ArrayList<>();
     private ArrayList<Humano> humanosEnfermeria = new ArrayList<>();
     private ArrayList<Humano> humanosZonaComun = new ArrayList<>();

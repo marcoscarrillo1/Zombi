@@ -11,5 +11,5 @@ public interface MonitorZombi extends Remote {
     Map<String, Integer> getRankingZombis() throws RemoteException;
     void pausar() throws RemoteException;
     void reanudar() throws RemoteException;
-    boolean estaPausado() throws RemoteException;
+
 }

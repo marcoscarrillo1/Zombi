@@ -42,17 +42,6 @@ public class Log {
         logger.info(message);
     }
 
-    public static void warning(String message) {
-        logger.warning(message);
-    }
-
-    public static void error(String message) {
-        logger.severe(message);
-    }
-
-    public static void debug(String message) {
-        logger.fine(message); // Nivel de debug
-    }
 }
 
 

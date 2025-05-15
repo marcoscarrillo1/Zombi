@@ -5,31 +5,27 @@ class Humano extends Thread {
     private ZonaInsegura zona;
     private Juegozombie juego;
     protected boolean marcado = false;
-    private boolean vivo=true;
+    private boolean vivo = true;
     protected Refugio refugio;
     protected String ubicacion = "Refugio"; // Valor inicial por defecto
 
 
-
-    public Humano(String id, Juegozombie juego,Refugio refugio) {
+    public Humano(String id, Juegozombie juego, Refugio refugio) {
         this.id = id;
         this.juego = juego;
         this.refugio = refugio;
         super.setName(id);
     }
+
     public void setMarcado(boolean marcado) {
         this.marcado = marcado;
     }
-
-
 
 
     public void morir() {
         this.vivo = false;
         Log.info(id + " ha muerto.");
     }
-
-
 
 
     @Override
@@ -51,25 +47,24 @@ class Humano extends Thread {
                 juego.esperarSiPausado();
                 zona = refugio.explorarZonaExterior(idTunel);
                 juego.esperarSiPausado();
-                juego.entrarZriesgoH(this,idTunel);
+                juego.entrarZriesgoH(this, idTunel);
                 zona.entrar(this);
                 if (marcado) {
                     juego.esperarSiPausado();
-                    juego.salirZriesgoH(this,idTunel);
+                    juego.salirZriesgoH(this, idTunel);
                     zona.salir(this);
-                    refugio.volverAlRefugio(this,idTunel,zona);
+                    refugio.volverAlRefugio(this, idTunel, zona);
 
-                }
-                else{
+                } else {
                     juego.esperarSiPausado();
                     int comida = zona.recolectarComida(this);
 
 
-                // 4. Cruzando túnel hacia adentro
-                juego.esperarSiPausado();
-                juego.salirZriesgoH(this,idTunel);
-                refugio.volverAlRefugio(this,idTunel,zona);
-                refugio.agregarComida(comida);
+                    // 4. Cruzando túnel hacia adentro
+                    juego.esperarSiPausado();
+                    juego.salirZriesgoH(this, idTunel);
+                    refugio.volverAlRefugio(this, idTunel, zona);
+                    refugio.agregarComida(comida);
                 }
                 // 5. Zona de descanso
                 juego.esperarSiPausado();
@@ -81,7 +76,7 @@ class Humano extends Thread {
                 refugio.comedor(this);
 
 
-                // 7. Enfermería (si está marcado)
+                // 7. Descansa (si está marcado)
                 if (marcado) {
                     refugio.zonaDescanso(this);
                 }
@@ -91,15 +86,13 @@ class Humano extends Thread {
                 Log.info(id + " interrumpido.");
             }
         }
-        if (zona!=null){
+        if (zona != null) {
             zona.salir(this);
         }
 
         // Si sale del bucle porque muere
         setUbicacion("Muerto");
     }
-
-
 
 
     // Métodos getters y setters
@@ -112,7 +105,4 @@ class Humano extends Thread {
         this.ubicacion = ubicacion;
     }
 
-    public boolean isVivo() {
-        return vivo;
-    }
 }

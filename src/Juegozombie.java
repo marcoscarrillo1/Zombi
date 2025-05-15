@@ -15,15 +15,12 @@ public class Juegozombie {
     private ListaHilos zonaComun;
     private ListaHilos zonaDescanso;
     private ListaHilos zonaComedor;
-    private LinkedBlockingDeque colacomedor = new LinkedBlockingDeque<>();
-    private Random rand = new Random();
     private ArrayList<ListaHilos> irtuneles;
     private ArrayList<ListaHilos> volvertuneles;
     private ArrayList<ListaHilos> dentrotuenel;
     private ArrayList<ListaHilos> zonariesgoZZ;
     private ArrayList<ListaHilos> enzonariesgo;
     private int comida;
-    private Text comidatxt;
     private final Lock cerrojopausa = new ReentrantLock();
     private final Condition condicionpausa = cerrojopausa.newCondition();
     private boolean pausado = false;

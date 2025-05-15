@@ -16,9 +16,7 @@ class Tunel {
     private Condition pasalir = cerrojo.newCondition();
     private Condition paentrar = cerrojo.newCondition();
     private List<Humano> esperandoEntrar = new ArrayList<>();
-    private int esperadentro=0;
-    private int esperanalir=0;
-    private boolean hayalguien=false;
+
     private boolean grupoFormado = false;
     private List<Humano> esperandosalir = new ArrayList<>();
     private Humano humanoDentro = null;
@@ -113,9 +111,7 @@ class Tunel {
             cerrojo.unlock();
         }
     }
-    public synchronized void insertarHdentro(Humano h){
-        volverTunel.añadir(h);
-    }
+
 
 }
 
